@@ -10,6 +10,7 @@ class DashboardContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props.user);
     return (
       <div>
         <h1>this will be your homepage stream</h1>
@@ -20,7 +21,7 @@ class DashboardContainer extends React.Component {
 
 
 let mapStateToProps = state => ({
-
+  auth: state.auth,
 });
 
 let mapDispatchToProps = dispatch => ({
@@ -28,4 +29,3 @@ let mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
-
