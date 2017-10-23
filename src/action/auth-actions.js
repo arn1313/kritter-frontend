@@ -14,6 +14,7 @@ export const signupRequest = user => dispatch => {
   return superagent.post(`${__API_URL__}/signup`)
     .withCredentials()
     .send(user)
+    .attach(user.avatar)
     .then(res => {
       dispatch(tokenSet(res.text));
       try {

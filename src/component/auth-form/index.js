@@ -10,6 +10,8 @@ class AuthForm extends React.Component {
       username: '',
       password: '',
       email: '',
+      bio: '',
+      avatar: '',
       usernameError: null,
       passwordError: null,
       emailError: null,
@@ -27,6 +29,17 @@ class AuthForm extends React.Component {
       emailError: name === 'email' && !value ? 'email must have a value' : null,
       passwordError: name === 'password' && !value ? 'password must have a value' : null,
     });
+
+    if(name === 'avatar') {
+      let {files} = e.target; 
+      let avatar = files[0];
+      this.setState({avatar});
+
+      utils.photoToDataUrl(avatar)
+        .then(preview => this.setState({preview}))
+        .catch(console.error);
+    }
+
   }
 
   handleSubmit(e) {
@@ -35,6 +48,8 @@ class AuthForm extends React.Component {
       username: this.state.username,
       password: this.state.password,
       email: this.state.email,
+      bio: this.state.bio,
+      avatar: this.state.avatar,
     })
       .then(() => this.props.redirect('/home'))
       .catch(error => {
@@ -84,6 +99,21 @@ class AuthForm extends React.Component {
           placeholder="password"
           value={this.state.password}
           onChange={this.handleChange}/><br/>
+
+        <img src={this.state.preview} style={{'width': '25%'}}/><br/>
+        <input 
+          type="file"
+          name="avatar"
+          onChange={this.handleChange}/><br/>
+
+        <textarea 
+          name="bio" 
+          cols="30" 
+          rows="5"
+          value={this.state.bio}
+          onChange={this.handleChange}>
+        </textarea><br/>
+        
         <Button bsStyle="primary" type='submit'>{this.props.auth}</Button>
       </form>
     );
