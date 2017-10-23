@@ -10,7 +10,8 @@ class DashboardContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.user);
+    console.log(this.props.auth);
+    console.log(this);
     return (
       <div>
         <h1>this will be your homepage stream</h1>
