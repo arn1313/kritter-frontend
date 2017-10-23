@@ -30,15 +30,15 @@ class AuthForm extends React.Component {
       passwordError: name === 'password' && !value ? 'password must have a value' : null,
     });
 
-    if(name === 'avatar') {
-      let {files} = e.target; 
-      let avatar = files[0];
-      this.setState({avatar});
+    // if(name === 'avatar') {
+    //   let {files} = e.target; 
+    //   let avatar = files[0];
+    //   this.setState({avatar});
 
-      utils.photoToDataUrl(avatar)
-        .then(preview => this.setState({preview}))
-        .catch(console.error);
-    }
+    //   utils.photoToDataUrl(avatar)
+    //     .then(preview => this.setState({preview}))
+    //     .catch(console.error);
+    // }
 
   }
 
@@ -49,7 +49,7 @@ class AuthForm extends React.Component {
       password: this.state.password,
       email: this.state.email,
       bio: this.state.bio,
-      avatar: this.state.avatar,
+      // avatar: this.state.avatar,
     })
       .then(() => this.props.redirect('/home'))
       .catch(error => {
@@ -100,11 +100,11 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}/><br/>
 
-        <img src={this.state.preview} style={{'width': '25%'}}/><br/>
+        {/* <img src={this.state.preview} style={{'width': '25%'}}/><br/>
         <input 
           type="file"
           name="avatar"
-          onChange={this.handleChange}/><br/>
+          onChange={this.handleChange}/><br/> */}
 
         <textarea 
           name="bio" 
@@ -113,7 +113,7 @@ class AuthForm extends React.Component {
           value={this.state.bio}
           onChange={this.handleChange}>
         </textarea><br/>
-        
+
         <Button bsStyle="primary" type='submit'>{this.props.auth}</Button>
       </form>
     );
