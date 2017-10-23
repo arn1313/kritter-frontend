@@ -1,15 +1,14 @@
-let reporter = store => next => action => {
-  console.log('__ACTION__', action);
+import reducer from '../reducer';
+import thunk from './redux-thunk';
+import reporter from './redux-reporter';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {persistStore, autoRehydrate} from 'redux-persist';
 
-  try {
-    let result = next(action);
-    console.log('__STATE__', store.getState());
-    return result;
-  } catch(e) {
-    e.action = action;
-    console.error('__ERROR__', e);
-    return e;
-  }
-};
+let appStoreCreate = () => 
+  createStore(reducer, compose(applyMiddleware(thunk, reporter), autoRehydrate()));
 
-export default reporter;
+
+export default appStoreCreate;
+
+
+
