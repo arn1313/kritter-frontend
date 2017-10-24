@@ -37,7 +37,7 @@ export const loginRequest = user => dispatch => {
     .auth(user.username, user.password)
     .then(res => {
       dispatch(tokenSet(res.text), 
-        dispatch(usernameSet(user.username))
+        // dispatch(usernameSet(user.username))
       );
       return res;
     })
@@ -63,13 +63,11 @@ export const userUpdate = user => ({
 });
 
 export const userFetchRequest = () => (dispatch, getState) => {
-  let {username} = getState();
-  console.log(username, '********user********about to send off');
+  let {auth} = getState();
   return superagent.get(`${__API_URL__}/users/me`)
-    // .set('Authorization', `Bearer ${auth}`)
-    .query({query: `${username}`})
+    .set('Authorization', `Bearer ${auth}`)
     .then(res => {
-      console.log(res, '__RESPONSEFROMUSER/ME');
+      console.log(res, '*****Res');
       dispatch(userSet(res.body));
       return res;
     });

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {userFetchRequest} from '../../action/auth-actions';
+import {postCreateRequest} from '../../action/post-actions';
 import {Button} from 'react-bootstrap';
 import PostForm from '../post-form';
 import PostList from '../post-list-container';
@@ -12,7 +13,6 @@ class DashboardContainer extends React.Component {
     super(props);
     this.state ={
     };
-    this.manualFetch = this.manualFetch.bind(this);
   }
 
   componentDidMount(){
@@ -20,10 +20,7 @@ class DashboardContainer extends React.Component {
     this.props.userFetch();
   }
 
-  manualFetch() {
-    this.props.userFetch();
-    console.log('__INSIDEMANUALFETCH');
-  }
+
 
   render() {
     console.log(this.props.auth, '__AUTH__');
@@ -32,10 +29,12 @@ class DashboardContainer extends React.Component {
 
     return (
       <div>
-        <PostForm />
+        <PostForm
+          buttonText={'submit'}
+          onComplete={this.props.postCreate}
+          user={this.props.user} />
         <h1>this will be your homepage stream</h1>
         <PostList />
-        <Button bsStyle="primary" onClick={this.manualFetch}>IGNORETHIS</Button>
       </div>
     );
   }
@@ -50,6 +49,7 @@ let mapStateToProps = state => ({
 
 let mapDispatchToProps = dispatch => ({
   userFetch: () => dispatch(userFetchRequest()),
+  postCreate: (post) => dispatch(postCreateRequest(post)),
 
 });
 
