@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {userFetchRequest} from '../../action/auth-actions';
 import {Button} from 'react-bootstrap';
+import PostForm from '../post-form-container';
 
 
 
@@ -29,8 +30,10 @@ class DashboardContainer extends React.Component {
     
     return (
       <div>
+        <PostForm />  
         <h1>this will be your homepage stream</h1>
-        <Button bsStyle="primary" onClick={this.manualFetch}>Edit Profile</Button>      </div>
+        <Button bsStyle="primary" onClick={this.manualFetch}>IGNORETHIS</Button>   
+      </div>
     );
   }
 }
