@@ -6,6 +6,11 @@ export const tokenSet = token => ({
   payload: token,
 });
 
+export const usernameSet = username => ({
+  type:'USERNAME_SET',
+  payload: username,
+});
+
 export const tokenDelete = () => ({type: 'TOKEN_DELETE', payload: null});
 
 export const logoutProfile = () => ({type: 'LOGOUT_PROFILE', payload: null});
@@ -26,13 +31,14 @@ export const signupRequest = user => dispatch => {
     })
     .catch(console.error);
 };
-
 export const loginRequest = user => dispatch => {
   return superagent.get(`${__API_URL__}/login`)
     .withCredentials()
     .auth(user.username, user.password)
     .then(res => {
-      dispatch(tokenSet(res.text));
+      dispatch(tokenSet(res.text), 
+        // dispatch(usernameSet(user.username))
+      );
       return res;
     })
     .then(localStorage.clear());
@@ -58,11 +64,10 @@ export const userUpdate = user => ({
 
 export const userFetchRequest = () => (dispatch, getState) => {
   let {auth} = getState();
-  console.log('****hitAUTH', auth);
   return superagent.get(`${__API_URL__}/users/me`)
     .set('Authorization', `Bearer ${auth}`)
     .then(res => {
-      console.log(res, '__RESPONSEFROMUSER/ME');
+      console.log(res, '*****Res');
       dispatch(userSet(res.body));
       return res;
     });

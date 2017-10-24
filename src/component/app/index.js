@@ -8,6 +8,7 @@ import LandingContainer from '../landing-container';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import SettingsContainer from '../settings-container';
 import DashboardContainer from '../dashboard-container';
+import {userFetchRequest} from '../../action/auth-actions';
 // import GalleryContainer from '../gallery-container';
 import Hero from '../hero-container';
 
@@ -15,8 +16,11 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    let token = utils.cookieFetch('X-Sluggram-Token');
+    let token = utils.cookieFetch('X-Kritter-Token');
     if(token) this.props.tokenSet(token);
+
+    // this.props.userFetch();
+    // console.log(this.props.username, 'imdone');
   }
 
   render() {
@@ -42,10 +46,13 @@ class App extends React.Component {
 let mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth,
+  username: state.username,
 });
 
 let mapDispatchToProps = dispatch => ({
   tokenSet: token => dispatch(tokenSet(token)),
+  userFetch: () => dispatch(userFetchRequest()),
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
