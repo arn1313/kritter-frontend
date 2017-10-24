@@ -81,12 +81,22 @@ class AuthForm extends React.Component {
         )}
 
         {utils.renderIf(this.props.auth === 'signup', 
-          <input
-            type="email"
-            name="email"
-            placeholder="email"
-            value={this.state.email}
-            onChange={this.handleChange} />
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              value={this.state.email}
+              onChange={this.handleChange} /><br/>
+
+            <textarea 
+              name="bio" 
+              cols="30" 
+              rows="5"
+              value={this.state.bio}
+              onChange={this.handleChange}>
+            </textarea><br/>
+          </div>
         )}
 
         {utils.renderIf(this.state.passwordError,
@@ -106,13 +116,6 @@ class AuthForm extends React.Component {
           name="avatar"
           onChange={this.handleChange}/><br/> */}
 
-        <textarea 
-          name="bio" 
-          cols="30" 
-          rows="5"
-          value={this.state.bio}
-          onChange={this.handleChange}>
-        </textarea><br/>
 
         <Button bsStyle="primary" type='submit'>{this.props.auth}</Button>
       </form>

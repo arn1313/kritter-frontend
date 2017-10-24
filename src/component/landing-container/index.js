@@ -14,6 +14,7 @@ class LandingContainer extends React.Component {
     };
     this.close = this.close.bind(this);
   }
+
   close() {
     this.setState({ showModal: !this.state.showModal });
     this.props.history.replace('/home');
@@ -41,7 +42,8 @@ class LandingContainer extends React.Component {
               <AuthForm 
                 auth={params.auth}
                 redirect={redirect}
-                onComplete={handleComplete}/>
+                onComplete={handleComplete} />
+                
 
             </Modal.Body> 
             <Modal.Footer>
