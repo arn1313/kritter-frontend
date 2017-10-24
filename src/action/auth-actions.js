@@ -38,12 +38,56 @@ export const loginRequest = user => dispatch => {
     .then(localStorage.clear());
 };
 
-export const OAuthRequest = user => dispatch => {
-  return superagent.get(`${__API_URL__}/oauth/google/code`)
-    // .withCredentials()
-    // .auth(user.username, user.password)
+
+
+
+export const userSet = user => ({
+  type: 'USER_SET',
+  payload: user,
+});
+
+export const userCreate = user => ({
+  type: 'USER_CREATE',
+  payload: user,
+});
+
+export const userUpdate = user => ({
+  type: 'USER_UPDATE',
+  payload: user,
+});
+
+export const userFetchRequest = () => (dispatch, getState) => {
+  let {auth} = getState();
+  console.log('****hitAUTH', auth);
+  return superagent.get(`${__API_URL__}/users/me`)
+    .set('Authorization', `Bearer ${auth}`)
     .then(res => {
-      dispatch(tokenSet(res.text));
+      console.log(res, '__RESPONSEFROMUSER/ME');
+      dispatch(userSet(res.body));
+      return res;
+    });
+};
+
+export const userCreateRequest = user => (dispatch, getState) => {
+  let {auth} = getState();
+  return superagent.post(`${__API_URL__}/users`)
+    .set('Authorization', `Bearer ${auth}`)
+    .field('bio', user.bio)
+    // .attach('avatar', user.avatar)
+    .then(res => {
+      dispatch(userCreate(res.body));
+      return res;
+    });
+};
+
+export const userUpdateRequest = (user) => (dispatch, getState) => {
+  let {auth} = getState();
+  return superagent.put(`${__API_URL__}/users/${user._id}`)
+    .set('Authorization', `Bearer ${auth}`)
+    .field('bio', user.bio)
+    .attach('attach', user.avatar)
+    .then(res => {
+      dispatch(userUpdate(res.body));
       return res;
     });
 };
