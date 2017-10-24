@@ -38,18 +38,11 @@ export const loginRequest = user => dispatch => {
     .then(localStorage.clear());
 };
 
-export const OAuthRequest = user => dispatch => {
-  return superagent.get(`${__API_URL__}/oauth/google/code`)
-    // .withCredentials()
-    // .auth(user.username, user.password)
-    .then(res => {
-      dispatch(tokenSet(res.text));
-      return res;
-    });
-};
+
+
 
 export const userSet = user => ({
-  type: 'PROFILE_SET',
+  type: 'USER_SET',
   payload: user,
 });
 
@@ -65,9 +58,11 @@ export const userUpdate = user => ({
 
 export const userFetchRequest = () => (dispatch, getState) => {
   let {auth} = getState();
+  console.log('****hitAUTH', auth);
   return superagent.get(`${__API_URL__}/users/me`)
     .set('Authorization', `Bearer ${auth}`)
     .then(res => {
+      console.log(res, '__RESPONSEFROMUSER/ME');
       dispatch(userSet(res.body));
       return res;
     });
@@ -78,7 +73,7 @@ export const userCreateRequest = user => (dispatch, getState) => {
   return superagent.post(`${__API_URL__}/users`)
     .set('Authorization', `Bearer ${auth}`)
     .field('bio', user.bio)
-    .attach('avatar', user.avatar)
+    // .attach('avatar', user.avatar)
     .then(res => {
       dispatch(userCreate(res.body));
       return res;
