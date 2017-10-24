@@ -27,6 +27,7 @@ class DashboardContainer extends React.Component {
   render() {
     console.log(this.props.auth, '__AUTH__');
     console.log(this.props.user, '__USER__');
+    console.log(this.props.username, '__USERNAMEEEE__');
     
     return (
       <div>
@@ -42,6 +43,7 @@ class DashboardContainer extends React.Component {
 let mapStateToProps = state => ({
   auth: state.auth,
   user: state.user,
+  username: state.username,
 });
 
 let mapDispatchToProps = dispatch => ({
