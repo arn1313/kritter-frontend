@@ -1,5 +1,20 @@
-//auth actions
 import superagent from 'superagent';
+//auth actions
+export const userSet = user => ({
+  type: 'USER_SET',
+  payload: user,
+});
+  
+export const userCreate = user => ({
+  type: 'USER_CREATE',
+  payload: user,
+});
+  
+export const userUpdate = user => ({
+  type: 'USER_UPDATE',
+  payload: user,
+});
+  
 
 export const tokenSet = token => ({
   type: 'TOKEN_SET',
@@ -9,13 +24,9 @@ export const tokenSet = token => ({
 export const tokenSetRequest = token => dispatch => {
   return new Promise((resolve, reject) => {
     resolve(dispatch(tokenSet(token)));
-  })
-}
+  });
+};
 
-export const usernameSet = username => ({
-  type:'USERNAME_SET',
-  payload: username,
-});
 
 export const tokenDelete = () => ({type: 'TOKEN_DELETE', payload: null});
 
@@ -42,35 +53,16 @@ export const loginRequest = user => dispatch => {
     .withCredentials()
     .auth(user.username, user.password)
     .then(res => {
-      dispatch(tokenSet(res.text), 
-        // dispatch(usernameSet(user.username))
-      );
-      return res;
+      dispatch(tokenSet(res.text));
+      return res;     
     })
     .then(localStorage.clear());
 };
 
 
-
-
-export const userSet = user => ({
-  type: 'USER_SET',
-  payload: user,
-});
-
-export const userCreate = user => ({
-  type: 'USER_CREATE',
-  payload: user,
-});
-
-export const userUpdate = user => ({
-  type: 'USER_UPDATE',
-  payload: user,
-});
-
 export const userFetchRequest = () => (dispatch, getState) => {
   let {auth} = getState();
-  return superagent.get(`${__API_URL__}/users/me`)
+  return superagent.get(`${__API_URL__}/user/me`)
     .set('Authorization', `Bearer ${auth}`)
     .then(res => {
       dispatch(userSet(res.body));
@@ -80,7 +72,7 @@ export const userFetchRequest = () => (dispatch, getState) => {
 
 export const userCreateRequest = user => (dispatch, getState) => {
   let {auth} = getState();
-  return superagent.post(`${__API_URL__}/users`)
+  return superagent.post(`${__API_URL__}/user`)
     .set('Authorization', `Bearer ${auth}`)
     .field('bio', user.bio)
     // .attach('avatar', user.avatar)
@@ -92,7 +84,7 @@ export const userCreateRequest = user => (dispatch, getState) => {
 
 export const userUpdateRequest = (user) => (dispatch, getState) => {
   let {auth} = getState();
-  console.log('THIS IS THE USER ID', user)
+  console.log('THIS IS THE USER ID', user);
   return superagent.put(`${__API_URL__}/user/${user._id}`)
     // .set('Authorization', `Bearer ${auth}`)
     .set('Content-Type', 'application/json')
