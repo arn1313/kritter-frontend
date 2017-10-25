@@ -17,7 +17,7 @@ class DashboardContainer extends React.Component {
 
   componentDidMount(){
     console.log('__componentDidMount__');
-    this.props.userFetch();
+    // this.props.userFetch();
   }
 
 
@@ -26,13 +26,14 @@ class DashboardContainer extends React.Component {
     console.log(this.props.auth, '__AUTH__');
     console.log(this.props.user, '__USER__');
     console.log(this.props.username, '__USERNAMEEEE__');
+    
 
     return (
       <div>
         <PostForm
           buttonText={'submit'}
           onComplete={this.props.postCreate}
-          user={this.props.user} />
+          user={this.props.user ? this.props.user : {lulwat: 'hahahah'}} />
         <h1>this will be your homepage stream</h1>
         <PostList />
       </div>
