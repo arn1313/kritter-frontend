@@ -26,8 +26,8 @@ class App extends React.Component {
 
         .catch(console.error);
     }
-    this.props.userFetch();
-    this.props.postFetch();
+    this.props.userFetch()
+      .then(() => this.props.postFetch());
   }
 
   render() {
