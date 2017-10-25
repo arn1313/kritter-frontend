@@ -39,7 +39,6 @@ export const postFetchAllRequest = () => (dispatch, getState) => {
   let {auth} = getState();
   return superagent.get(`${__API_URL__}/post`)
     .then(res => {
-      console.log('LOOOKAS;LKDJF;LKJAS;DJF;LJ',res.body);
       dispatch(postSet(res.body.data));
       return res;
     });
@@ -47,7 +46,6 @@ export const postFetchAllRequest = () => (dispatch, getState) => {
 
 export const postCreateRequest = (post) => (dispatch, getState) => {
   let {auth} = getState();
-  console.log('post^^^^^^^^^', post);
   return superagent.post(`${__API_URL__}/post`)
     .set('Authorization', `Bearer ${auth}`)
     .set('Content-Type', 'application/json')

@@ -9,6 +9,7 @@ import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import SettingsContainer from '../settings-container';
 import DashboardContainer from '../dashboard-container';
 import {userFetchRequest} from '../../action/auth-actions';
+import {postFetchAllRequest} from '../../action/post-actions';
 // import GalleryContainer from '../gallery-container';
 import Hero from '../hero-container';
 
@@ -20,7 +21,9 @@ class App extends React.Component {
     if(token) {
       this.props.tokenSet(token)
         .then(() => this.props.userFetch())
-        .then(result => console.log('scott was here', result.body))
+        .then(result => console.log(result.body))
+        .then(() => this.props.postFetch())
+        
         .catch(console.error);
     }
   }
@@ -49,12 +52,13 @@ class App extends React.Component {
 let mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth,
-  username: state.username,
+  post: state.post,
 });
 
 let mapDispatchToProps = dispatch => ({
   tokenSet: token => dispatch(tokenSetRequest(token)),
   userFetch: () => dispatch(userFetchRequest()),
+  postFetch: () => dispatch(postFetchAllRequest()),
   
 });
 

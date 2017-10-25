@@ -7,7 +7,6 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    console.log('props.account', props.account);
     let emptyState = {url: '', description: '', timeStamp: '', ownerName: props.user.username, ownerAvatar: 'props.user.avatar', preview: ''};
     this.state = props.post ? props.post : emptyState;
     
@@ -25,7 +24,6 @@ class PostForm extends React.Component {
   }
 
   componentDidUpdate(){
-    // console.log('viewsate', this.state);
   }
 
   handleChange(e) {
@@ -93,7 +91,6 @@ class PostForm extends React.Component {
 
 let mapStateToProps = state => {
 
-  console.log('luwat', state);
   return {
     account: {...state.user},
 
