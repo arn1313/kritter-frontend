@@ -41,7 +41,6 @@ class DashboardContainer extends React.Component {
 let mapStateToProps = state => ({
   auth: state.auth,
   user: state.user,
-  username: state.username,
 });
 
 let mapDispatchToProps = dispatch => ({
