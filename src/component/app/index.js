@@ -3,7 +3,7 @@ import './_app.scss';
 import Navbar from '../navbar';
 import {connect} from 'react-redux';
 import * as utils from '../../lib/utils';
-import {tokenSet} from '../../action/auth-actions';
+import {tokenSetRequest} from '../../action/auth-actions';
 import LandingContainer from '../landing-container';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import SettingsContainer from '../settings-container';
@@ -15,12 +15,14 @@ import Hero from '../hero-container';
 class App extends React.Component {
 
 
-  componentDidMount() {
+  componentWillMount() {
     let token = utils.cookieFetch('X-Kritter-Token');
-    if(token) this.props.tokenSet(token);
-
-    // this.props.userFetch();
-    // console.log(this.props.username, 'imdone');
+    if(token) {
+      this.props.tokenSet(token)
+        .then(() => this.props.userFetch())
+        .then(result => console.log('scott was here', result.body))
+        .catch(console.error);
+    }
   }
 
   render() {
@@ -51,7 +53,7 @@ let mapStateToProps = state => ({
 });
 
 let mapDispatchToProps = dispatch => ({
-  tokenSet: token => dispatch(tokenSet(token)),
+  tokenSet: token => dispatch(tokenSetRequest(token)),
   userFetch: () => dispatch(userFetchRequest()),
   
 });

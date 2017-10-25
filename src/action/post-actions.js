@@ -49,13 +49,14 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
   console.log('post^^^^^^^^^', post);
   return superagent.post(`${__API_URL__}/post`)
     .set('Authorization', `Bearer ${auth}`)
-    .field('description', post.description)
-    .field('url', post.url)
-    .field('timeStamp', post.timeStamp)
-    .field('ownerName', post.ownerName)
-    .field('ownerAvatar', post.ownerAvatar)
+    .set('Content-Type', 'application/json')
+    // .field('description', post.description)
+    // .field('url', post.url)
+    // .field('timeStamp', post.timeStamp)
+    // .field('ownerName', post.ownerName)
+    // .field('ownerAvatar', post.ownerAvatar)
     // .attach('post', post.post)
-    // .send(post)
+    .send(`${post}`)
     .then((res) => {
       dispatch(postCreate(res.body));
       return res;

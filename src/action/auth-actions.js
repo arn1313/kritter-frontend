@@ -6,6 +6,12 @@ export const tokenSet = token => ({
   payload: token,
 });
 
+export const tokenSetRequest = token => dispatch => {
+  return new Promise((resolve, reject) => {
+    resolve(dispatch(tokenSet(token)));
+  })
+}
+
 export const usernameSet = username => ({
   type:'USERNAME_SET',
   payload: username,

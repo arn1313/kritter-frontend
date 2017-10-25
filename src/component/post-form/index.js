@@ -6,16 +6,26 @@ import userFetchRequest from '../../action/auth-actions';
 class PostForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = props.post
-      ? props.post
-      : {url: '', description: '', timeStamp: '', ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''};
 
+    console.log('props.account', props.account);
+    let emptyState = {url: '', description: '', timeStamp: '', ownerName: props.user.username, ownerAvatar: 'props.user.avatar', preview: ''};
+    this.state = props.post ? props.post : emptyState;
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    console.log('++++++++>lookhere',this.props.user);
+  componentWillReceiveProps(nextProps){
+    if(nextProps.account)
+      this.setState({
+        ownerName: nextProps.account.username,
+        ownerAvatar: 'nextProps.account.avatar',
+        
+      });
+  }
+
+  componentDidUpdate(){
+    // console.log('viewsate', this.state);
   }
 
   handleChange(e) {
@@ -81,12 +91,14 @@ class PostForm extends React.Component {
 
 
 
-let mapStateToProps = state => ({
-  // auth: state.auth,
-  user: state.user,
-  // username: state.username,
-});
+let mapStateToProps = state => {
 
+  console.log('luwat', state);
+  return {
+    account: {...state.user},
+
+  };
+};
 let mapDispatchToProps = dispatch => ({
   userFetch: () => dispatch(userFetchRequest()),
   
