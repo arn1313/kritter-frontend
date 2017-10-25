@@ -15,7 +15,7 @@ class DashboardContainer extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentWillMount(){
   }
 
 
