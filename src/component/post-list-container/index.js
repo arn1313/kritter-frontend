@@ -14,7 +14,6 @@ class PostList extends React.Component {
 
 
   render () {
-    console.log('(**********this is state post*****',this.props.post);
     return (
       <div>
         <h1>This is the list of posts</h1>
