@@ -7,14 +7,27 @@ import {connect} from 'react-redux';
 class PostList extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      helloPost: this.props.fetchedPost,
+    };
   }
 
-  componetDidMount(){
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.post)
+      this.setState({
+        fetchedPost: nextProps.post,
+        
+      });
+  }
+  componentDidMount(){
     this.props.postFetch();
+    console.log('HELLOOOOOOOOOO',this.state.helloPost, 'HELLOOOOOOOOOO');
   }
   render () {
     return (
       <div>
+        <h1>hihihihhihihihih</h1>
         {/* {utils.renderIf(this.props.post,
           this.props.post.map(post =>
             <div key={post._id}>{
@@ -30,7 +43,7 @@ class PostList extends React.Component {
 let mapStateToProps = state => ({
   auth: state.auth,
   user: state.user,
-  post: state.post,
+  fetchedPost: {...state.post},
 });
 
 let mapDispatchToProps = dispatch => ({

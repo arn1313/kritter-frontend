@@ -39,6 +39,7 @@ export const postFetchAllRequest = () => (dispatch, getState) => {
   let {auth} = getState();
   return superagent.get(`${__API_URL__}/post`)
     .then(res => {
+      console.log('LOOOKAS;LKDJF;LKJAS;DJF;LJ',res.body);
       dispatch(postSet(res.body.data));
       return res;
     });
@@ -56,7 +57,7 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
     // .field('ownerName', post.ownerName)
     // .field('ownerAvatar', post.ownerAvatar)
     // .attach('post', post.post)
-    .send(`${post}`)
+    .send(post)
     .then((res) => {
       dispatch(postCreate(res.body));
       return res;
