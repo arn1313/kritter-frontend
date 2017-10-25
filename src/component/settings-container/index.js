@@ -26,9 +26,13 @@ class SettingsContainer extends React.Component {
   render() {
     return (
       <div>
-         
+
         <div className="user-form-container">
           <h2>Welcome to Settings</h2>
+          <div>
+            <h3>{this.props.username}</h3>
+            <p>{this.props.email}</p>
+          </div>
           <h4>Please configure your account</h4>
           <AuthForm
             buttonText="Update"
