@@ -62,22 +62,22 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
     });
 };
 
-export const postDeleteRequest = (photo) => (dispatch, getState) => {
+export const postDeleteRequest = (post) => (dispatch, getState) => {
   let {auth} = getState();
-  return superagent.delete(`${__API_URL__}/post/${photo._id}`)
+  return superagent.delete(`${__API_URL__}/post/${post._id}`)
     .set('Authorization', `Bearer ${auth}`)
     .then(res => {
-      dispatch(postDelete(photo));
+      dispatch(postDelete(post));
       return res;
     });
 };
 
-export const postUpdateRequest = (photo) => (dispatch, getState) => {
+export const postUpdateRequest = (post) => (dispatch, getState) => {
   let {auth} = getState();
-  return superagent.put(`${__API_URL__}/post/${photo._id}`)
+  return superagent.put(`${__API_URL__}/post/${post._id}`)
     .set('Authorization', `Bearer ${auth}`)
-    .field('description', photo.description)
-  // .attach('photo', photo.photo)
+    .field('description', post.description)
+  // .attach('post', post.post)
     .then(res => {
       dispatch(postUpdate(res.body));
       return res;

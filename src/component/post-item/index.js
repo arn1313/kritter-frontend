@@ -16,11 +16,13 @@ class PostItem extends React.Component {
   }
 
   handleDelete() {
-
+    return this.props.postDelete(this.props.post)
+      .catch(console.error);
   }
 
 
   render () {
+    console.log('******pos',this.props.post);
     return (
       <div>
         <div>
@@ -29,6 +31,8 @@ class PostItem extends React.Component {
           <h4>{this.props.post.timeStamp}</h4>
           <p>{this.props.post.description}</p>
           <img src={this.props.post.url} />
+          <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+
           <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
 
           {/* <button onClick={() => this.setState({edit: !this.state.edit})}>Edit</button> */}
@@ -67,7 +71,7 @@ let mapStateToProps = state => ({
 
 let mapDispatchToProps = dispatch => ({
   
-  deletePhoto: (post) => dispatch(postDeleteRequest(post)),
+  postDelete: (post) => dispatch(postDeleteRequest(post)),
   updatePost: (post) => dispatch(postUpdateRequest(post)),
 });
 
