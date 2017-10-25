@@ -7,30 +7,30 @@ class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.user ?
-    {...props.user,
-      _id: this.props.user._id,
-      username: '',
-      password: '',
-      email: '',
-      bio: '',
-      avatar: '',
-      species: '',
-      usernameError: null,
-      passwordError: null,
-      emailError: null,
-      error: null,
-    } :
-    {
-      username: '',
-      password: '',
-      email: '',
-      bio: '',
-      avatar: '',
-      species: '',
-      usernameError: null,
-      passwordError: null,
-      emailError: null,
-      error: null};
+      {...props.user,
+        _id: this.props.user._id,
+        username: '',
+        password: '',
+        email: '',
+        bio: '',
+        avatar: '',
+        species: '',
+        usernameError: null,
+        passwordError: null,
+        emailError: null,
+        error: null,
+      } :
+      {
+        username: '',
+        password: '',
+        email: '',
+        bio: '',
+        avatar: '',
+        species: '',
+        usernameError: null,
+        passwordError: null,
+        emailError: null,
+        error: null};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
