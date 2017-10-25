@@ -17,20 +17,18 @@ class App extends React.Component {
 
 
   componentWillMount() {
-    let token = utils.cookieFetch('X-Kritter-Token');
-    // let token = localStorage.getItem('reduxPersist:auth');
+    // let token = utils.cookieFetch('X-Kritter-Token');
+    let token = JSON.parse(localStorage.getItem('reduxPersist:auth'));
     // console.log('kashdjghasopiughasoighaoighaoig',token);
     if(token) {
       this.props.tokenSet(token)
         .then(() => this.props.userFetch())
-        .then(result => console.log('After userFetch', result.body))
+        // .then(result => console.log('After userFetch', result.body))
         .then(() => this.props.postFetch())
-        .then(() => this.props.redirect('/home'))
-
         .catch(console.error);
     }
-    if(!this.props.user)this.props.userFetch();
-    if(!this.props.post)this.props.postFetch();
+    // if(!this.props.user) this.props.userFetch();
+    // if(!this.props.post) this.props.postFetch();
   }
 
   render() {
