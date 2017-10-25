@@ -8,10 +8,9 @@ class PostList extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      
+
     };
   }
-
 
   render () {
     return (
@@ -37,7 +36,7 @@ let mapStateToProps = state => ({
 
 let mapDispatchToProps = dispatch => ({
   postFetch: () => dispatch(postFetchAllRequest()),
- 
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
