@@ -35,14 +35,15 @@ class LandingContainer extends React.Component {
         <div className="static-modal">
           <Modal show={this.state.showModal}>
             <Modal.Header>
-              <Modal.Title>Please Log in</Modal.Title>
+              <Modal.Title>Please Sign Up</Modal.Title>
             </Modal.Header>
   
             <Modal.Body>
               <AuthForm 
                 auth={params.auth}
                 redirect={redirect}
-                onComplete={handleComplete} />
+                onComplete={handleComplete}
+                buttonText={'signup'} />
                 
 
             </Modal.Body> 
