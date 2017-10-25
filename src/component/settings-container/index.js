@@ -26,21 +26,15 @@ class SettingsContainer extends React.Component {
   render() {
     return (
       <div>
-        {
-        // {utils.renderIf(this.props.auth && !this.props.user,
-        }
+         
         <div className="user-form-container">
           <h2>Welcome to Settings</h2>
           <h4>Please configure your account</h4>
           <AuthForm
-            buttonText="Create"
-            onComplete={this.props.userCreate}/>
+            buttonText="Update"
+            onComplete={this.props.userUpdate}
+            user={this.props.user}/>
         </div>
-
-        {
-          // )}
-        }
-
 
       </div>
     );
