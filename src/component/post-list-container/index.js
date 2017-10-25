@@ -3,6 +3,7 @@ import * as utils from '../../lib/utils';
 import PostItem from '../post-item';
 import {postFetchAllRequest} from '../../action/post-actions.js';
 import {connect} from 'react-redux';
+import './_post-list-container.scss';
 
 class PostList extends React.Component {
   constructor(props){
@@ -15,7 +16,6 @@ class PostList extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is the list of posts</h1>
         {utils.renderIf(this.props.post,
           this.props.post.map(post =>
             <div key={post._id}>{

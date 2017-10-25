@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import appCreateStore from './lib/app-create-store';
 import * as utils from './lib/utils';
 import {persistStore, autoRehydrate} from 'redux-persist';
+import './style/main.scss';
 
 
 let store = appCreateStore();

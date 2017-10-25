@@ -24,15 +24,20 @@ class Navbar extends React.Component {
   }
 
   render() {
+
     return (
       <header>
         {this.props.auth && this.props.user ?
           <div className="profile-header">
             <h2>Welcome {this.props.user.username}</h2>
             <img src={this.props.user.avatar} style={{'width': '15%', 'border': '1px solid grey'}}/>
+
           </div>
           :
-          undefined
+          <div>
+            <li><Link to="/welcome/signup">Signup</Link></li>
+            <li><Link to="/welcome/login">Login</Link></li>
+          </div>
         }
         <nav>
           <ul>
@@ -51,7 +56,37 @@ class Navbar extends React.Component {
           </ul>
         </nav>
       </header >
+
     );
+    //
+    // return (
+    //   <header>
+    //     {this.props.auth && this.props.profile ?
+    //       <div className="profile-header">
+    //         <h2>Welcome {this.props.profile.username}</h2>
+    //         <img src={this.props.profile.avatar} style={{'width': '15%', 'border': '1px solid grey'}}/>
+    //       </div>
+    //       :
+    //       undefined
+    //     }
+    //     <nav>
+    //       <ul>
+    //         {this.props.auth ?
+    //           <div>
+    //             <li onClick={this.handleLogout}><Link to="/home">Logout</Link></li>
+    //             <li><Link to="/home">Dashboard</Link></li>
+    //             <li><Link to="/settings">Settings</Link></li>
+    //           </div>
+    //           :
+    //           <div>
+    //             <li><Link to="/welcome/signup">Signup</Link></li>
+    //             <li><Link to="/welcome/login">Login</Link></li>
+    //           </div>
+    //         }
+    //       </ul>
+    //     </nav>
+    //   </header >
+    // );
   }
 }
 
