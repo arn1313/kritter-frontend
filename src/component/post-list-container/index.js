@@ -17,7 +17,7 @@ class PostList extends React.Component {
     console.log('(**********this is state post*****',this.props.post);
     return (
       <div>
-        <h1>hihihihhihihihih</h1>
+        <h1>This is the list of posts</h1>
         {utils.renderIf(this.props.post,
           this.props.post.map(post =>
             <div key={post._id}>{
