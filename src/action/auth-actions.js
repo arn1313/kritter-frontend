@@ -4,17 +4,17 @@ export const userSet = user => ({
   type: 'USER_SET',
   payload: user,
 });
-  
+
 export const userCreate = user => ({
   type: 'USER_CREATE',
   payload: user,
 });
-  
+
 export const userUpdate = user => ({
   type: 'USER_UPDATE',
   payload: user,
 });
-  
+
 
 export const tokenSet = token => ({
   type: 'TOKEN_SET',
@@ -54,7 +54,7 @@ export const loginRequest = user => dispatch => {
     .auth(user.username, user.password)
     .then(res => {
       dispatch(tokenSet(res.text));
-      return res;     
+      return res;
     })
     .then(localStorage.clear());
 };
