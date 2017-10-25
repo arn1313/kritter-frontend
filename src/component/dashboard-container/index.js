@@ -30,7 +30,6 @@ class DashboardContainer extends React.Component {
           buttonText={'submit'}
           onComplete={this.props.postCreate}
           user={this.props.user ? this.props.user : {lulwat: 'hahahah'}} />
-        <h1>this will be your homepage stream</h1>
         <PostList />
       </section>
     );
