@@ -1,4 +1,5 @@
 import React from 'react';
+import './_post-form.scss';
 import * as utils from '../../lib/utils';
 import {connect} from 'react-redux';
 import userFetchRequest from '../../action/auth-actions';
@@ -6,16 +7,26 @@ import userFetchRequest from '../../action/auth-actions';
 class PostForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = props.post
-      ? props.post
-      : {url: '', description: '', timeStamp: '', ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''};
 
+    let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
+    this.state = props.post ? props.post : emptyState;
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    console.log('++++++++>lookhere',this.props.user);
+  componentWillReceiveProps(nextProps){
+    if(nextProps.account)
+      this.setState({
+        ownerName: nextProps.account.username,
+        ownerAvatar: nextProps.account.avatar,
+        ownerId: nextProps.account.id,
+        timeStamp: new Date().getTime(),
+        
+      });
+  }
+
+  componentDidUpdate(){
   }
 
   handleChange(e) {
@@ -35,30 +46,25 @@ class PostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     return this.props.onComplete(this.state)
+      .then((console.log('******sentoffstate', this.state)))
       .then(() => {
         if(!this.props.user){
-          this.setState({url: '', description: '', timeStamp: new Date.prototype.getTime(), ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
+          this.setState({url: '', description: '', timeStamp: new Date().getTime(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
         }
       });
   }
 
   render () {
     return (
-      <div>
+      <div className='postForm'>
         <h1>THIS IS POST FORM</h1>
-        <h2>Choose a photo to upload</h2>
         <br/>
         <form
-          className="photoForm"
+          className="postFormform"
           onSubmit={this.handleSubmit}>
 
-          <img src={this.state.preview} style={{'width': '25%'}}/>
-          
-          <input 
-            type="file"
-            name="photo"
-            onChange={this.handleChange}/>
-          <h2>Write a description for your photo</h2>
+
+          <h2>Whats on your mind?</h2>
 
           <textarea 
             name="description" 
@@ -67,6 +73,14 @@ class PostForm extends React.Component {
             value={this.state.description}
             onChange={this.handleChange}>
           </textarea>
+
+          <h1>Or....</h1>
+          <h2>Share a photo with your animal friends</h2>
+          <input 
+            type="file"
+            name="photo"
+            onChange={this.handleChange}/>
+          <img src={this.state.preview} style={{'width': '25%'}}/>
 
           <button type="submit">{this.props.buttonText}</button>
         </form>
@@ -81,12 +95,13 @@ class PostForm extends React.Component {
 
 
 
-let mapStateToProps = state => ({
-  // auth: state.auth,
-  user: state.user,
-  // username: state.username,
-});
+let mapStateToProps = state => {
 
+  return {
+    account: {...state.user},
+
+  };
+};
 let mapDispatchToProps = dispatch => ({
   userFetch: () => dispatch(userFetchRequest()),
   

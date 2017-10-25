@@ -7,21 +7,23 @@ import {connect} from 'react-redux';
 class PostList extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      
+    };
   }
 
-  componetDidMount(){
-    this.props.postFetch();
-  }
+
   render () {
     return (
       <div>
-        {/* {utils.renderIf(this.props.post,
+        <h1>This is the list of posts</h1>
+        {utils.renderIf(this.props.post,
           this.props.post.map(post =>
             <div key={post._id}>{
               <PostItem key={post._id} post={post}
               />
             }<br/></div>
-          ))} */}
+          ))}
       </div>
     );
   }
