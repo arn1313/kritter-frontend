@@ -86,16 +86,16 @@ export const userUpdateRequest = (user) => (dispatch, getState) => {
   let {auth} = getState();
   console.log('THIS IS THE USER ID', user);
   return superagent.put(`${__API_URL__}/user/${user._id}`)
-    // .set('Authorization', `Bearer ${auth}`)
-    .set('Content-Type', 'application/json')
-    
-    // .field('email', user.email)
-    // .field('username', user.username)
-    // .field('bio', user.bio)
-    // .field('species', user.species)
+    .set('Authorization', `Bearer ${auth}`)
+    // .set('Content-Type', 'application/json')
+    // .type('form')
+    .field('email', user.email)
+    .field('username', user.username)
+    .field('bio', user.bio)
+    .field('species', user.species)
     // .field('password', user.password)
-    // .attach('attach', user.avatar)
-    .send(user)
+    .attach('avatar', user.avatar)
+    // .send(user)
     .then(res => {
       dispatch(userUpdate(res.body));
       return res;
