@@ -69,7 +69,6 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    console.log('&&&&&&', this.props.user);
     return (
       <form
         onSubmit={this.handleSubmit}

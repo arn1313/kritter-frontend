@@ -1,4 +1,5 @@
 import React from 'react';
+import './_post-form.scss';
 import * as utils from '../../lib/utils';
 import {connect} from 'react-redux';
 import userFetchRequest from '../../action/auth-actions';
@@ -7,7 +8,7 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    let emptyState = {url: '', description: '', timeStamp: '', ownerName: props.user.username, ownerAvatar: 'props.user.avatar', preview: ''};
+    let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerName: props.user.username, ownerAvatar: props.account.avatar, preview: ''};
     this.state = props.post ? props.post : emptyState;
     
     this.handleChange = this.handleChange.bind(this);
@@ -18,7 +19,8 @@ class PostForm extends React.Component {
     if(nextProps.account)
       this.setState({
         ownerName: nextProps.account.username,
-        ownerAvatar: 'nextProps.account.avatar',
+        ownerAvatar: nextProps.account.avatar,
+        timeStamp: new Date().getTime(),
         
       });
   }
@@ -43,30 +45,25 @@ class PostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     return this.props.onComplete(this.state)
+      .then((console.log('******sentoffstate', this.state)))
       .then(() => {
         if(!this.props.user){
-          this.setState({url: '', description: '', timeStamp: new Date.prototype.getTime(), ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
+          this.setState({url: '', description: '', timeStamp: new Date().getTime(), ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
         }
       });
   }
 
   render () {
     return (
-      <div>
+      <div className='postForm'>
         <h1>THIS IS POST FORM</h1>
-        <h2>Choose a photo to upload</h2>
         <br/>
         <form
-          className="photoForm"
+          className="postFormform"
           onSubmit={this.handleSubmit}>
 
-          <img src={this.state.preview} style={{'width': '25%'}}/>
-          
-          <input 
-            type="file"
-            name="photo"
-            onChange={this.handleChange}/>
-          <h2>Write a description for your photo</h2>
+
+          <h2>Whats on your mind?</h2>
 
           <textarea 
             name="description" 
@@ -75,6 +72,14 @@ class PostForm extends React.Component {
             value={this.state.description}
             onChange={this.handleChange}>
           </textarea>
+
+          <h1>Or....</h1>
+          <h2>Share a photo with your animal friends</h2>
+          <input 
+            type="file"
+            name="photo"
+            onChange={this.handleChange}/>
+          <img src={this.state.preview} style={{'width': '25%'}}/>
 
           <button type="submit">{this.props.buttonText}</button>
         </form>
