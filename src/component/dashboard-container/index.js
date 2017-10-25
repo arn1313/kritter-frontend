@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {userFetchRequest} from '../../action/auth-actions';
-import {postCreateRequest} from '../../action/post-actions';
+import {postCreateRequest, postFetchAllRequest} from '../../action/post-actions';
 import {Button} from 'react-bootstrap';
 import PostForm from '../post-form';
 import PostList from '../post-list-container';
@@ -46,6 +46,7 @@ let mapStateToProps = state => ({
 let mapDispatchToProps = dispatch => ({
   userFetch: () => dispatch(userFetchRequest()),
   postCreate: (post) => dispatch(postCreateRequest(post)),
+  postFetchAll: () => dispatch(postFetchAllRequest()),
 
 });
 

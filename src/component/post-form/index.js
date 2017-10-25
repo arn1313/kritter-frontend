@@ -8,7 +8,7 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerName: props.user.username, ownerAvatar: props.account.avatar, preview: ''};
+    let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
     this.state = props.post ? props.post : emptyState;
     
     this.handleChange = this.handleChange.bind(this);
@@ -20,6 +20,7 @@ class PostForm extends React.Component {
       this.setState({
         ownerName: nextProps.account.username,
         ownerAvatar: nextProps.account.avatar,
+        ownerId: nextProps.account.id,
         timeStamp: new Date().getTime(),
         
       });
@@ -48,7 +49,7 @@ class PostForm extends React.Component {
       .then((console.log('******sentoffstate', this.state)))
       .then(() => {
         if(!this.props.user){
-          this.setState({url: '', description: '', timeStamp: new Date().getTime(), ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
+          this.setState({url: '', description: '', timeStamp: new Date().getTime(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
         }
       });
   }

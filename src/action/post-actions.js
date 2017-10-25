@@ -54,6 +54,7 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
     .field('timeStamp', post.timeStamp)
     .field('ownerName', post.ownerName)
     .field('ownerAvatar', post.ownerAvatar)
+    .field('ownerId', post.ownerId)
     .attach('url', post.url)
     // .send(post)
     .then((res) => {
@@ -77,7 +78,8 @@ export const postUpdateRequest = (post) => (dispatch, getState) => {
   return superagent.put(`${__API_URL__}/post/${post._id}`)
     .set('Authorization', `Bearer ${auth}`)
     .field('description', post.description)
-  // .attach('post', post.post)
+    .field('timeStamp', post.timeStamp)
+    .attach('url', post.url)
     .then(res => {
       dispatch(postUpdate(res.body));
       return res;

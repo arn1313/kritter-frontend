@@ -13,11 +13,16 @@ class PostItem extends React.Component {
       showModal: false, 
     };
     this.handleDelete = this.handleDelete.bind(this);
+    this.close = this.close.bind(this);
   }
 
   handleDelete() {
     return this.props.postDelete(this.props.post)
       .catch(console.error);
+  }
+
+  close() {
+    this.setState({ showModal: !this.state.showModal, edit: !this.state.edit });
   }
 
 
@@ -35,7 +40,6 @@ class PostItem extends React.Component {
 
           <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
 
-          {/* <button onClick={() => this.setState({edit: !this.state.edit})}>Edit</button> */}
         </div>
 
         {utils.renderIf(this.state.edit,
