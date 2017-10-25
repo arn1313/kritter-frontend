@@ -222,7 +222,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/isaiahgwalker/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/Lonewalker72)
 
-![Isaiah](./kritter-frontend/src/img/a.png)
+![Isaiah](./src/img/a.png)
 
 Isaiah is a creature from earth. He identifies as human/other. He enjoys eating food, sleeping from time to time(on a daily basis...sometimes), and living life. Isaiah emerged into this realm roughly 27years ago with the intent to do things. Isaiah has recently taken part in the life-time companionship agreement with another creature from earth(Katie). Be aware that when approaching Isaiah, he may seem distracted or spaced out. This is normal, he is just trying to figure out what he will be eating later that day.
 
@@ -231,6 +231,6 @@ Isaiah is a creature from earth. He identifies as human/other. He enjoys eating 
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/aaron-mcpeek-15826339/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/arn1313)
 
-![Aaron](./kritter-frontend/src/img/a.png)
+![Aaron](./src/img/a.png)
 
 Aaron moved to Seattle from San Francisco in 1999.  He worked in retail and bank management for many years but transitioned into a role as an Office Manager and Paralegal in 2012. During that time he assisted on several high profile lawsuits including the Oso Land Slide case in Snohomish County. Earlier this year he decided that he needed a change and a career more inline with the direction Seattle has been moving. This led him to Code Fellows and a future in tech.
