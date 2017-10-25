@@ -23,22 +23,24 @@ class App extends React.Component {
         .then(() => this.props.userFetch())
         .then(result => console.log('After userFetch', result.body))
         .then(() => this.props.postFetch())
-        
+
         .catch(console.error);
     }
+    this.props.userFetch();
+    this.props.postFetch();
   }
 
   render() {
-    
+
     return (
       <div className="application">
         <BrowserRouter>
           <div>
-            <Navbar 
+            <Navbar
               user={this.props.user}/>
             {utils.renderIf(!this.props.auth,
               <Hero />
-            )} 
+            )}
             <Route path="/welcome/:auth" component={LandingContainer}/>
             <Route exact path="/settings" component={() => this.props.auth ? <SettingsContainer/> : <Redirect to="/home" />}/>
             <Route exact path="/home" component={() => this.props.auth ? <DashboardContainer/> : <Redirect to="/home" />}/>
@@ -61,7 +63,7 @@ let mapDispatchToProps = dispatch => ({
   tokenSet: token => dispatch(tokenSetRequest(token)),
   userFetch: () => dispatch(userFetchRequest()),
   postFetch: () => dispatch(postFetchAllRequest()),
-  
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
