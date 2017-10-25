@@ -7,31 +7,31 @@ class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.user ?
-      {...props.user,
-        _id: this.props.user._id,
-        username: '',
-        password: '',
-        email: '',
-        bio: '',
-        avatar: '',
-        species: '',
-        usernameError: null,
-        passwordError: null,
-        emailError: null,
-        error: null,
-      } :
-      { 
-        username: '',
-        password: '',
-        email: '',
-        bio: '',
-        avatar: '',
-        species: '',
-        usernameError: null,
-        passwordError: null,
-        emailError: null,
-        error: null};
-    
+    {...props.user,
+      _id: this.props.user._id,
+      username: '',
+      password: '',
+      email: '',
+      bio: '',
+      avatar: '',
+      species: '',
+      usernameError: null,
+      passwordError: null,
+      emailError: null,
+      error: null,
+    } :
+    {
+      username: '',
+      password: '',
+      email: '',
+      bio: '',
+      avatar: '',
+      species: '',
+      usernameError: null,
+      passwordError: null,
+      emailError: null,
+      error: null};
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -47,7 +47,7 @@ class AuthForm extends React.Component {
     });
 
     if(name === 'avatar') {
-      let {files} = e.target; 
+      let {files} = e.target;
       let avatar = files[0];
       this.setState({avatar});
 
@@ -74,11 +74,11 @@ class AuthForm extends React.Component {
         onSubmit={this.handleSubmit}
         className="auth-form">
 
-        {utils.renderIf(this.state.usernameError, 
+        {utils.renderIf(this.state.usernameError,
           <span className="tooltip">{this.state.usernameError}</span>
         )}
 
-        <input 
+        <input
           type="text"
           name="username"
           placeholder="username"
@@ -89,7 +89,7 @@ class AuthForm extends React.Component {
           <span className="tooltip">{this.state.emailError}</span>
         )}
 
-        {utils.renderIf(this.props.auth === 'signup', 
+        {utils.renderIf(this.props.auth === 'signup',
           <div>
             <input
               type="email"
@@ -98,15 +98,15 @@ class AuthForm extends React.Component {
               value={this.state.email}
               onChange={this.handleChange} /><br/>
 
-            <textarea 
-              name="bio" 
-              cols="30" 
+            <textarea
+              name="bio"
+              cols="30"
               rows="5"
               value={this.state.bio}
               onChange={this.handleChange}>
             </textarea><br/>
 
-            <input 
+            <input
               type="text"
               name="species"
               placeholder="species"
@@ -114,14 +114,14 @@ class AuthForm extends React.Component {
               onChange={this.handleChange}/><br/>
 
             <img src={this.state.preview} style={{'width': '25%'}}/><br/>
-            <input 
+            <input
               type="file"
               name="avatar"
               onChange={this.handleChange}/><br/>
           </div>
         )}
 
-        {utils.renderIf(this.props.buttonText === 'Update', 
+        {utils.renderIf(this.props.buttonText === 'Update',
           <div>
             <input
               type="email"
@@ -130,15 +130,15 @@ class AuthForm extends React.Component {
               value={this.state.email}
               onChange={this.handleChange} /><br/>
 
-            <textarea 
-              name="bio" 
-              cols="30" 
+            <textarea
+              name="bio"
+              cols="30"
               rows="5"
               value={this.state.bio}
               onChange={this.handleChange}>
             </textarea><br/>
 
-            <input 
+            <input
               type="text"
               name="species"
               placeholder="species"
@@ -146,7 +146,7 @@ class AuthForm extends React.Component {
               onChange={this.handleChange}/><br/>
 
             <img src={this.state.preview} style={{'width': '25%'}}/><br/>
-            <input 
+            <input
               type="file"
               name="avatar"
               onChange={this.handleChange}/><br/>
@@ -157,7 +157,7 @@ class AuthForm extends React.Component {
           <span className="tooltip">{this.state.passwordError}</span>
         )}
 
-        <input 
+        <input
           type="password"
           name="password"
           placeholder="password"

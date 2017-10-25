@@ -10,7 +10,7 @@ class PostForm extends React.Component {
 
     let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
     this.state = props.post ? props.post : emptyState;
-    
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,7 +22,7 @@ class PostForm extends React.Component {
         ownerAvatar: nextProps.account.avatar,
         ownerId: nextProps.account.id,
         timeStamp: new Date().getTime(),
-        
+
       });
   }
 
@@ -66,9 +66,9 @@ class PostForm extends React.Component {
 
           <h2>Whats on your mind?</h2>
 
-          <textarea 
-            name="description" 
-            cols="30" 
+          <textarea
+            name="description"
+            cols="30"
             rows="5"
             value={this.state.description}
             onChange={this.handleChange}>
@@ -76,7 +76,7 @@ class PostForm extends React.Component {
 
           <h1>Or....</h1>
           <h2>Share a photo with your animal friends</h2>
-          <input 
+          <input
             type="file"
             name="photo"
             onChange={this.handleChange}/>
@@ -84,7 +84,7 @@ class PostForm extends React.Component {
 
           <button type="submit">{this.props.buttonText}</button>
         </form>
-        
+
 
 
       </div>
@@ -104,7 +104,7 @@ let mapStateToProps = state => {
 };
 let mapDispatchToProps = dispatch => ({
   userFetch: () => dispatch(userFetchRequest()),
-  
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
