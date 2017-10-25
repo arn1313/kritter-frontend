@@ -3,12 +3,13 @@ import * as utils from '../../lib/utils';
 import PostItem from '../post-item';
 import {postFetchAllRequest} from '../../action/post-actions.js';
 import {connect} from 'react-redux';
+import './_post-list-container.scss';
 
 class PostList extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      
+
     };
   }
 
@@ -37,7 +38,7 @@ let mapStateToProps = state => ({
 
 let mapDispatchToProps = dispatch => ({
   postFetch: () => dispatch(postFetchAllRequest()),
- 
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

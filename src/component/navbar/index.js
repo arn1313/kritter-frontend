@@ -24,34 +24,60 @@ class Navbar extends React.Component {
   }
 
   render() {
+
     return (
-      <header>
-        {this.props.auth && this.props.user ? 
-          <div className="profile-header">
-            <h2>Welcome {this.props.user.username}</h2>
-            <img src={this.props.user.avatar} style={{'width': '15%', 'border': '1px solid grey'}}/>
+      <div>
+        {this.props.auth ?
+          <div className="container">
+            <header className="header-world">
+              <div className="kritter-header">
+                <img className="kritter-logo" src="http://www.clker.com/cliparts/Q/0/a/r/h/S/paw-print-hi.png" height="50px" width="50px"/>
+                <span><h1>kritter</h1></span>
+              </div>
+              <div className="nav-header">
+                <img className="nav-logo" src="http://via.placeholder.com/50x50" />
+                <span><h4>{this.props.user.username}</h4> <br />
+                  <h5><Link to="/settings">settings</Link></h5>|<h5 onClick={this.handleLogout}><Link to="/home">logout</Link></h5></span>
+              </div>
+            </header>
           </div>
           :
-          undefined
+          <div>
+            <li><Link to="/welcome/signup">Signup</Link></li>
+            <li><Link to="/welcome/login">Login</Link></li>
+          </div>
         }
-        <nav>
-          <ul>
-            {this.props.auth ?
-              <div>
-                <li onClick={this.handleLogout}><Link to="/home">Logout</Link></li> 
-                <li><Link to="/home">Dashboard</Link></li> 
-                <li><Link to="/settings">Settings</Link></li> 
-              </div>
-              :
-              <div> 
-                <li><Link to="/welcome/signup">Signup</Link></li>
-                <li><Link to="/welcome/login">Login</Link></li>
-              </div>
-            }
-          </ul>
-        </nav>
-      </header >
+      </div>
     );
+    //
+    // return (
+    //   <header>
+    //     {this.props.auth && this.props.profile ?
+    //       <div className="profile-header">
+    //         <h2>Welcome {this.props.profile.username}</h2>
+    //         <img src={this.props.profile.avatar} style={{'width': '15%', 'border': '1px solid grey'}}/>
+    //       </div>
+    //       :
+    //       undefined
+    //     }
+    //     <nav>
+    //       <ul>
+    //         {this.props.auth ?
+    //           <div>
+    //             <li onClick={this.handleLogout}><Link to="/home">Logout</Link></li>
+    //             <li><Link to="/home">Dashboard</Link></li>
+    //             <li><Link to="/settings">Settings</Link></li>
+    //           </div>
+    //           :
+    //           <div>
+    //             <li><Link to="/welcome/signup">Signup</Link></li>
+    //             <li><Link to="/welcome/login">Login</Link></li>
+    //           </div>
+    //         }
+    //       </ul>
+    //     </nav>
+    //   </header >
+    // );
   }
 }
 
