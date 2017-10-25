@@ -20,7 +20,7 @@ class AuthForm extends React.Component {
         emailError: null,
         error: null,
       } :
-      { _id: '',
+      { 
         username: '',
         password: '',
         email: '',
@@ -46,15 +46,15 @@ class AuthForm extends React.Component {
       passwordError: name === 'password' && !value ? 'password must have a value' : null,
     });
 
-    // if(name === 'avatar') {
-    //   let {files} = e.target; 
-    //   let avatar = files[0];
-    //   this.setState({avatar});
+    if(name === 'avatar') {
+      let {files} = e.target; 
+      let avatar = files[0];
+      this.setState({avatar});
 
-    //   utils.photoToDataUrl(avatar)
-    //     .then(preview => this.setState({preview}))
-    //     .catch(console.error);
-    // }
+      utils.photoToDataUrl(avatar)
+        .then(preview => this.setState({preview}))
+        .catch(console.error);
+    }
 
   }
 
@@ -90,7 +90,7 @@ class AuthForm extends React.Component {
           <span className="tooltip">{this.state.emailError}</span>
         )}
 
-        {utils.renderIf(this.props.buttonText === 'signup', 
+        {utils.renderIf(this.props.auth === 'signup', 
           <div>
             <input
               type="email"
@@ -112,6 +112,12 @@ class AuthForm extends React.Component {
               name="species"
               placeholder="species"
               value={this.state.species}
+              onChange={this.handleChange}/><br/>
+
+            <img src={this.state.preview} style={{'width': '25%'}}/><br/>
+            <input 
+              type="file"
+              name="avatar"
               onChange={this.handleChange}/><br/>
           </div>
         )}
@@ -139,6 +145,12 @@ class AuthForm extends React.Component {
               placeholder="species"
               value={this.state.species}
               onChange={this.handleChange}/><br/>
+
+            <img src={this.state.preview} style={{'width': '25%'}}/><br/>
+            <input 
+              type="file"
+              name="avatar"
+              onChange={this.handleChange}/><br/>
           </div>
         )}
 
@@ -153,11 +165,6 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}/><br/>
 
-        {/* <img src={this.state.preview} style={{'width': '25%'}}/><br/>
-        <input 
-          type="file"
-          name="avatar"
-          onChange={this.handleChange}/><br/> */}
 
 
         <Button bsStyle="primary" type='submit'>{this.props.buttonText}</Button>

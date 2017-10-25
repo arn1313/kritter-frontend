@@ -7,7 +7,7 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    let emptyState = {url: '', description: '', timeStamp: '', ownerName: props.user.username, ownerAvatar: 'props.user.avatar', preview: ''};
+    let emptyState = {url: '', description: '', timeStamp: '', ownerName: '', ownerAvatar: 'props.user.avatar', preview: ''};
     this.state = props.post ? props.post : emptyState;
     
     this.handleChange = this.handleChange.bind(this);

@@ -21,7 +21,7 @@ class App extends React.Component {
     if(token) {
       this.props.tokenSet(token)
         .then(() => this.props.userFetch())
-        .then(result => console.log(result.body))
+        .then(result => console.log('After userFetch', result.body))
         .then(() => this.props.postFetch())
         
         .catch(console.error);
