@@ -16,8 +16,7 @@ class SettingsContainer extends React.Component {
   }
 
   componentWillMount() {
-    if(!this.props.user) this.props.userFetch()
-      .then(() => console.log('__SETTINGS_CONTAINER__', this.props));
+    if(!this.props.user) this.props.userFetch();
   }
 
   handleToggle() {

@@ -16,17 +16,13 @@ class DashboardContainer extends React.Component {
   }
 
   componentDidMount(){
-    console.log('__componentDidMount__');
-    // this.props.userFetch();
   }
 
 
 
   render() {
-    console.log(this.props.auth, '__AUTH__');
-    console.log(this.props.user, '__USER__');
-    console.log(this.props.username, '__USERNAMEEEE__');
-    
+    console.log('__USER__', this.props.user, '__USER__');
+
 
     return (
       <div>
