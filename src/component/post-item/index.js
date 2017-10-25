@@ -26,7 +26,7 @@ class PostItem extends React.Component {
     return (
       <div>
         <div>
-          <img src={this.props.post.ownerAvatar} />
+          <img style={{'width': '15%', 'border': '1px solid grey'}} src={this.props.post.ownerAvatar} />
           <h2>{this.props.post.ownerName}</h2>
           <h4>{this.props.post.timeStamp}</h4>
           <p>{this.props.post.description}</p>

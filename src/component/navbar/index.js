@@ -26,10 +26,10 @@ class Navbar extends React.Component {
   render() {
     return (
       <header>
-        {this.props.auth && this.props.profile ? 
+        {this.props.auth && this.props.user ? 
           <div className="profile-header">
-            <h2>Welcome {this.props.profile.username}</h2>
-            <img src={this.props.profile.avatar} style={{'width': '15%', 'border': '1px solid grey'}}/>
+            <h2>Welcome {this.props.user.username}</h2>
+            <img src={this.props.user.avatar} style={{'width': '15%', 'border': '1px solid grey'}}/>
           </div>
           :
           undefined

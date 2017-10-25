@@ -29,11 +29,13 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
       <div className="application">
         <BrowserRouter>
           <div>
-            <Navbar />
+            <Navbar 
+              user={this.props.user}/>
             {utils.renderIf(!this.props.auth,
               <Hero />
             )} 
@@ -50,7 +52,7 @@ class App extends React.Component {
 //test
 
 let mapStateToProps = state => ({
-  profile: state.profile,
+  user: state.user,
   auth: state.auth,
   post: state.post,
 });
