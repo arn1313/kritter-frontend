@@ -10,7 +10,7 @@ class PostItem extends React.Component {
     super(props);
     this.state = {
       edit: false,
-      showModal: false, 
+      showModal: false,
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.close = this.close.bind(this);
@@ -57,13 +57,13 @@ class PostItem extends React.Component {
                   onComplete={this.props.updatePost}
                 />
 
-              </Modal.Body>   
+              </Modal.Body>
               <Modal.Footer>
                 <Button onClick={this.close}>Close</Button>
-              </Modal.Footer>  
+              </Modal.Footer>
             </Modal>
           </div>
- 
+
         )}
       </div>
     );
@@ -74,9 +74,10 @@ let mapStateToProps = state => ({
 });
 
 let mapDispatchToProps = dispatch => ({
-  
+
   postDelete: (post) => dispatch(postDeleteRequest(post)),
   updatePost: (post) => dispatch(postUpdateRequest(post)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostItem);
+//whatever
