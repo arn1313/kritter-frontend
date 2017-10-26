@@ -65,7 +65,7 @@ class PostItem extends React.Component {
             {utils.renderIf(this.props.post.ownerId === this.props.user._id,
               <div>
                 <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
-                <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
+                <Button bsStyle="primary" onClick={() =>this.setState({edit: !this.state.edit})}>Edit</Button>
               </div>
 
 
@@ -76,24 +76,15 @@ class PostItem extends React.Component {
 
         {utils.renderIf(this.state.edit,
           <div className="static-modal">
-            <Modal show={this.state.showModal}>
-              <Modal.Header>
-                <Modal.Title>Update Your Post</Modal.Title>
-              </Modal.Header>
 
-              <Modal.Body>
-                <PostForm
-                  hideUploadForm={'hideUploadForm'}
-                  post={this.props.post}
-                  buttonText='update'
-                  onComplete={this.props.updatePost}
-                />
 
-              </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={this.close}>Close</Button>
-              </Modal.Footer>
-            </Modal>
+            <PostForm
+              hideUploadForm={'hideUploadForm'}
+              post={this.props.post}
+              buttonText='update'
+              onComplete={this.props.updatePost}
+            />
+
           </div>
 
         )}
