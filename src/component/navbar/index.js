@@ -30,11 +30,11 @@ class Navbar extends React.Component {
           <div className="container">
             <header className="header-world">
               <div className="kritter-header">
-                <img className="kritter-logo" src="http://www.clker.com/cliparts/Q/0/a/r/h/S/paw-print-hi.png" height="50px" width="50px"/>
+                <img className="kritter-logo" src="../src/img/paw-print-hi.png" height="50px" width="50px"/>
                 <span><Link to="/home"><h1>kritter</h1></Link></span>
               </div>
               <div className="nav-header">
-                <img className="post-logo" style={{'width': '50px', 'height': '50px'}} src={this.props.user.avatar ? this.props.user.avatar : "http://www.iconsdb.com/icons/preview/black/question-mark-xxl.png"} />
+                <img className="post-logo" style={{'width': '50px', 'height': '50px'}} src={this.props.user.avatar ? this.props.user.avatar : "../src/img/question-mark-xxl.png"} />
                 <span><Link to="/settings"><h4>{this.props.user.username}</h4></Link> <br />
                   <Link to="/settings">settings</Link>    <Link onClick={this.handleLogout} to="/home">logout</Link></span>
               </div>
