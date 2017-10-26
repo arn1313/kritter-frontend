@@ -5,7 +5,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import {persistStore, autoRehydrate} from 'redux-persist';
 
 let appStoreCreate = () =>
-  createStore(reducer, undefined, compose(applyMiddleware(thunk, reporter), autoRehydrate({log:true})));
+  createStore(reducer, undefined, compose(applyMiddleware(thunk, reporter), autoRehydrate({})));
 
 
 export default appStoreCreate;
