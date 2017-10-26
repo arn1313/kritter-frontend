@@ -41,6 +41,7 @@ class Navbar extends React.Component {
                 <li onClick={this.handleLogout}><Link to="/home">Logout</Link></li>
                 <li><Link to="/home">Dashboard</Link></li> 
                 <li><Link to="/settings">Settings</Link></li>
+                <li><Link to="/gallery">KritterPub</Link></li>
               </div>
               :
               <div>
