@@ -8,19 +8,19 @@ class PostList extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-
+      sortedArray: this.props.post,
+      
     };
   }
-
-
+  
+  
   render () {
-    let sortedArray = this.props.post.reverse();
     // console.log('==========>',sortedArray);
     // console.log('=========>original', this.props.post);
     return (
       <div>
         {utils.renderIf(this.props.post,
-          sortedArray.map(post =>
+          this.props.post.map(post =>
             <div key={post._id}>{
               <PostItem key={post._id} post={post}
               />
