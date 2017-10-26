@@ -29,8 +29,8 @@ class Aside extends React.Component {
         <aside className="three columns">
           <ul>
             <li><Link to="/gallery">KritterPub</Link></li>
-            <li>friends</li>
-            <li>garbage</li>
+            <li>Friends</li>
+            <li>Events</li>
           </ul>
         </aside>
       </div>
