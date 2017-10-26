@@ -61,6 +61,7 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
     .attach('url', post.url)
     // .send(post)
     .then((res) => {
+      console.log('&&&&&&&&&&&&', res.body);
       dispatch(postCreate(res.body));
       return res;
     });
