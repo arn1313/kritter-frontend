@@ -4,12 +4,13 @@ import './_heroContainer.scss';
 import {Button, Image} from 'react-bootstrap';
 // import assetPicture from '../../assets/mountains.jpg';
 import scrollToComponent from 'react-scroll-to-component';
+import './_heroContainer.scss';
 
 
 class Hero extends React.Component {
   constructor(props){
     super(props);
-    this.state = { 
+    this.state = {
 
     };
   }
@@ -20,8 +21,8 @@ class Hero extends React.Component {
       elem.scrollIntoView(false);
     }
   }
- 
-  
+
+
   render() {
     return (
       <section>

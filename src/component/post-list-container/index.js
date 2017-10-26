@@ -15,7 +15,6 @@ class PostList extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is the list of posts</h1>
         {utils.renderIf(this.props.post,
           this.props.post.map(post =>
             <div key={post._id}>{
