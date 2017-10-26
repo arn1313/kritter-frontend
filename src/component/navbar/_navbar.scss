@@ -1,0 +1,84 @@
+.header-world {
+  background-color: #F7882F;
+  height: 4.5em;
+  position: relative;
+  border-bottom: 1px solid #f7f7f7;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.nav-header {
+  position: relative;
+  float: right;
+  top: .2em;
+  margin-right: 1em;
+}
+
+.nav-header img {
+  position: absolute;
+}
+
+.nav-header span {
+  display: block;
+  margin-left: 4.5em;
+}
+
+header h4 {
+  line-height: 1.35;
+  font-size:  1.2em;
+  margin: 0;
+  position: relative;
+  top: .8em;
+  color: white;
+}
+
+header h5 {
+  line-height: 1.5;
+  margin: 0;
+  font-size: .8em;
+  position: relative;
+  bottom: 1em;
+}
+
+.nav-logo {
+  border-radius: 25px;
+  float: right;
+  margin: .5em 1em 0em .5em;
+}
+
+.kritter-header {
+  position: relative;
+  float: left;
+  top: .2em;
+}
+
+.kritter-header img {
+  position: absolute;
+}
+
+.kritter-header span {
+  display: block;
+  margin-left: 4.1em;
+}
+
+header h1 {
+  font-size: 4.0rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
+  margin: 0em .2em;
+  position: relative;
+  top: .2em;
+  color: white;
+}
+
+.kritter-logo {
+  float: right;
+  margin: .5em 1em 0em .5em;
+}
+
+.nav-settings a {
+  text-decoration: none;
+  line-height: 1.5;
+  position: relative;
+  bottom: 1em;
+  color: grey;
+}

@@ -4,12 +4,14 @@ import {Grid, Row, Col, Jumbotron, Button, Modal} from 'react-bootstrap';
 import * as utils from '../../lib/utils';
 import PostItem from '../post-item';
 import {postFetchAllRequest} from '../../action/post-actions.js';
+import '../post-item/_post-item.scss';
+
 
 class GalleryContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      
+
     };
     // this.toggleFormStart = this.toggleFormStart.bind(this);
     // this.close = this.close.bind(this);
@@ -17,8 +19,8 @@ class GalleryContainer extends React.Component {
   // componentDidMount(){
   //   this.props.photoFetchAll();
   // }
-  
-  
+
+
 
 
   render() {
@@ -27,20 +29,20 @@ class GalleryContainer extends React.Component {
         <Jumbotron>
           <h1>Group Memories</h1>
           <p>Live their adventures</p>
-        </Jumbotron> 
-        
+        </Jumbotron>
+
         <Row>
           {utils.renderIf(this.props.post,
             this.props.post.map(post =>
               <Col sm={6} md={3} key={post._id}>{
-                <PostItem key={post._id} 
+                <PostItem key={post._id}
                   post={post}
                   renderText={'photoOnly'}
                 />
               }<br/></Col>
             ))}
         </Row>
-        
+
       </div>
     );
   }
@@ -57,5 +59,3 @@ let mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GalleryContainer);
-
-
