@@ -1,4 +1,52 @@
-.yolo {
- width: 20%;
- height: 20%;
+.post {
+  border: 1px solid #f1f1f1;
+  padding: 1em;
+  margin: 1em 0em;
+}
+
+.post-header {
+  /*background: #dfe3ee;*/
+  width: 100%;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.post-header img {
+  position: absolute;
+}
+
+.post-header span {
+  display: block;
+  margin-left: 4.5em;
+}
+
+.post h4 {
+  line-height: 1.35;
+  letter-spacing: -.08rem;
+  font-size:  1.2em;
+  margin: 0;
+  position: relative;
+  top: .8em;
+}
+
+.post h5 {
+  line-height: 1.5;
+  letter-spacing: -.05rem;
+  margin: 0;
+  font-size: .8em;
+  position: relative;
+  bottom: 1em;
+}
+
+.post-logo {
+  border-radius: 25px;
+}
+
+.post-logo {
+  float: left;
+  margin: .5em 1em 0em .5em;
+}
+
+.post-image {
+  text-align: center;
 }
