@@ -11,5 +11,3 @@ let appStoreCreate = () =>
 export default appStoreCreate;
 
 
-// createStore(rootReducer, initialState, compose()) to 
-// createStore(rootReducer, undefined, compose())
