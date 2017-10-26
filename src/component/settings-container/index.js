@@ -5,6 +5,7 @@ import AuthForm from '../auth-form';
 import {userFetchRequest, userCreateRequest, userUpdateRequest} from '../../action/auth-actions';
 import {postFetchAllRequest} from '../../action/post-actions';
 import PostItem from '../post-item';
+import Aside from '../aside';
 
 class SettingsContainer extends React.Component {
   constructor(props) {
@@ -25,50 +26,47 @@ class SettingsContainer extends React.Component {
   render() {
     let filtered = this.props.post.filter(post => post.ownerId === this.props.user._id);
     return (
-      <section>
+      <div className="container">
+        <Aside />
+        <section className="nine columns container">
 
-        {utils.renderIf(!this.props.user.avatar,
-          <div>
-            <h1>I see this is your first time logging in</h1>
-            <h3>Feel free to upload an avatar and edit your profile </h3>
+          {utils.renderIf(!this.props.user.avatar,
+            <div>
+              <h1>I see this is your first time logging in</h1>
+              <h3>Feel free to upload an avatar and edit your profile </h3>
 
 
-            <AuthForm
-              buttonText="Update"
-              onComplete={this.props.userUpdate}
-              user={this.props.user}/>
+              <AuthForm
+                buttonText="Update"
+                onComplete={this.props.userUpdate}
+                user={this.props.user}/>
+            </div>
+          )}
+
+          {utils.renderIf(this.state.editUser,
+            <div>
+              <h1> Edit your profile</h1>
+              <AuthForm
+                buttonText="Update"
+                onComplete={this.props.userUpdate}
+                user={this.props.user}/>
+            </div>
+          )}
+
+          <div className="user-form-container">
+            <button onClick={this.handleEdit}>Edit Profile</button>
+
+            {utils.renderIf(this.props.post,
+
+              filtered.map(post =>
+                <div key={post._id}>{
+                  <PostItem key={post._id} post={post}
+                  />
+                }<br/></div>
+              ))}
           </div>
-        )}
-
-        {utils.renderIf(this.state.editUser,
-          <div>
-            <h1> Edit your profile</h1>
-            <AuthForm
-              buttonText="Update"
-              onComplete={this.props.userUpdate}
-              user={this.props.user}/>
-          </div>
-        )}
-
-        <div className="user-form-container">
-          <h1> About me </h1>
-          <h3>Username: {this.props.user.username}</h3>
-          <h3>Email: {this.props.user.email}</h3>
-          <p>My Biography: <br/> {this.props.user.bio}</p>
-          <h4>My Avatar</h4>
-          <img src={this.props.user.avatar}/>
-          <button onClick={this.handleEdit}>Edit Profile</button>
-          <h2>Here are all your posts</h2>
-          {utils.renderIf(this.props.post,
-
-            filtered.map(post =>
-              <div key={post._id}>{
-                <PostItem key={post._id} post={post}
-                />
-              }<br/></div>
-            ))}
-        </div>
-      </section>
+        </section>
+      </div>
     );
   }
 }

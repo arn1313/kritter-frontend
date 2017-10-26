@@ -28,9 +28,10 @@ class Aside extends React.Component {
       <div className="row">
         <aside className="three columns">
           <ul>
-            <li><Link to="/gallery">KritterPub</Link></li>
-            <li>Friends</li>
-            <li>Events</li>
+            <li><img className="u-full-width" src={this.props.user.avatar ? this.props.user.avatar : 'upload'} /></li>
+            <li>{this.props.user.username}</li>
+            <li className="bio">{this.props.user.bio}</li>
+            <li><Link to="/gallery">gallery</Link></li>
           </ul>
         </aside>
       </div>
