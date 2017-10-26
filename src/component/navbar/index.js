@@ -34,16 +34,13 @@ class Navbar extends React.Component {
                 <span><Link to="/home"><h1>kritter</h1></Link></span>
               </div>
               <div className="nav-header">
-                <img className="post-logo" style={{'width': '50px', 'height': '50px', 'border': '1px solid grey'}} src={this.props.user.avatar} />                <span><h4>sdfkgjskfgjlskjdfgkjsgf{this.props.user.username}</h4> <br />
-                  <span className="nav-settings"><Link to="/settings">settings</Link> <Link onClick={this.handleLogout} to="/home">logout</Link></span></span>
+                <img className="post-logo" style={{'width': '50px', 'height': '50px', 'border': '1px solid grey'}} src={this.props.user.avatar} />            
+                <span><h4>{this.props.user.username}</h4> <br />
+                  <span className="nav-settings"><Link to="/settings">settings</Link> 
+                    <Link onClick={this.handleLogout} to="/home">logout</Link></span></span>
               </div>
             </header>
           </div>
-          :
-          undefined
-        }
-        {this.props.auth ?
-          undefined
           :
           <div className="nav-start">
             <div className="container row nav-links">

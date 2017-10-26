@@ -17,9 +17,9 @@ class SettingsContainer extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
-  componentWillMount() {
-    if(!this.props.user) this.props.userFetch();
-  }
+  // componentWillMount() {
+  //   if(!this.props.user) this.props.userFetch();
+  // }
 
   handleToggle() {
     this.setState({editUser: !this.state.editUser});
@@ -27,8 +27,6 @@ class SettingsContainer extends React.Component {
 
   render() {
     let filtered = this.props.post.filter(post => post.ownerId === this.props.user._id);
-    console.log('===>', this.props.post[2].ownerId, this.props.user._id);
-    console.log('+++++>', filtered);
     return (
       <section>
 
