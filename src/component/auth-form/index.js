@@ -183,16 +183,16 @@ class AuthForm extends React.Component {
                       placeholder="email"
                       value={this.state.email}
                       onChange={this.handleChange} />
-                    </div>
-                      <div className="six columns">
-                        <label for="species">Species</label>
-                      <input
-                        type="text"
-                        name="species"
-                        placeholder="species"
-                        value={this.state.species}
-                        onChange={this.handleChange}/>
-                      </div>
+                  </div>
+                  <div className="six columns">
+                    <label for="species">Species</label>
+                    <input
+                      type="text"
+                      name="species"
+                      placeholder="species"
+                      value={this.state.species}
+                      onChange={this.handleChange}/>
+                  </div>
 
                 </div>
 
