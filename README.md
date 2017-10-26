@@ -1,6 +1,7 @@
 ![Kritter Logo](./src/img/Kritter.png)
 
 # Kritter~ Finally, there is a Social Media for your animals!
+Visit us at http://www.kritter.club/.
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/arn1313/kritter-frontend/master/LICENSE) ![Build Passing](https://img.shields.io/badge/build-passing-green.svg)
 
@@ -116,7 +117,7 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/css-loader.
 
-* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. 
+* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 
   * Documentation can be found at https://www.npmjs.com/package/cors.
 
@@ -241,13 +242,14 @@ Once you have set up your account, the next time you visit the site you will be 
   * Documentation can be found at https://www.npmjs.com/package/webpack-dev-server.
 
 ### How to Report Bugs or Issues
-Bugs and Issues can be reported through our GitHub repository located at https://github.com/arn1313/kritter-frontend/issues. To create a new issue, simply click the green "New Issue" button, and add a description of the issue or bug, with a method for replication if possible. If you want to contribute to the project, feel free to fork our repository and create a pull request, which will be reviewed by one of our team members. You will be credited for your contributions in our "Credits And Thanks" section of this README.
+Bugs and Issues can be reported through our GitHub repository located at https://github.com/arn1313/kritter-frontend/issues. To create a new issue, simply click the green "New Issue" button, and add a description of the issue or bug, with a method for replication if possible.
 
 ### Credit and Thanks
 We obviously borrowed heavily from current Social Media's like Facebook and Twitter for our styling and the thought process behind our choices of functionality.
 We modeled our backend off of the sluggram-backend created by Duncan Marsh https://github.com/slugbyte and greatly appreciate all of the hard work he put into the build.
 
 ### Upcoming features
+**Friends** We would love to add a friends feature in future updates. This way your pets could create circles. Also by adding this functionality, we could begin to incorporate an events calendar, so your pets can schedule play dates with their friends.
 
 ### FAQs
 **Why Kritter?** People love their pets and there are plenty of animals represented on Social Media. We thought it was time pets had their own platform to shine and share their stories.
