@@ -38,7 +38,7 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/debug.
 
-* **eslint** : A linting tool used to evaluate our code to catch any syntax errors. It is heavily suggested to use this if you plan to contribute to our code. For my information on contributing to Pi Spy, see the "How To Report Bugs or Issues" section.
+* **eslint** : A linting tool used to evaluate our code to catch any syntax errors. I
 
   * Documentation can be found at https://www.npmjs.com/package/eslint.
 
@@ -68,14 +68,33 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/babel-core
 
-* **babel-cli** :
+* **babel-cli** :Provides a command line for babel.
 
-  * Documentation can be found at
+  * Documentation can be found at https://www.npmjs.com/package/babel-cli.
 
-* ****
+* **babel-core** : Babels compiler core.
 
-  *
+  * Documentation can be found at https://www.npmjs.com/package/babel-core.
 
+* **babel-loader** : Allows transpiling Javascript files using Babel and webpack.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-loader.
+
+* **babel-plugin-transform-object-rest-spread** : Allows babel to transform rest properties for object destructuring assignments and spread properties for object literals.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread.
+
+* **babel-preset-es2015** : Presets for es2015 plugins.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-preset-es2015.
+
+* **babel-preset-react** : Presets for React plugins.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-preset-react.
+
+* **babel-register** : A require hook for using babel.
+
+  * Documentation can be found at https://babeljs.io/docs/usage/babel-register/.
 
 * **bcrypt** : A dependency to hash our users' passwords, for their security.
 
@@ -97,7 +116,7 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/css-loader.
 
-* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. For more information on what CORS is, please refer to https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS.
+* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. 
 
   * Documentation can be found at https://www.npmjs.com/package/cors.
 
