@@ -14,14 +14,11 @@ class SettingsContainer extends React.Component {
       username: '',
       bio: '',
     };
-    this.handleToggle = this.handleToggle.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
-  // componentWillMount() {
-  //   if(!this.props.user) this.props.userFetch();
-  // }
 
-  handleToggle() {
+  handleEdit() {
     this.setState({editUser: !this.state.editUser});
   }
 
@@ -43,6 +40,16 @@ class SettingsContainer extends React.Component {
           </div>
         )}
 
+        {utils.renderIf(this.state.editUser,
+          <div>
+            <h1> Edit your profile</h1>
+            <AuthForm
+              buttonText="Update"
+              onComplete={this.props.userUpdate}
+              user={this.props.user}/>
+          </div>
+        )}
+
         <div className="user-form-container">
           <h1> About me </h1>
           <h3>Username: {this.props.user.username}</h3>
@@ -50,6 +57,7 @@ class SettingsContainer extends React.Component {
           <p>My Biography: <br/> {this.props.user.bio}</p>
           <h4>My Avatar</h4>
           <img src={this.props.user.avatar}/>
+          <button onClick={this.handleEdit}>Edit Profile</button>
           <h2>Here are all your posts</h2>
           {utils.renderIf(this.props.post,
 
