@@ -1,13 +1,21 @@
+* {
+  outline: 1px solid purple;
+}
+
 body {
   margin: 0 auto;
   font-size: 1.5em;
   line-height: 1.6;
   font-weight: 400;
   background-color: #f7f7f7;
-  background-image: url("https://ak1.ostkcdn.com/images/products/8367239/Black-Paw-Print-Tracks-Vinyl-Art-Quote-2b8aa210-db61-47e0-8fcd-3fb35c08e345_600.jpg");
-  background-attachment: fixed;
-  background-position: bottom;
+  // background-image: url("https://ak1.ostkcdn.com/images/products/8367239/Black-Paw-Print-Tracks-Vinyl-Art-Quote-2b8aa210-db61-47e0-8fcd-3fb35c08e345_600.jpg");
+  // background-attachment: fixed;
+  // background-position: bottom;
   font-family: 'Roboto', sans-serif;
+}
+
+.post, form, aside{
+  background-color: white;
 }
 
 html {
@@ -23,22 +31,6 @@ a:hover {
   color: orange;
 }
 
-aside {
-font-family: 'Catamaran', sans-serif;
-font-size: 1.5em;
-text-align: center;
-margin-top: 1em;
-}
-
-.post, form, aside{
-  background-color: white;
-}
-
-aside ul {
-    list-style-type: none;
-    padding: 1em 0em;
-}
-
 .container {
   position: relative;
   width: 100%;
@@ -47,7 +39,7 @@ aside ul {
   padding: 0 20px;
   box-sizing: border-box;
 }
-.column,
+
 .columns {
   width: 100%;
   float: left;
@@ -65,20 +57,15 @@ aside ul {
 @media (min-width: 550px) {
   .container {
     width: 80%; }
-  .column,
   .columns {
     margin-left: 4%; }
-  .column:first-child,
   .columns:first-child {
     margin-left: 0; }
 
 
-  .three.columns                  { width: 22%;            }
-  .six.columns                    { width: 48%;            }
-  .nine.columns                   { width: 74.0%;          }
-  .one-third.column               { width: 30.6666666667%; }
-  .two-thirds.column              { width: 69.3333333333%; margin-left: 0;}
-}
+  .three.columns{ width: 22%; }
+  .six.columns  { width: 48%; }
+  .nine.columns { width: 74.0%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
@@ -154,3 +141,4 @@ select {
   .u-full-width {
     width: 100%;
     box-sizing: border-box; }
+  }

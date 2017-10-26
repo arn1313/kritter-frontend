@@ -6,6 +6,7 @@ import {Button} from 'react-bootstrap';
 import PostForm from '../post-form';
 import PostList from '../post-list-container';
 import {Link} from 'react-router-dom';
+import './_aside.scss';
 
 
 

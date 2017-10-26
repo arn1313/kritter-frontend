@@ -32,7 +32,7 @@ class SettingsContainer extends React.Component {
     return (
       <section>
 
-        {/* {utils.renderIf(!this.props.user.avatar, */}
+        {utils.renderIf(!this.props.user.avatar,
           <div>
             <h1>I see this is your first time logging in</h1>
             <h3>Feel free to upload an avatar and edit your profile </h3>
@@ -43,7 +43,7 @@ class SettingsContainer extends React.Component {
               onComplete={this.props.userUpdate}
               user={this.props.user}/>
           </div>
-        {/* )} */}
+        )}
 
         <div className="user-form-container">
           <h1> About me </h1>

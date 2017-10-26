@@ -76,7 +76,9 @@ class PostForm extends React.Component {
                 type="file"
                 name="photo"
                 onChange={this.handleChange}/>
-              <img src={this.state.preview} style={{'width': '25%'}}/>
+
+                {/* <div className="container u-full-width picture-thing">
+              <img src={this.state.preview} style={{'width': '25%'}}/></div> */}
             </div>
             <button type="submit">{this.props.buttonText}</button>
           </div>

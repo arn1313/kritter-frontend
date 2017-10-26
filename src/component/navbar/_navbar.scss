@@ -22,6 +22,16 @@
   margin-left: 4.5em;
 }
 
+.nav-header a {
+  line-height: 1.5;
+  padding: 0em .8em;
+  margin: 0;
+  font-size: .8em;
+  position: relative;
+  bottom: 1em;
+  color: grey;
+
+}
 header h4 {
   line-height: 1.35;
   font-size:  1.2em;
@@ -31,13 +41,6 @@ header h4 {
   color: white;
 }
 
-header h5 {
-  line-height: 1.5;
-  margin: 0;
-  font-size: .8em;
-  position: relative;
-  bottom: 1em;
-}
 
 .nav-logo {
   border-radius: 25px;
@@ -75,10 +78,17 @@ header h1 {
   margin: .5em 1em 0em .5em;
 }
 
-.nav-settings a {
-  text-decoration: none;
-  line-height: 1.5;
-  position: relative;
-  bottom: 1em;
-  color: grey;
+.nav-start {
+  font-family: 'Catamaran', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
+// .nav-links {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
