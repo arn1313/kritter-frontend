@@ -38,9 +38,13 @@ class PostItem extends React.Component {
             <h4>{this.props.post.timeStamp}</h4>
             <p>{this.props.post.description}</p>
             <img src={this.props.post.url} />
-            <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+            {utils.renderIf(this.props.post.ownerId === this.props.user._id,
+              <div>
+                <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+                <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
+              </div>
 
-            <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
+            )}
 
           </div>
         )}
@@ -82,6 +86,7 @@ class PostItem extends React.Component {
 }
 
 let mapStateToProps = state => ({
+  user: state.user,
 });
 
 let mapDispatchToProps = dispatch => ({
