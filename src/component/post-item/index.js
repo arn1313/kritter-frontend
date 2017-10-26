@@ -30,17 +30,20 @@ class PostItem extends React.Component {
     console.log('******pos',this.props.post);
     return (
       <div>
-        <div>
-          <img style={{'width': '15%', 'border': '1px solid grey'}} src={this.props.post.ownerAvatar} />
-          <h2>{this.props.post.ownerName}</h2>
-          <h4>{this.props.post.timeStamp}</h4>
-          <p>{this.props.post.description}</p>
-          <img src={this.props.post.url} />
-          <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+        {utils.renderIf(this.props.renderText !== 'photoOnly',
 
-          <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
+          <div>
+            <img style={{'width': '15%', 'border': '1px solid grey'}} src={this.props.post.ownerAvatar} />
+            <h2>{this.props.post.ownerName}</h2>
+            <h4>{this.props.post.timeStamp}</h4>
+            <p>{this.props.post.description}</p>
+            <img src={this.props.post.url} />
+            <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
 
-        </div>
+            <Button bsStyle="primary" onClick={() =>this.setState({showModal: !this.state.showModal, edit: !this.state.edit})}>Edit</Button>
+
+          </div>
+        )}
 
         {utils.renderIf(this.state.edit,
           <div className="static-modal">
@@ -62,6 +65,14 @@ class PostItem extends React.Component {
                 <Button onClick={this.close}>Close</Button>
               </Modal.Footer>  
             </Modal>
+          </div>
+ 
+        )}
+
+        {utils.renderIf(this.props.renderText === 'photoOnly',
+          <div className="static-modal">
+            <h2>{this.props.post.ownerName}</h2>
+            <img src={this.props.post.url}/>
           </div>
  
         )}
