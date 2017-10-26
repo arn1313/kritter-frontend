@@ -70,116 +70,118 @@ class AuthForm extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={this.handleSubmit}
-        className="auth-form">
+      <div className="container auth">
+        <form
+          onSubmit={this.handleSubmit}
+          className="auth-form">
 
-        {utils.renderIf(this.state.usernameError,
-          <span className="tooltip">{this.state.usernameError}</span>
-        )}
-        <h2>Username</h2><br/>
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          value={this.state.username}
-          onChange={this.handleChange}/><br/>
+          {utils.renderIf(this.state.usernameError,
+            <span className="tooltip">{this.state.usernameError}</span>
+          )}
+          <label for="username">Full Name</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={this.state.username}
+            onChange={this.handleChange}/><br/>
 
-        {utils.renderIf(this.state.emailError,
-          <span className="tooltip">{this.state.emailError}</span>
-        )}
+          {utils.renderIf(this.state.emailError,
+            <span className="tooltip">{this.state.emailError}</span>
+          )}
 
-        {utils.renderIf(this.props.auth === 'login',
-          <div>
-            <h2>Password</h2><br/>
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.handleChange}/><br/>
-          </div>
+          {utils.renderIf(this.props.auth === 'login',
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}/><br/>
+            </div>
 
-        )}
+          )}
 
-        {utils.renderIf(this.props.auth === 'signup',
-          <div>
-            <h2>Email</h2><br/>
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              value={this.state.email}
-              onChange={this.handleChange} /><br/>
-            <h2>About Me Bio</h2><br/>
-            <textarea
-              name="bio"
-              cols="30"
-              rows="5"
-              value={this.state.bio}
-              onChange={this.handleChange}>
-            </textarea><br/>
-            <h2>Species</h2><br/>
-            <input
-              type="text"
-              name="species"
-              placeholder="species"
-              value={this.state.species}
-              onChange={this.handleChange}/><br/>
+          {utils.renderIf(this.props.auth === 'signup',
+            <div>
+              <h2>Email</h2><br/>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                value={this.state.email}
+                onChange={this.handleChange} /><br/>
+              <h2>About Me Bio</h2><br/>
+              <textarea
+                name="bio"
+                cols="30"
+                rows="5"
+                value={this.state.bio}
+                onChange={this.handleChange}>
+              </textarea><br/>
+              <h2>Species</h2><br/>
+              <input
+                type="text"
+                name="species"
+                placeholder="species"
+                value={this.state.species}
+                onChange={this.handleChange}/><br/>
 
-            <h2>Password</h2><br/>
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.handleChange}/><br/>
-          </div>
+              <h2>Password</h2><br/>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}/><br/>
+            </div>
 
-        )}
+          )}
 
-        {utils.renderIf(this.props.buttonText === 'Update',
-          <div>
-            <h2>Email</h2><br/>
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              value={this.state.email}
-              onChange={this.handleChange} /><br/>
-            <h2>About Me Biography</h2><br/>
-            <textarea
-              name="bio"
-              cols="30"
-              rows="5"
-              value={this.state.bio}
-              onChange={this.handleChange}>
-            </textarea><br/>
-            <h2>Species</h2><br/>
-            <input
-              type="text"
-              name="species"
-              placeholder="species"
-              value={this.state.species}
-              onChange={this.handleChange}/><br/>
-            <h2>Avatar</h2><br/>
-            <img src={this.state.preview} style={{'width': '25%'}}/><br/>
-            <input
-              type="file"
-              name="avatar"
-              onChange={this.handleChange}/><br/>
-          </div>
-        )}
+          {utils.renderIf(this.props.buttonText === 'Update',
+            <div>
+              <h2>Email</h2><br/>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                value={this.state.email}
+                onChange={this.handleChange} /><br/>
+              <h2>About Me Biography</h2><br/>
+              <textarea
+                name="bio"
+                cols="30"
+                rows="5"
+                value={this.state.bio}
+                onChange={this.handleChange}>
+              </textarea><br/>
+              <h2>Species</h2><br/>
+              <input
+                type="text"
+                name="species"
+                placeholder="species"
+                value={this.state.species}
+                onChange={this.handleChange}/><br/>
+              <h2>Avatar</h2><br/>
+              <img src={this.state.preview} style={{'width': '25%'}}/><br/>
+              <input
+                type="file"
+                name="avatar"
+                onChange={this.handleChange}/><br/>
+            </div>
+          )}
 
-        {utils.renderIf(this.state.passwordError,
-          <span className="tooltip">{this.state.passwordError}</span>
-        )}
-
-
+          {utils.renderIf(this.state.passwordError,
+            <span className="tooltip">{this.state.passwordError}</span>
+          )}
 
 
-        <Button bsStyle="primary" type='submit'>{this.props.buttonText}</Button>
-      </form>
+
+
+          <Button bsStyle="primary" type='submit'>{this.props.buttonText}</Button>
+        </form>
+      </div>
     );
   }
 }
