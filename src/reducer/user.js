@@ -1,7 +1,9 @@
 export default (state=[], action) => {
   let {type, payload} = action;
   switch(type) {
-   
+
+  case 'persist/REHYDRATE':
+    return {...state, persistedState: action.payload };
   case 'USER_SET':
     return payload;
   case 'USER_CREATE':

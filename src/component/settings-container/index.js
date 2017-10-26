@@ -14,30 +14,35 @@ class SettingsContainer extends React.Component {
       username: '',
       bio: '',
     };
-    this.handleToggle = this.handleToggle.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
-  componentWillMount() {
-    if(!this.props.user) this.props.userFetch();
-  }
 
-  handleToggle() {
+  handleEdit() {
     this.setState({editUser: !this.state.editUser});
   }
 
   render() {
     let filtered = this.props.post.filter(post => post.ownerId === this.props.user._id);
-    console.log('===>', this.props.post[2].ownerId, this.props.user._id);
-    console.log('+++++>', filtered);
     return (
       <section>
-        
+
         {utils.renderIf(!this.props.user.avatar,
           <div>
             <h1>I see this is your first time logging in</h1>
             <h3>Feel free to upload an avatar and edit your profile </h3>
-            
-         
+
+
+            <AuthForm
+              buttonText="Update"
+              onComplete={this.props.userUpdate}
+              user={this.props.user}/>
+          </div>
+        )}
+
+        {utils.renderIf(this.state.editUser,
+          <div>
+            <h1> Edit your profile</h1>
             <AuthForm
               buttonText="Update"
               onComplete={this.props.userUpdate}
@@ -52,9 +57,10 @@ class SettingsContainer extends React.Component {
           <p>My Biography: <br/> {this.props.user.bio}</p>
           <h4>My Avatar</h4>
           <img src={this.props.user.avatar}/>
+          <button onClick={this.handleEdit}>Edit Profile</button>
           <h2>Here are all your posts</h2>
           {utils.renderIf(this.props.post,
-          
+
             filtered.map(post =>
               <div key={post._id}>{
                 <PostItem key={post._id} post={post}
