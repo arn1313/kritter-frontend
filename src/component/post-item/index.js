@@ -13,14 +13,24 @@ class PostItem extends React.Component {
     this.state = {
       edit: false,
       showModal: false,
+      statePost: this.props.post,
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.close = this.close.bind(this);
+    this.handleLike = this.handleLike.bind(this);
   }
 
   handleDelete() {
     return this.props.postDelete(this.props.post)
       .catch(console.error);
+  }
+
+  handleLike(){
+    console.log('STATEPOST',this.state.statePost);
+    this.state.statePost.likes++;
+    console.log('afterupvote',this.state.statePost);
+    
+    return this.props.updatePost(this.state.statePost);
   }
 
   close() {
@@ -43,6 +53,8 @@ class PostItem extends React.Component {
             </div>
             <p className="post-text">{this.props.post.description}</p>
             <img className="u-full-width" src={this.props.post.url} /><br />
+            <p>{this.props.post.likes}</p>
+            <Button bsStyle="info" onClick={this.handleLike}>PawUP</Button>
             {utils.renderIf(this.props.post.ownerId === this.props.user._id,
               <div>
                 <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
@@ -96,7 +108,6 @@ let mapStateToProps = state => ({
 });
 
 let mapDispatchToProps = dispatch => ({
-
   postDelete: (post) => dispatch(postDeleteRequest(post)),
   updatePost: (post) => dispatch(postUpdateRequest(post)),
 });
