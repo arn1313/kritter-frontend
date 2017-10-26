@@ -77,7 +77,7 @@ class AuthForm extends React.Component {
         {utils.renderIf(this.state.usernameError,
           <span className="tooltip">{this.state.usernameError}</span>
         )}
-
+        <h2>Username</h2><br/>
         <input
           type="text"
           name="username"
@@ -91,6 +91,7 @@ class AuthForm extends React.Component {
 
         {utils.renderIf(this.props.auth === 'login',
           <div>
+            <h2>Password</h2><br/>
             <input
               type="password"
               name="password"
@@ -103,13 +104,14 @@ class AuthForm extends React.Component {
 
         {utils.renderIf(this.props.auth === 'signup',
           <div>
+            <h2>Email</h2><br/>
             <input
               type="email"
               name="email"
               placeholder="email"
               value={this.state.email}
               onChange={this.handleChange} /><br/>
-
+            <h2>About Me Bio</h2><br/>
             <textarea
               name="bio"
               cols="30"
@@ -117,7 +119,7 @@ class AuthForm extends React.Component {
               value={this.state.bio}
               onChange={this.handleChange}>
             </textarea><br/>
-
+            <h2>Species</h2><br/>
             <input
               type="text"
               name="species"
@@ -125,11 +127,7 @@ class AuthForm extends React.Component {
               value={this.state.species}
               onChange={this.handleChange}/><br/>
 
-            <img src={this.state.preview} style={{'width': '25%'}}/><br/>
-            <input
-              type="file"
-              name="avatar"
-              onChange={this.handleChange}/><br/>
+            <h2>Password</h2><br/>
             <input
               type="password"
               name="password"
@@ -142,13 +140,14 @@ class AuthForm extends React.Component {
 
         {utils.renderIf(this.props.buttonText === 'Update',
           <div>
+            <h2>Email</h2><br/>
             <input
               type="email"
               name="email"
               placeholder="email"
               value={this.state.email}
               onChange={this.handleChange} /><br/>
-
+            <h2>About Me Biography</h2><br/>
             <textarea
               name="bio"
               cols="30"
@@ -156,14 +155,14 @@ class AuthForm extends React.Component {
               value={this.state.bio}
               onChange={this.handleChange}>
             </textarea><br/>
-
+            <h2>Species</h2><br/>
             <input
               type="text"
               name="species"
               placeholder="species"
               value={this.state.species}
               onChange={this.handleChange}/><br/>
-
+            <h2>Avatar</h2><br/>
             <img src={this.state.preview} style={{'width': '25%'}}/><br/>
             <input
               type="file"
