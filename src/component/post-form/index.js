@@ -8,7 +8,7 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
+    let emptyState = {url: '', description: '', timeStamp: new Date(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
     this.state = props.post ? props.post : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,7 +21,7 @@ class PostForm extends React.Component {
         ownerName: nextProps.account.username,
         ownerAvatar: nextProps.account.avatar,
         ownerId: nextProps.account.id,
-        timeStamp: new Date().getTime(),
+        timeStamp: new Date(),
 
       });
   }
@@ -49,7 +49,7 @@ class PostForm extends React.Component {
       .then((console.log('******sentoffstate', this.state)))
       .then(() => {
         if(!this.props.user){
-          this.setState({url: '', description: '', timeStamp: new Date().getTime(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
+          this.setState({url: '', description: '', timeStamp: new Date(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
         }
       });
   }
@@ -77,7 +77,7 @@ class PostForm extends React.Component {
                 name="photo"
                 onChange={this.handleChange}/>
 
-                {/* <div className="container u-full-width picture-thing">
+              {/* <div className="container u-full-width picture-thing">
               <img src={this.state.preview} style={{'width': '25%'}}/></div> */}
             </div>
             <button type="submit">{this.props.buttonText}</button>
