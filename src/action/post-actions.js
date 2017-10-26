@@ -25,6 +25,8 @@ export const postSet = post => ({
 });
 
 
+
+
 export const postFetchRequest = () => (dispatch, getState) => {
   let {auth} = getState();
   return superagent.get(`${__API_URL__}/post/me`)
@@ -55,6 +57,7 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
     .field('ownerName', post.ownerName)
     .field('ownerAvatar', post.ownerAvatar)
     .field('ownerId', post.ownerId)
+    .field('likes', post.likes)
     .attach('url', post.url)
     // .send(post)
     .then((res) => {
@@ -75,11 +78,13 @@ export const postDeleteRequest = (post) => (dispatch, getState) => {
 };
 
 export const postUpdateRequest = (post) => (dispatch, getState) => {
+  console.log('==>', post);
   let {auth} = getState();
   return superagent.put(`${__API_URL__}/post/${post._id}`)
     .set('Authorization', `Bearer ${auth}`)
     .field('description', post.description)
     .field('timeStamp', post.timeStamp)
+    .field('likes', post.likes)
     .attach('url', post.url)
     .then(res => {
       dispatch(postUpdate(res.body));

@@ -12,7 +12,11 @@ class PostList extends React.Component {
     };
   }
 
+
   render () {
+    // let sortedArray = this.props.post.reverse();
+    // console.log('==========>',sortedArray);
+    // console.log('=========>original', this.props.post);
     return (
       <div>
         {utils.renderIf(this.props.post,
