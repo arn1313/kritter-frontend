@@ -8,11 +8,15 @@ class PostList extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-
+      sortedArray: this.props.post,
+      
     };
   }
-
+  
+  
   render () {
+    // console.log('==========>',sortedArray);
+    // console.log('=========>original', this.props.post);
     return (
       <div>
         {utils.renderIf(this.props.post,

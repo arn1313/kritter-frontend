@@ -22,7 +22,7 @@
 
 
 ### How to Use
-To use the app just navigate to our website located at """""""" and create an account. After you become a member you will have full access to all the features of Kritter.
+To use the app just navigate to our website located at http://www.kritter.club/ and create an account. After you become a member you will have full access to all the features of Kritter.
 
 ### User Sign Up
 Once you have arrived to the website, you will be prompted to create an account. This will require you to input a valid email address and create a password. On your first sign in you will also be asked to upload a picture of your pet and fill out a short bio.
@@ -38,7 +38,7 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/debug.
 
-* **eslint** : A linting tool used to evaluate our code to catch any syntax errors. It is heavily suggested to use this if you plan to contribute to our code. For my information on contributing to Pi Spy, see the "How To Report Bugs or Issues" section.
+* **eslint** : A linting tool used to evaluate our code to catch any syntax errors. I
 
   * Documentation can be found at https://www.npmjs.com/package/eslint.
 
@@ -64,9 +64,37 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/aws-sdk-mock.
 
-* **babel** : A transpiler for Javascript which allows the usage of ES^ syntax.
+* **babel** : A transpiler for Javascript which allows the usage of ES6 syntax.
 
   * Documentation can be found at https://www.npmjs.com/package/babel-core
+
+* **babel-cli** :Provides a command line for babel.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-cli.
+
+* **babel-core** : Babels compiler core.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-core.
+
+* **babel-loader** : Allows transpiling Javascript files using Babel and webpack.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-loader.
+
+* **babel-plugin-transform-object-rest-spread** : Allows babel to transform rest properties for object destructuring assignments and spread properties for object literals.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread.
+
+* **babel-preset-es2015** : Presets for es2015 plugins.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-preset-es2015.
+
+* **babel-preset-react** : Presets for React plugins.
+
+  * Documentation can be found at https://www.npmjs.com/package/babel-preset-react.
+
+* **babel-register** : A require hook for using babel.
+
+  * Documentation can be found at https://babeljs.io/docs/usage/babel-register/.
 
 * **bcrypt** : A dependency to hash our users' passwords, for their security.
 
@@ -76,11 +104,19 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/body-parser.
 
+* **clean-webpack-plugin** :
+
+  * Documentation can be found at https://www.npmjs.com/package/clean-webpack-plugin.
+
 * **cookie-parser** : Parses our cookies and puts the cookie information on req object in the middleware.
 
-* Documentation can be found at https://www.npmjs.com/package/cookie-parser.
+  * Documentation can be found at https://www.npmjs.com/package/cookie-parser.
 
-* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. For more information on what CORS is, please refer to https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS.
+* **css-loader** : Interprets @import and url() like import/require() and will resolve them.
+
+  * Documentation can be found at https://www.npmjs.com/package/css-loader.
+
+* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. 
 
   * Documentation can be found at https://www.npmjs.com/package/cors.
 
@@ -100,6 +136,22 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/file-loader.
 
+* **fs-extra** : Adds file system methods that are not included in the native fs module.
+
+  * Documentation can be found at https://www.npmjs.com/package/fs-extra.
+
+* **http-errors** : Creates http errors for Express.
+
+  * Documentation can be found at https://www.npmjs.com/package/http-errors.
+
+* **html-webpack-plugin** : Simplifies the creation of HTML files to serve the webpack bundles.
+
+  * Documentation can be found at https://www.npmjs.com/package/html-webpack-plugin.
+
+* **json-parser** : JSON parser to parse JSON object and MAINTAIN comments.
+
+  * Documentation can be found at https://www.npmjs.com/package/json-parser.
+
 * **jsonwebtoken** : An implementation of JSON Web Tokens. Used for user authorization.
 
   * Documentation can be found at https://www.npmjs.com/package/jsonwebtoken.
@@ -118,11 +170,19 @@ Once you have set up your account, the next time you visit the site you will be 
 
 * **multer** : Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
 
-  * Documentation can be found at https://www.npmjs.com/package/multer.
+  * Documentation can be found at https://www.npmjs.com/package/multer
+
+* **nodemon** : Watches all files in your directory and refreshes your node application as changes are made.
+
+  * Documentation can be found at https://www.npmjs.com/package/nodemon.
 
 * **node-sass** : Node-sass is a library that provides binding for Node.js to LibSass.
 
   * Documentation can be found at https://www.npmjs.com/package/node-sass.
+
+* **ramda** : A library for Javascript that assists with functional programming.
+
+  * Documentation can be found at https://www.npmjs.com/package/ramda.
 
 * **react** : Allows immediate access to React without requiring a JSX transformer.
 
@@ -180,12 +240,6 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/webpack-dev-server.
 
-
-* ****
-
-  * Documentation can be found at
-
-
 ### How to Report Bugs or Issues
 Bugs and Issues can be reported through our GitHub repository located at https://github.com/arn1313/kritter-frontend/issues. To create a new issue, simply click the green "New Issue" button, and add a description of the issue or bug, with a method for replication if possible. If you want to contribute to the project, feel free to fork our repository and create a pull request, which will be reviewed by one of our team members. You will be credited for your contributions in our "Credits And Thanks" section of this README.
 
@@ -206,7 +260,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/gavinthomas1192/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/GavinThomas1192)
 
-![Gavin](./img/a.png)
+![Gavin](./src/img/g.png)
 
 
 
@@ -214,7 +268,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/kpryzk/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/kpryzk)
 
-![Katherine](./img/a.png)
+![Katherine](./src/img/k.png)
 
 
 
@@ -225,7 +279,6 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 ![Isaiah](./src/img/i.png)
 
 Isaiah is a creature from earth. He identifies as human/other. He enjoys eating food, sleeping from time to time(on a daily basis...sometimes), and living life. Isaiah emerged into this realm roughly 27years ago with the intent to do things. Isaiah has recently taken part in the life-time companionship agreement with another creature from earth(Katie). Be aware that when approaching Isaiah, he may seem distracted or spaced out. This is normal, he is just trying to figure out what he will be eating later that day.
-
 
 + **Aaron**:  
 

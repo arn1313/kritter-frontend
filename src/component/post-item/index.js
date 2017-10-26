@@ -13,14 +13,26 @@ class PostItem extends React.Component {
     this.state = {
       edit: false,
       showModal: false,
+      statePost: this.props.post,
+      counterForLike: 0,
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.close = this.close.bind(this);
+    this.handleLike = this.handleLike.bind(this);
   }
 
   handleDelete() {
     return this.props.postDelete(this.props.post)
       .catch(console.error);
+  }
+
+  handleLike(){
+    this.state.statePost.likes++;
+    this.state.counterForLike++;
+    // this.setState({counterForLike: 1});
+
+    
+    return this.props.updatePost(this.state.statePost);
   }
 
   close() {
@@ -49,31 +61,40 @@ class PostItem extends React.Component {
               <span><h4>{this.props.post.ownerName}</h4><br />
                 <h5>{this.props.post.timeStamp}</h5></span>
             </div>
+
             <p className="post-text">{this.props.post.description}</p>
             <img className="u-full-width" src={this.props.post.url} /><br />
+
+            <p>{this.props.post.likes}</p>
+
+            {utils.renderIf(this.state.counterForLike < 1,
+              <Button bsStyle="info" onClick={this.handleLike}>PawUP</Button>
+            )}
+
+            {utils.renderIf(this.props.post.ownerId === this.props.user._id,
+              <div>
+                <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+                <Button bsStyle="primary" onClick={() =>this.setState({edit: !this.state.edit})}>Edit</Button>
+              </div>
+
+
+            )}
+
+
           </div>
         )}
 
         {utils.renderIf(this.state.edit,
           <div className="static-modal">
-            <Modal show={this.state.showModal}>
-              <Modal.Header>
-                <Modal.Title>Update Your Post</Modal.Title>
-              </Modal.Header>
 
-              <Modal.Body>
-                <PostForm
-                  hideUploadForm={'hideUploadForm'}
-                  post={this.props.post}
-                  buttonText='update'
-                  onComplete={this.props.updatePost}
-                />
 
-              </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={this.close}>Close</Button>
-              </Modal.Footer>
-            </Modal>
+            <PostForm
+              hideUploadForm={'hideUploadForm'}
+              post={this.props.post}
+              buttonText='update'
+              onComplete={this.props.updatePost}
+            />
+
           </div>
 
         )}
@@ -95,7 +116,6 @@ let mapStateToProps = state => ({
 });
 
 let mapDispatchToProps = dispatch => ({
-
   postDelete: (post) => dispatch(postDeleteRequest(post)),
   updatePost: (post) => dispatch(postUpdateRequest(post)),
 });
