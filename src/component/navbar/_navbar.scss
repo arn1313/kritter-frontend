@@ -24,7 +24,6 @@
 
 .nav-header a {
   line-height: 1.5;
-  padding: 0em .8em;
   margin: 0;
   font-size: .8em;
   position: relative;
@@ -32,15 +31,6 @@
   color: grey;
 
 }
-header h4 {
-  line-height: 1.35;
-  font-size:  1.2em;
-  margin: 0;
-  position: relative;
-  top: .8em;
-  color: white;
-}
-
 
 .nav-logo {
   border-radius: 25px;
@@ -86,9 +76,15 @@ header h1 {
   text-align: center;
 }
 
-// .nav-links {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
+.nav-settings {
+  padding: 0em .8em;
+}
+
+header h4 {
+  line-height: 1.35;
+  font-size:  1.5em;
+  margin: 0;
+  position: relative;
+  top: 1.5em;
+  color: white;
+}
