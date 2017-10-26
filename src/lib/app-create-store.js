@@ -4,11 +4,12 @@ import reporter from './redux-reporter';
 import {createStore, applyMiddleware, compose} from 'redux';
 import {persistStore, autoRehydrate} from 'redux-persist';
 
-let appStoreCreate = () => 
-  createStore(reducer, compose(applyMiddleware(thunk, reporter), autoRehydrate()));
+let appStoreCreate = () =>
+  createStore(reducer, undefined, compose(applyMiddleware(thunk, reporter), autoRehydrate({log:true})));
 
 
 export default appStoreCreate;
 
 
-
+// createStore(rootReducer, initialState, compose()) to 
+// createStore(rootReducer, undefined, compose())

@@ -8,7 +8,7 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    let emptyState = {url: '', description: '', timeStamp: new Date().getTime(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
+    let emptyState = {url: '', description: '', timeStamp: new Date(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
     this.state = props.post ? props.post : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,7 +21,7 @@ class PostForm extends React.Component {
         ownerName: nextProps.account.username,
         ownerAvatar: nextProps.account.avatar,
         ownerId: nextProps.account.id,
-        timeStamp: new Date().getTime(),
+        timeStamp: new Date(),
 
       });
   }
@@ -49,48 +49,43 @@ class PostForm extends React.Component {
       .then((console.log('******sentoffstate', this.state)))
       .then(() => {
         if(!this.props.user){
-          this.setState({url: '', description: '', timeStamp: new Date().getTime(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
+          this.setState({url: '', description: '', timeStamp: new Date(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
         }
       });
   }
 
   render () {
     return (
-      <div className='postForm'>
-        <h1>THIS IS POST FORM</h1>
-        <br/>
+      <div className='row form-form'>
         <form
           className="postFormform"
           onSubmit={this.handleSubmit}>
 
-
-          <h2>Whats on your mind?</h2>
-
           <textarea
+            className="u-full-width"
+            placeholder="what's up?"
             name="description"
-            cols="30"
-            rows="5"
             value={this.state.description}
             onChange={this.handleChange}>
           </textarea>
 
-          <h1>Or....</h1>
-          <h2>Share a photo with your animal friends</h2>
-          <input
-            type="file"
-            name="photo"
-            onChange={this.handleChange}/>
-          <img src={this.state.preview} style={{'width': '25%'}}/>
+          <div className="row">
+            <div className="nine columns">
+              <input
+                className="u-full-width"
+                type="file"
+                name="photo"
+                onChange={this.handleChange}/>
 
-          <button type="submit">{this.props.buttonText}</button>
+              {/* <div className="container u-full-width picture-thing">
+              <img src={this.state.preview} style={{'width': '25%'}}/></div> */}
+            </div>
+            <button type="submit">{this.props.buttonText}</button>
+          </div>
         </form>
-
-
-
       </div>
     );
   }
-
 }
 
 
