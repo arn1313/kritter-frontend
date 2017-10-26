@@ -89,6 +89,18 @@ class AuthForm extends React.Component {
           <span className="tooltip">{this.state.emailError}</span>
         )}
 
+        {utils.renderIf(this.props.auth === 'login',
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.handleChange}/><br/>
+          </div>
+
+        )}
+
         {utils.renderIf(this.props.auth === 'signup',
           <div>
             <input
@@ -118,7 +130,14 @@ class AuthForm extends React.Component {
               type="file"
               name="avatar"
               onChange={this.handleChange}/><br/>
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.handleChange}/><br/>
           </div>
+
         )}
 
         {utils.renderIf(this.props.buttonText === 'Update',
@@ -157,12 +176,6 @@ class AuthForm extends React.Component {
           <span className="tooltip">{this.state.passwordError}</span>
         )}
 
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={this.state.password}
-          onChange={this.handleChange}/><br/>
 
 
 
