@@ -88,7 +88,6 @@ export const userUpdateRequest = (user) => (dispatch, getState) => {
     .set('Authorization', `Bearer ${auth}`)
  
     .field('email', user.email)
-    .field('username', user.username)
     .field('bio', user.bio)
     .field('species', user.species)
     .attach('avatar', user.avatar)
