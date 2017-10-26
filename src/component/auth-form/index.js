@@ -87,7 +87,7 @@ class AuthForm extends React.Component {
                 <input
                   type="text"
                   name="username"
-                  placeholder="username"
+                  placeholder="name"
                   value={this.state.username}
                   onChange={this.handleChange}/>
               </div>
@@ -119,7 +119,7 @@ class AuthForm extends React.Component {
                   <input
                     type="text"
                     name="username"
-                    placeholder="username"
+                    placeholder="name"
                     value={this.state.username}
                     onChange={this.handleChange}/>
                 </div>
@@ -157,9 +157,10 @@ class AuthForm extends React.Component {
                 </div>
               </div>
 
-              <div className="u-full-width">
+              <div>
                 <label for="bio">Bio</label>
                 <textarea
+                  className="u-full-width"
                   name="bio"
                   cols="30"
                   rows="5"
