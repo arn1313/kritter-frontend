@@ -14,6 +14,7 @@ class PostItem extends React.Component {
       edit: false,
       showModal: false,
       statePost: this.props.post,
+      counterForLike: 0,
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.close = this.close.bind(this);
@@ -26,9 +27,10 @@ class PostItem extends React.Component {
   }
 
   handleLike(){
-    console.log('STATEPOST',this.state.statePost);
     this.state.statePost.likes++;
-    console.log('afterupvote',this.state.statePost);
+    this.state.counterForLike++;
+    // this.setState({counterForLike: 1});
+
     
     return this.props.updatePost(this.state.statePost);
   }
@@ -51,10 +53,15 @@ class PostItem extends React.Component {
               <span><h4>{this.props.post.ownerName}</h4><br />
                 <h5>{this.props.post.timeStamp}</h5></span>
             </div>
+
             <p className="post-text">{this.props.post.description}</p>
             <img className="u-full-width" src={this.props.post.url} /><br />
             <p>{this.props.post.likes}</p>
-            <Button bsStyle="info" onClick={this.handleLike}>PawUP</Button>
+
+            {utils.renderIf(this.state.counterForLike < 1,
+              <Button bsStyle="info" onClick={this.handleLike}>PawUP</Button>
+            )}
+
             {utils.renderIf(this.props.post.ownerId === this.props.user._id,
               <div>
                 <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
