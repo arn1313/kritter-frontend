@@ -27,7 +27,6 @@ class SettingsContainer extends React.Component {
 
   render() {
     let filtered = this.props.post.filter(post => post.ownerId === this.props.user._id);
-    console.log('===>', this.props.post[2].ownerId, this.props.user._id);
     console.log('+++++>', filtered);
     return (
       <section>
