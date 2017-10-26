@@ -41,7 +41,6 @@ class PostItem extends React.Component {
 
 
   render () {
-    console.log('******pos',this.props.post);
     return (
       <div>
         {utils.renderIf(this.props.renderText !== 'photoOnly',
