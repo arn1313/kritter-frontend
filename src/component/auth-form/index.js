@@ -75,109 +75,152 @@ class AuthForm extends React.Component {
           onSubmit={this.handleSubmit}
           className="auth-form">
 
-          {utils.renderIf(this.state.usernameError,
-            <span className="tooltip">{this.state.usernameError}</span>
-          )}
-          <label for="username">Full Name</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="username"
-            value={this.state.username}
-            onChange={this.handleChange}/><br/>
-
-          {utils.renderIf(this.state.emailError,
-            <span className="tooltip">{this.state.emailError}</span>
-          )}
-
           {utils.renderIf(this.props.auth === 'login',
-            <div>
-              <label for="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                value={this.state.password}
-                onChange={this.handleChange}/><br/>
-            </div>
 
+            <div className="row">
+              <div className="six columns">
+                {utils.renderIf(this.state.usernameError,
+                  <span className="tooltip">{this.state.usernameError}</span>
+                )}
+
+                <label for="username">Full Name</label>
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="name"
+                  value={this.state.username}
+                  onChange={this.handleChange}/>
+              </div>
+
+              <div className="six columns">
+                {utils.renderIf(this.state.emailError,
+                  <span className="tooltip">{this.state.emailError}</span>
+                )}
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}/>
+              </div>
+            </div>
           )}
+
 
           {utils.renderIf(this.props.auth === 'signup',
-            <div>
-              <h2>Email</h2><br/>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                value={this.state.email}
-                onChange={this.handleChange} /><br/>
-              <h2>About Me Bio</h2><br/>
-              <textarea
-                name="bio"
-                cols="30"
-                rows="5"
-                value={this.state.bio}
-                onChange={this.handleChange}>
-              </textarea><br/>
-              <h2>Species</h2><br/>
-              <input
-                type="text"
-                name="species"
-                placeholder="species"
-                value={this.state.species}
-                onChange={this.handleChange}/><br/>
+            <section>
+              <div className="row">
+                <div className="six columns">
+                  {utils.renderIf(this.state.usernameError,
+                    <span className="tooltip">{this.state.usernameError}</span>
+                  )}
+                  <label for="username">Full Name</label>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="name"
+                    value={this.state.username}
+                    onChange={this.handleChange}/>
+                </div>
 
-              <h2>Password</h2><br/>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                value={this.state.password}
-                onChange={this.handleChange}/><br/>
-            </div>
+                <div className="six columns">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    value={this.state.email}
+                    onChange={this.handleChange} />
+                </div>
+              </div>
 
+              <div className="row">
+                <div className="six columns">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}/>
+                </div>
+
+                <div className="six columns">
+                  <label for="species">Species</label>
+                  <input
+                    type="text"
+                    name="species"
+                    placeholder="species"
+                    value={this.state.species}
+                    onChange={this.handleChange}/>
+                </div>
+              </div>
+
+              <div>
+                <label for="bio">Bio</label>
+                <textarea
+                  className="u-full-width"
+                  name="bio"
+                  cols="30"
+                  rows="5"
+                  value={this.state.bio}
+                  onChange={this.handleChange}>
+                </textarea>
+              </div>
+            </section>
           )}
 
-          {utils.renderIf(this.props.buttonText === 'Update',
-            <div>
-              <h2>Email</h2><br/>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                value={this.state.email}
-                onChange={this.handleChange} /><br/>
-              <h2>About Me Biography</h2><br/>
-              <textarea
-                name="bio"
-                cols="30"
-                rows="5"
-                value={this.state.bio}
-                onChange={this.handleChange}>
-              </textarea><br/>
-              <h2>Species</h2><br/>
-              <input
-                type="text"
-                name="species"
-                placeholder="species"
-                value={this.state.species}
-                onChange={this.handleChange}/><br/>
-              <h2>Avatar</h2><br/>
-              <img src={this.state.preview} style={{'width': '25%'}}/><br/>
-              <input
-                type="file"
-                name="avatar"
-                onChange={this.handleChange}/><br/>
-            </div>
-          )}
+          <div>
+            {utils.renderIf(this.props.buttonText === 'Update',
+              <section>
+                <div className="row">
+                  <div className="six columns">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="email"
+                      value={this.state.email}
+                      onChange={this.handleChange} />
+                  </div>
+                  <div className="six columns">
+                    <label for="species">Species</label>
+                    <input
+                      type="text"
+                      name="species"
+                      placeholder="species"
+                      value={this.state.species}
+                      onChange={this.handleChange}/>
+                  </div>
+
+                </div>
+
+                <label for="bio">Bio</label>
+
+                <textarea
+                  className="u-full-width"
+                  name="bio"
+                  cols="30"
+                  rows="5"
+                  value={this.state.bio}
+                  onChange={this.handleChange}>
+                </textarea>
+                <label for="avatar">Avatar</label>
+                <img src={this.state.preview} style={{'width': '25%'}}/>
+                <input
+                  type="file"
+                  name="avatar"
+                  onChange={this.handleChange}/>
+              </section>
+            )}
+          </div>
 
           {utils.renderIf(this.state.passwordError,
-            <span className="tooltip">{this.state.passwordError}</span>
+            <div>
+              <span className="tooltip">{this.state.passwordError}</span>
+            </div>
           )}
-
-
-
 
           <Button bsStyle="primary" type='submit'>{this.props.buttonText}</Button>
         </form>
