@@ -2,7 +2,7 @@ import React from 'react';
 import AuthForm from '../auth-form';
 import {connect} from 'react-redux';
 import * as utils from '../../lib/utils';
-import {Button, Modal} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import {signupRequest, loginRequest} from '../../action/auth-actions';
 import {stringify} from 'querystring';
 
@@ -33,24 +33,12 @@ class LandingContainer extends React.Component {
     return (
       <section>
         <div className="static-modal">
-          <Modal show={this.state.showModal}>
-            <Modal.Header>
-              <Modal.Title>Please {params.auth}</Modal.Title>
-            </Modal.Header>
-  
-            <Modal.Body>
-              <AuthForm 
-                auth={params.auth}
-                redirect={redirect}
-                onComplete={handleComplete}
-                buttonText={'submit'} />
-                
-
-            </Modal.Body> 
-            <Modal.Footer>
-              <Button onClick={this.close}>Close</Button>
-            </Modal.Footer>  
-          </Modal>
+          <h1> Please {params.auth}</h1>
+          <AuthForm 
+            auth={params.auth}
+            redirect={redirect}
+            onComplete={handleComplete}
+            buttonText={'submit'} />
         </div>
       </section>
     );
