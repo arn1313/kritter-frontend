@@ -258,13 +258,13 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 **OurTeam**
 
-+ **Gavin**:  Gavin was born and raised locally here in the Pacific Northwest. In his past career at Pierce County Sheriff's Department he learned a lot about himself. The greatest of those things are that he loves to help people. He lives for the feeling he gets after truly making someone happy. This led him to search for a new career where he could satsify his need to help. Gavin found technology, more specifically Github, where he discovered there are thousands of people that are creating things for free, just to help others. He was hooked he knew this was where he wanted to be. 
++ **Gavin**: 
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/gavinthomas1192/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/GavinThomas1192)
 
 ![Gavin](./src/img/g.png)
 
-
+Gavin was born and raised locally here in the Pacific Northwest. In his past career at Pierce County Sheriff's Department he learned a lot about himself. The greatest of those things are that he loves to help people. He lives for the feeling he gets after truly making someone happy. This led him to search for a new career where he could satisfy his need to help. Gavin found technology, more specifically Github, where he discovered there are thousands of people that are creating things for free, just to help others. He was hooked he knew this was where he wanted to be.
 
 + **Katherine**:  
 
