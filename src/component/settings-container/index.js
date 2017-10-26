@@ -31,19 +31,19 @@ class SettingsContainer extends React.Component {
     console.log('+++++>', filtered);
     return (
       <section>
-        
-        {utils.renderIf(!this.props.user.avatar,
+
+        {/* {utils.renderIf(!this.props.user.avatar, */}
           <div>
             <h1>I see this is your first time logging in</h1>
             <h3>Feel free to upload an avatar and edit your profile </h3>
-            
-         
+
+
             <AuthForm
               buttonText="Update"
               onComplete={this.props.userUpdate}
               user={this.props.user}/>
           </div>
-        )}
+        {/* )} */}
 
         <div className="user-form-container">
           <h1> About me </h1>
@@ -54,7 +54,7 @@ class SettingsContainer extends React.Component {
           <img src={this.props.user.avatar}/>
           <h2>Here are all your posts</h2>
           {utils.renderIf(this.props.post,
-          
+
             filtered.map(post =>
               <div key={post._id}>{
                 <PostItem key={post._id} post={post}

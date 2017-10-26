@@ -4,8 +4,9 @@ body {
   line-height: 1.6;
   font-weight: 400;
   background-color: #f7f7f7;
-  /*background-image: url("https://ak1.ostkcdn.com/images/products/8367239/Black-Paw-Print-Tracks-Vinyl-Art-Quote-2b8aa210-db61-47e0-8fcd-3fb35c08e345_600.jpg");*/
+  background-image: url("https://ak1.ostkcdn.com/images/products/8367239/Black-Paw-Print-Tracks-Vinyl-Art-Quote-2b8aa210-db61-47e0-8fcd-3fb35c08e345_600.jpg");
   background-attachment: fixed;
+  background-position: bottom;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -15,9 +16,6 @@ html {
 
 a {
   text-decoration: none;
-  // display: inline-block;
-  // color: grey;
-  // margin: 0em .5em 0em .5em;
 }
 
 a:hover {

@@ -5,10 +5,11 @@ import {postCreateRequest, postFetchAllRequest} from '../../action/post-actions'
 import {Button} from 'react-bootstrap';
 import PostForm from '../post-form';
 import PostList from '../post-list-container';
+import {Link} from 'react-router-dom';
 
 
 
-class DashboardContainer extends React.Component {
+class Aside extends React.Component {
   constructor(props){
     super(props);
     this.state ={
@@ -21,17 +22,17 @@ class DashboardContainer extends React.Component {
 
 
   render() {
-    console.log('__USER__', this.props.user, '__USER__');
-
 
     return (
-      <section className="nine columns container">
-        <PostForm
-          buttonText={'submit'}
-          onComplete={this.props.postCreate}
-          user={this.props.user ? this.props.user : {lulwat: 'hahahah'}} />
-        <PostList />
-      </section>
+      <div className="row">
+        <aside className="three columns">
+          <ul>
+            <li><Link to="/gallery">KritterPub</Link></li>
+            <li>friends</li>
+            <li>garbage</li>
+          </ul>
+        </aside>
+      </div>
     );
   }
 }
@@ -49,4 +50,4 @@ let mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Aside);

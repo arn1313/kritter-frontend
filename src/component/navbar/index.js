@@ -34,8 +34,7 @@ class Navbar extends React.Component {
                 <span><Link to="/home"><h1>kritter</h1></Link></span>
               </div>
               <div className="nav-header">
-                <img className="nav-logo" src="http://via.placeholder.com/50x50" />
-                <span><h4>sdfkgjskfgjlskjdfgkjsgf{this.props.user.username}</h4> <br />
+                <img className="post-logo" style={{'width': '50px', 'height': '50px', 'border': '1px solid grey'}} src={this.props.user.avatar} />                <span><h4>sdfkgjskfgjlskjdfgkjsgf{this.props.user.username}</h4> <br />
                   <span className="nav-settings"><Link to="/settings"><h5>settings</h5></Link><h5 onClick={this.handleLogout}><Link to="/home">logout</Link></h5></span></span>
               </div>
             </header>
@@ -45,13 +44,7 @@ class Navbar extends React.Component {
         }
         <ul>
           {this.props.auth ?
-            // undefined
-      <div>
-        {/* <li onClick={this.handleLogout}><Link to="/home">Logout</Link></li>
-        <li><Link to="/home">Dashboard</Link></li>
-        <li><Link to="/settings">Settings</Link></li> */}
-        <li><Link to="/gallery">KritterPub</Link></li>
-      </div>
+            undefined
             :
             <div>
               <li><Link to="/welcome/signup">Signup</Link></li>

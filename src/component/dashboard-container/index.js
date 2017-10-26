@@ -5,6 +5,7 @@ import {postCreateRequest, postFetchAllRequest} from '../../action/post-actions'
 import {Button} from 'react-bootstrap';
 import PostForm from '../post-form';
 import PostList from '../post-list-container';
+import Aside from '../aside';
 
 
 
@@ -25,13 +26,16 @@ class DashboardContainer extends React.Component {
 
 
     return (
-      <section className="nine columns container">
-        <PostForm
-          buttonText={'submit'}
-          onComplete={this.props.postCreate}
-          user={this.props.user ? this.props.user : {lulwat: 'hahahah'}} />
-        <PostList />
-      </section>
+      <div className="container">
+        <Aside />
+        <section className="nine columns container">
+          <PostForm
+            buttonText={'submit'}
+            onComplete={this.props.postCreate}
+            user={this.props.user ? this.props.user : {lulwat: 'hahahah'}} />
+          <PostList />
+        </section>
+      </div>
     );
   }
 }
