@@ -46,7 +46,6 @@ class PostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     return this.props.onComplete(this.state)
-      .then((console.log('******sentoffstate', this.state)))
       .then(() => {
         if(!this.props.user){
           this.setState({url: '', description: '', likes: 0, timeStamp: new Date(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});

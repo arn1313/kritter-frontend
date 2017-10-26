@@ -15,8 +15,7 @@ class PostList extends React.Component {
   
   
   render () {
-    // console.log('==========>',sortedArray);
-    // console.log('=========>original', this.props.post);
+
     return (
       <div>
         {utils.renderIf(this.props.post,
