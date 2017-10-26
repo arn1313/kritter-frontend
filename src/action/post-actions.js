@@ -46,7 +46,7 @@ export const postFetchAllRequest = () => (dispatch, getState) => {
 
 export const postCreateRequest = (post) => (dispatch, getState) => {
   let {auth} = getState();
-  console.log('**********', post.url);
+  console.log('**********', post);
   return superagent.post(`${__API_URL__}/post`)
     .set('Authorization', `Bearer ${auth}`)
     // .set('Content-Type', 'application/json')
@@ -62,6 +62,7 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
       return res;
     });
 };
+
 
 export const postDeleteRequest = (post) => (dispatch, getState) => {
   let {auth} = getState();

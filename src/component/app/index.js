@@ -32,7 +32,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <Navbar
-              user={this.props.user}/>
+            />
             {utils.renderIf(!this.props.auth,
               <Hero />
             )}
