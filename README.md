@@ -241,7 +241,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/gavinthomas1192/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/GavinThomas1192)
 
-![Gavin](./img/g.png)
+![Gavin](./src/img/g.png)
 
 
 
@@ -249,7 +249,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/kpryzk/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/kpryzk)
 
-![Katherine](./img/k.png)
+![Katherine](./src/img/k.png)
 
 
 
