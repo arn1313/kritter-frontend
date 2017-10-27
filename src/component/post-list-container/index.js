@@ -22,7 +22,7 @@ class PostList extends React.Component {
     return (
       <div>
         {utils.renderIf(this.props.post,
-          sorted.map(post =>
+          this.props.post.map(post =>
             <div key={post._id}>{
               <PostItem key={post._id} post={post}
               />
