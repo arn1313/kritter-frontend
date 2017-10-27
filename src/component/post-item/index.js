@@ -48,6 +48,22 @@ class PostItem extends React.Component {
 
           <div className="post">
             <div className="post-header">
+
+              {utils.renderIf(this.state.edit,
+                <div className="static-modal">
+
+
+                  <PostForm
+                    hideUploadForm={'hideUploadForm'}
+                    post={this.props.post}
+                    buttonText='update'
+                    onComplete={this.props.updatePost}
+                  />
+
+                </div>
+
+              )}
+
               {utils.renderIf(this.props.post.ownerId === this.props.user._id,
                 <div>
                   <div className="alter">
@@ -70,20 +86,18 @@ class PostItem extends React.Component {
               <Button bsStyle="info" onClick={this.handleLike}>PawUP</Button>
             )}
 
-            {utils.renderIf(this.props.post.ownerId === this.props.user._id,
+            {/* {utils.renderIf(this.props.post.ownerId === this.props.user._id,
               <div>
                 <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
                 <Button bsStyle="primary" onClick={() =>this.setState({edit: !this.state.edit})}>Edit</Button>
               </div>
-
-
-            )}
+            )} */}
 
 
           </div>
         )}
 
-        {utils.renderIf(this.state.edit,
+        {/* {utils.renderIf(this.state.edit,
           <div className="static-modal">
 
 
@@ -96,7 +110,7 @@ class PostItem extends React.Component {
 
           </div>
 
-        )}
+        )} */}
 
         {utils.renderIf(this.props.renderText === 'photoOnly',
           <div>
