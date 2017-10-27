@@ -271,6 +271,7 @@ Gavin was born and raised locally here in the Pacific Northwest. In his past car
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/kpryzk/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/kpryzk)
 
 ![Katherine](./src/img/k.png)
+
 Katherine took 12 years away from the Seattle area to meet wonderful people & adorable animals around the world. In Chicago, she found inspiration in the vibrancy of a major city & the beauty of its architecture. In Portland, she helped grow a community of people trying to making the world a better place. After moving to Berlin, the easy access to history, art, and inexpensive flights led her to consider the intersection of travel through technology, and the ability to bring the world into people's homes. She is cool. 
 
 + **Isaiah**:  
