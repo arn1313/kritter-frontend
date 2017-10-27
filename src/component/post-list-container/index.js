@@ -32,6 +32,7 @@ class PostList extends React.Component {
     );
   }
 }
+//testing
 
 let mapStateToProps = state => ({
   auth: state.auth,
