@@ -8,7 +8,7 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
 
-    let emptyState = {url: '', description: '', likes: 0, timeStamp: new Date(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
+    let emptyState = {url: '', description: '', likes: 0, exactTime: new Date().getTime(), timeStamp: new Date(), ownerId: props.account._id, ownerName: props.account.username, ownerAvatar: props.account.avatar, preview: ''};
     this.state = props.post ? props.post : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
@@ -48,7 +48,7 @@ class PostForm extends React.Component {
     return this.props.onComplete(this.state)
       .then(() => {
         if(!this.props.user){
-          this.setState({url: '', description: '', likes: 0, timeStamp: new Date(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
+          this.setState({url: '', description: '', likes: 0, exactTime: new Date().getTime(), timeStamp: new Date(), ownerId: this.props.user._id, ownerName: this.props.user.username, ownerAvatar: this.props.user.avatar, preview: ''});
         }
       });
   }
