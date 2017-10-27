@@ -8,7 +8,6 @@ import {Button} from 'react-bootstrap';
 import {tokenDelete, logoutUser} from '../../action/auth-actions';
 import {stringify} from 'querystring';
 
-
 class Navbar extends React.Component {
   constructor(props){
     super(props);
@@ -41,12 +40,8 @@ class Navbar extends React.Component {
             </header>
           </div>
           :
-          <div className="nav-start">
-            <div className="container row nav-links">
-              <Link to="/welcome/signup"><h1>Signup</h1></Link>
-              <Link to="/welcome/login"><h1>Login</h1></Link>
-            </div>
-          </div>
+          // <Login />
+          undefined
         }
       </div >
     );

@@ -1,6 +1,5 @@
 import React from 'react';
 import * as utils from '../../lib/utils';
-import {Button} from 'react-bootstrap';
 import {stringify} from 'querystring';
 
 class AuthForm extends React.Component {
@@ -222,7 +221,7 @@ class AuthForm extends React.Component {
             </div>
           )}
 
-          <Button bsStyle="primary" type='submit'>{this.props.buttonText}</Button>
+          <button type='submit'>{this.props.buttonText}</button>
         </form>
       </div>
     );
