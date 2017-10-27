@@ -35,7 +35,7 @@ class Navbar extends React.Component {
               <div className="nav-header">
                 <img className="post-logo" style={{'width': '50px', 'height': '50px'}} src={this.props.user.avatar ? this.props.user.avatar : "http://www.iconsdb.com/icons/preview/black/question-mark-xxl.png"} />
                 <span><Link to="/settings"><h4>{this.props.user.username}</h4></Link> <br />
-                  <Link to="/settings">settings</Link>    <Link onClick={this.handleLogout} to="/home">logout</Link></span>
+                  <Link className="settings-link" to="/settings">settings</Link>    <Link onClick={this.handleLogout} to="/home">logout</Link></span>
               </div>
             </header>
           </div>

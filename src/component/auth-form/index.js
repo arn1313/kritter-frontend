@@ -76,7 +76,7 @@ class AuthForm extends React.Component {
 
           {utils.renderIf(this.props.auth === 'login',
             <div className="login-auth">
-              <div className="row">
+              <div className="login-row">
                 <div className="six columns">
                   {utils.renderIf(this.state.usernameError,
                     <span className="tooltip">{this.state.usernameError}</span>
@@ -86,7 +86,7 @@ class AuthForm extends React.Component {
                   <input
                     type="text"
                     name="username"
-                    placeholder="name"
+                    // placeholder="name"
                     value={this.state.username}
                     onChange={this.handleChange}/>
                 </div>
@@ -99,7 +99,7 @@ class AuthForm extends React.Component {
                   <input
                     type="password"
                     name="password"
-                    placeholder="password"
+                    // placeholder="password"
                     value={this.state.password}
                     onChange={this.handleChange}/>
                 </div>
@@ -222,7 +222,7 @@ class AuthForm extends React.Component {
             </div>
           )}
 
-          <button className={this.props.buttonText} type='submit'>{this.props.buttonText}</button>
+          <button className="submit-button" type='submit'>{this.props.buttonText}</button>
         </form>
       </div>
     );

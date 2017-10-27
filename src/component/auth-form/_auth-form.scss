@@ -13,7 +13,7 @@
 }
 
   .signup-form textarea {
-    min-height: 65px;
+    min-height: 100px;
     padding-top: 1em;
     padding-bottom: 6px;
     resize: vertical;
@@ -48,18 +48,18 @@
     font-weight: normal; }
 
     .signup-form form {
-      background-color: white;
+      // background-color: rgba(255, 255, 255, 0.2);;
       padding-right: 2em;
     }
 
+
   .login-auth {
-    background-color: yellow;
     margin: 0 auto;
     position: relative;
-    top: 3em;
+    top: 1em;
     right: 5em;
   }
-  //
-  // .login-auth button {
-  //   background-color: yellow;
-  // }
+
+  .login-row {
+    height: 100px;
+  }

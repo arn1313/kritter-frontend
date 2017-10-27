@@ -49,6 +49,8 @@
 
 .post-image {
   text-align: center;
+  padding-bottom: 1em;
+  border-bottom: 1px solid  #f1f1f1;
 }
 
 .alter {
@@ -67,6 +69,15 @@
 .delete {
   display: inline-block;
   padding: 0em .5em;
+}
+
+
+.like-counter {
+  display: inline-block;
+}
+
+.like-button {
+  float: right;;
 }
 
 @media (max-width: 550px) {

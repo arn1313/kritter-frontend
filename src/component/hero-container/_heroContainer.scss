@@ -36,3 +36,23 @@
 @media (max-width: 550px) {
   .nav-aside{display:none;}
 }
+
+.create {
+  font-weight: 600;
+  margin-left: 1.5em;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.land-head2 {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 3.5em;
+  background-color: white;
+  color: white;
+  margin: 0em .5em;
+  padding: 0em .5em;
+  width: 80%
+}
+
+.login-link {
+  color: #42d1a8;
+}
