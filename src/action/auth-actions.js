@@ -46,7 +46,7 @@ export const signupRequest = user => dispatch => {
       }
       return res;
     })
-    .then(window.location.href = '/settings')
+    .then(window.location.href = 'http://www.kritter.club/settings')
     .catch(console.error);
     
 };
@@ -58,7 +58,7 @@ export const loginRequest = user => dispatch => {
       dispatch(tokenSet(res.text));
       return res;
     })
-    .then(window.location.href = '/home');
+    .then(window.location.href = 'http://www.kritter.club/home');
 };
 
 
