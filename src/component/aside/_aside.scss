@@ -3,18 +3,50 @@ font-family: 'Catamaran', sans-serif;
 font-size: 1.5em;
 text-align: center;
 margin-top: 1.5em;
-}
-
-aside ul {
-  list-style-type: none;
-  padding: 1em 0em;
+border: 1px solid #f1f1f1;
+border-radius: 2px;
 }
 
 aside .bio {
   font-family: 'Roboto', sans-serif;
-  font-size: .5em;
+  font-size: .55em;
+  position: relative;
+  bottom: 1.5em;
+  padding: 0em .4em;
 }
 
 @media (max-width: 550px) {
   .nav-aside{display:none;}
+}
+
+// .span-line {
+//     display: block;
+//     height: 1px;
+//     border: 0;
+//     border-top: 1px solid #42d1a8;
+//     margin: 1em 0;
+//     padding: 0;
+//     width: 80%;
+// }
+
+.aside-head {
+  display: block;
+  height: 2em;
+  background-color: #42d1a8;
+}
+
+.aside-img {
+  width: 85%;
+  position: relative;
+  bottom: 1em;
+  outline: 3px solid white;
+  border: 1px solid #f1f1f1;
+  border-radius: 2px;
+}
+
+.aside-username {
+  margin: .5em 0em;
+  position: relative;
+  bottom: 1em;
+  font-size: 1em;
 }
