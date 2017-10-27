@@ -9,8 +9,7 @@ import {stringify} from 'querystring';
 import {connect} from 'react-redux';
 import * as utils from '../../lib/utils';
 import {Link} from 'react-router-dom';
-
-
+import '../auth-form/_auth-form.scss';
 
 
 class Hero extends React.Component {
@@ -21,35 +20,30 @@ class Hero extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   const elem = ReactDOM.findDOMNode(this.refs.hello);
-  //   if (elem) {
-  //     elem.scrollIntoView(false);
-  //   }
-  // }
-
   render() {
-
-    // let {params} = this.props.match;
-    // let handleComplete = params.auth === 'login' ?
-    //   this.props.login  :
-    //   this.props.signup;
-
-    // let redirect = path => this.props.history.replace(path);
 
     return (
       <div className="landing">
         <div className="landing-row">
-          <div className="six columns please">
+          <div className="six columns signup-form">
+            <h1 className="land-head">Kritter</h1>
+            <h2 className="create">Create a New Account</h2>
             <AuthForm
               className="signup"
               auth='signup'
               onComplete={this.props.signup}
               buttonText={'submit'}/>
           </div>
-          <img className="raccoon" src={img} />
+          {/* <div className="wrap">
+          <div className="raccoon-img">
+            <img className="u-max-width" src={img} />
+          </div>
+        </div> */}
+          <div className="six columns login-thing">
+            <h1 className="land-head2">dflgjdfkg</h1>
+            <Link to="/welcome/login"><h2 className="login-link">...or Login</h2></Link>
+          </div>
         </div>
-        <Link to="/welcome/login"><h1>Login</h1></Link>
 
       </div>
 
