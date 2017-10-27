@@ -13,3 +13,9 @@ form {
   background-color: black;
 
 }
+
+@media (max-width: 550px) {
+  .post-textarea{
+    max-width: 100%;
+  }
+}
