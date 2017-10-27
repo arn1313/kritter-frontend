@@ -46,7 +46,9 @@ export const signupRequest = user => dispatch => {
       }
       return res;
     })
+    // .then(window.location.href = '/settings')
     .catch(console.error);
+    
 };
 export const loginRequest = user => dispatch => {
   return superagent.get(`${__API_URL__}/login`)
@@ -58,6 +60,7 @@ export const loginRequest = user => dispatch => {
     })
     .then(localStorage.clear());
 };
+  // .then(window.location.href = '/home');
 
 
 export const userFetchRequest = () => (dispatch, getState) => {
@@ -88,7 +91,6 @@ export const userUpdateRequest = (user) => (dispatch, getState) => {
     .set('Authorization', `Bearer ${auth}`)
  
     .field('email', user.email)
-    .field('username', user.username)
     .field('bio', user.bio)
     .field('species', user.species)
     .attach('avatar', user.avatar)
