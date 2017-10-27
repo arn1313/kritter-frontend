@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {userFetchRequest} from '../../action/auth-actions';
 import {postCreateRequest, postFetchAllRequest} from '../../action/post-actions';
-import {Button} from 'react-bootstrap';
 import PostForm from '../post-form';
 import PostList from '../post-list-container';
 import {Link} from 'react-router-dom';
@@ -26,7 +25,7 @@ class Aside extends React.Component {
 
     return (
       <div className="row">
-        <aside className="three columns">
+        <aside className="three columns nav-aside">
           <ul>
             <li><img className="u-full-width" src={this.props.user.avatar ? this.props.user.avatar : 'upload'} /></li>
             <li>{this.props.user.username}</li>

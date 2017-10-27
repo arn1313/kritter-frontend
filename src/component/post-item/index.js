@@ -31,7 +31,7 @@ class PostItem extends React.Component {
     this.state.counterForLike++;
     // this.setState({counterForLike: 1});
 
-    
+
     return this.props.updatePost(this.state.statePost);
   }
 
@@ -62,7 +62,7 @@ class PostItem extends React.Component {
             </div>
 
             <p className="post-text">{this.props.post.description}</p>
-            <img className="u-full-width" src={this.props.post.url} /><br />
+            <img className="u-full-width post-image" src={this.props.post.url} /><br />
 
             <p>{this.props.post.likes}</p>
 
@@ -99,11 +99,9 @@ class PostItem extends React.Component {
         )}
 
         {utils.renderIf(this.props.renderText === 'photoOnly',
-          <div className="static-modal">
-            <h2>{this.props.post.ownerName}</h2>
-            <img src={this.props.post.url}/>
+          <div>
+            <img src={this.props.post.url} style={{'maxWidth': '200px', 'maxHeight': '200px'}} />
           </div>
-
         )}
       </div>
     );
