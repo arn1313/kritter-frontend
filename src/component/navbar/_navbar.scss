@@ -1,5 +1,5 @@
 .header-world {
-  background-color: #F7882F;
+  background-color: #42d1a8;
   height: 4.5em;
   position: relative;
   border-bottom: 1px solid #f7f7f7;
@@ -87,4 +87,8 @@ header h4 {
   position: relative;
   top: 1.5em;
   color: white;
+}
+
+@media (max-width: 480px) {
+    .nav-header{display:none;}
 }
