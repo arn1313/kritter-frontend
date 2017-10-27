@@ -56,6 +56,7 @@ export const postCreateRequest = (post) => (dispatch, getState) => {
     .field('ownerName', post.ownerName)
     .field('ownerAvatar', post.ownerAvatar)
     .field('ownerId', post.ownerId)
+    .field('exactTime', post.exactTime)
     .field('likes', post.likes)
     .attach('url', post.url)
     // .send(post)
