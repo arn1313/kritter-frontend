@@ -49,4 +49,19 @@ aside .bio {
   position: relative;
   bottom: 1em;
   font-size: 1em;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.gallery-link {
+  margin: .5em 0em;
+  position: relative;
+  bottom: 1em;
+  font-size: 1em;
+}
+
+aside a {
+  color: #42d1a8;
+  border-top: 1px solid #f1f1f1;
+  overflow: hidden;
+  white-space: nowrap;
 }

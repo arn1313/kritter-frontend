@@ -27,7 +27,7 @@ class Hero extends React.Component {
         <div className="landing-row">
           <div className="six columns signup-form">
             <h1 className="land-head">Kritter</h1>
-            <h5>please kill me or login please do this</h5>
+            <h2 className="create">Create a New Account</h2>
             <AuthForm
               className="signup"
               auth='signup'
@@ -40,7 +40,8 @@ class Hero extends React.Component {
           </div>
         </div> */}
           <div className="six columns login-thing">
-            <Link to="/welcome/login"><h5>or you could login you asshole</h5></Link>
+            <h1 className="land-head2">dflgjdfkg</h1>
+            <Link to="/welcome/login"><h2 className="login-link">...or Login</h2></Link>
           </div>
         </div>
 

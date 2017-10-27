@@ -6,6 +6,7 @@ import {userFetchRequest, userCreateRequest, userUpdateRequest} from '../../acti
 import {postFetchAllRequest} from '../../action/post-actions';
 import PostItem from '../post-item';
 import Aside from '../aside';
+import './_settings-container.scss';
 
 class SettingsContainer extends React.Component {
   constructor(props) {
@@ -35,7 +36,6 @@ class SettingsContainer extends React.Component {
               <h1>I see this is your first time logging in</h1>
               <h3>Feel free to upload an avatar and edit your profile </h3>
 
-
               <AuthForm
                 buttonText="Update"
                 onComplete={this.props.userUpdate}
@@ -45,7 +45,6 @@ class SettingsContainer extends React.Component {
 
           {utils.renderIf(this.state.editUser,
             <div>
-              <h1> Edit your profile</h1>
               <AuthForm
                 buttonText="Update"
                 onComplete={this.props.userUpdate}
@@ -54,7 +53,7 @@ class SettingsContainer extends React.Component {
           )}
 
           <div className="user-form-container">
-            <button onClick={this.handleEdit}>Edit Profile</button>
+            <div className="edit-thing"><div className="edit-div" onClick={this.handleEdit}><p className="edit-text">Edit Profile</p></div></div>
 
             {utils.renderIf(this.props.post,
 

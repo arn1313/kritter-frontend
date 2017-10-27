@@ -80,11 +80,11 @@ class PostItem extends React.Component {
             <p className="post-text">{this.props.post.description}</p>
             <img className="u-full-width post-image" src={this.props.post.url} /><br />
 
-            <p>{this.props.post.likes}</p>
+            <div className="likes-thing">
 
             {utils.renderIf(this.state.counterForLike < 1,
-              <Button bsStyle="info" onClick={this.handleLike}>PawUP</Button>
-            )}
+              <img className="like-button" onClick={this.handleLike} style={{'width': '50px', 'height': '50px'}} src="https://image.flaticon.com/icons/png/512/21/21545.png" />
+            )}<p className="like-counter">{this.props.post.likes}</p></div>
 
             {/* {utils.renderIf(this.props.post.ownerId === this.props.user._id,
               <div>

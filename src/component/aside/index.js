@@ -30,7 +30,7 @@ class Aside extends React.Component {
           <img className="aside-img" src={this.props.user.avatar ? this.props.user.avatar : 'upload'} />
           <h2 className="aside-username">{this.props.user.username}</h2>
           <p className="bio">{this.props.user.bio}</p>
-          <Link to="/gallery">gallery</Link>
+          <Link className="gallery-link" to="/gallery">Friend Activity</Link>
         </aside>
       </div>
     );
