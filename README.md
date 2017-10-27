@@ -258,7 +258,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 
 **OurTeam**
 
-+ **Gavin**: 
++ **Gavin**:
 
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/gavinthomas1192/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/GavinThomas1192)
 
@@ -280,7 +280,7 @@ Gavin was born and raised locally here in the Pacific Northwest. In his past car
 
 ![Isaiah](./src/img/i.png)
 
-Isaiah is a creature from earth. He identifies as human/other. He enjoys eating food, sleeping from time to time(on a daily basis...sometimes), and living life. Isaiah emerged into this realm roughly 27years ago with the intent to do things. Isaiah has recently taken part in the life-time companionship agreement with another creature from earth(Katie). Be aware that when approaching Isaiah, he may seem distracted or spaced out. This is normal, he is just trying to figure out what he will be eating later that day.
+Isaiah is full-stack web developer who utilizes the MERN stack. His past experience was in sales, marketing, management, and customer service where he uncovered his passion of helping others through innovative problem solving. With his skills as a developer and the creative freedom that comes with programming, Isaiah is now better suited to help others through creative problem solving and ready to make a positive impact on the world. 
 
 + **Aaron**:  
 
