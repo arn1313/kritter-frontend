@@ -15,11 +15,14 @@ class PostList extends React.Component {
   
   
   render () {
-
+    let sorted =  this.props.post.sort(function(a,b) {
+      return b.exactTime - a.exactTime;
+    });
+    console.log('====>THIS IS SORTED', sorted);
     return (
       <div>
         {utils.renderIf(this.props.post,
-          this.props.post.map(post =>
+          sorted.map(post =>
             <div key={post._id}>{
               <PostItem key={post._id} post={post}
               />
@@ -29,6 +32,7 @@ class PostList extends React.Component {
     );
   }
 }
+//testing
 
 let mapStateToProps = state => ({
   auth: state.auth,
