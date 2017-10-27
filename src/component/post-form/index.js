@@ -61,7 +61,7 @@ class PostForm extends React.Component {
           onSubmit={this.handleSubmit}>
 
           <textarea
-            className="u-full-width"
+            className="u-full-width post-textarea"
             placeholder="what's up?"
             name="description"
             value={this.state.description}
