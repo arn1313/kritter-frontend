@@ -116,7 +116,7 @@ Once you have set up your account, the next time you visit the site you will be 
 
   * Documentation can be found at https://www.npmjs.com/package/css-loader.
 
-* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. 
+* **cors** : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 
   * Documentation can be found at https://www.npmjs.com/package/cors.
 
@@ -269,8 +269,7 @@ We modeled our backend off of the sluggram-backend created by Duncan Marsh https
 [![LinkedInProfile](https://img.shields.io/badge/LinkedIn-Profile-brightgreen.svg)](https://www.linkedin.com/in/kpryzk/) [![View My Github](https://img.shields.io/badge/View%20My-Github-blue.svg)](https://github.com/kpryzk)
 
 ![Katherine](./src/img/k.png)
-
-
+Katherine took 12 years away from the Seattle area to meet wonderful people & adorable animals around the world. In Chicago, she found inspiration in the vibrancy of a major city & the beauty of its architecture. In Portland, she helped grow a community of people trying to making the world a better place. After moving to Berlin, the easy access to history, art, and inexpensive flights led her to consider the intersection of travel through technology, and the ability to bring the world into people's homes. She is cool. 
 
 + **Isaiah**:  
 
