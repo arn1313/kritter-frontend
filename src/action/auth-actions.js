@@ -46,7 +46,9 @@ export const signupRequest = user => dispatch => {
       }
       return res;
     })
+    .then(window.location.href = '/settings')
     .catch(console.error);
+    
 };
 export const loginRequest = user => dispatch => {
   return superagent.get(`${__API_URL__}/login`)
@@ -56,7 +58,7 @@ export const loginRequest = user => dispatch => {
       dispatch(tokenSet(res.text));
       return res;
     })
-    .then(localStorage.clear());
+    .then(window.location.href = '/home');
 };
 
 
