@@ -14,3 +14,7 @@ aside .bio {
   font-family: 'Roboto', sans-serif;
   font-size: .5em;
 }
+
+@media (max-width: 550px) {
+  .nav-aside{display:none;}
+}

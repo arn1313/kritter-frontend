@@ -5,6 +5,7 @@ import * as utils from '../../lib/utils';
 import PostItem from '../post-item';
 import {postFetchAllRequest} from '../../action/post-actions.js';
 import '../post-item/_post-item.scss';
+import './_gallery-container.scss';
 
 
 class GalleryContainer extends React.Component {
@@ -25,24 +26,16 @@ class GalleryContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <Jumbotron>
-          <h1>Group Memories</h1>
-          <p>Live their adventures</p>
-        </Jumbotron>
-
-        <Row>
-          {utils.renderIf(this.props.post,
-            this.props.post.map(post =>
-              <Col sm={6} md={3} key={post._id}>{
-                <PostItem key={post._id}
-                  post={post}
-                  renderText={'photoOnly'}
-                />
-              }<br/></Col>
-            ))}
-        </Row>
-
+      <div className="what">
+        {utils.renderIf(this.props.post,
+          this.props.post.map(post =>
+            <div className="gallery-column">
+              <PostItem key={post._id}
+                post={post}
+                renderText={'photoOnly'}
+              />
+            </div>
+          ))}
       </div>
     );
   }
