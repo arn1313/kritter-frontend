@@ -28,11 +28,12 @@
   font-size: .8em;
   position: relative;
   bottom: 1em;
-  color: grey;
+  color: white;
 
 }
 
 .nav-logo {
+  object-fit: cover;
   border-radius: 25px;
   float: right;
   margin: .5em 1em 0em .5em;
@@ -77,7 +78,7 @@ header h1 {
 }
 
 .nav-settings {
-  padding: 0em .8em;
+  padding: 0em 1em;
 }
 
 header h4 {
@@ -91,4 +92,10 @@ header h4 {
 
 @media (max-width: 480px) {
     .nav-header{display:none;}
+}
+
+.settings-link {
+  padding-right: .2em;
+  margin-right: .8em;
+  border-right: 1px solid #f1f1f1;
 }

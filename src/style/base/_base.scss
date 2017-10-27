@@ -67,23 +67,78 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
+  input,
+    textarea {
+    height: 3em;
+    background-color: white;
+    border: 0px;
+    border-top: 1px solid #D1D1D1;
+    border-left: 1px solid #D1D1D1;
+    border-radius: 0px;
+    padding: .6em .6em;
+    box-shadow: none;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+  }
+
+    textarea {
+      min-height: 65px;
+      padding-top: 1em;
+      padding-bottom: 6px;
+      resize: vertical;
+  }
+
+    input:focus
+     {
+      border: 0px;
+      border-bottom: 2px solid #42d1a8;
+      // border-bottom: 1px solid black;
+      outline: 0; }
+
+    textarea:focus {
+      border: 0px;
+      border-bottom: 2px solid #42d1a8;
+      border-left: 2px solid #42d1a8;
+      // border-bottom: 1px solid black;
+      // border-left: 1px solid black;
+      outline: 0;
+    }
+
+    label
+     {
+      display: block;
+      margin-bottom: .2em;
+      font-weight: 200;
+     }
+
+    //  label > .label-body {
+    //   display: inline-block;
+    //   margin-left: .5rem;
+    //   font-weight: normal; }
+
+      form {
+        background-color: white;
+        padding-right: 2em;
+      }
+
+
 button
  {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: #555;
+  color: white;
   text-align: center;
-  font-size: 11px;
+  font-size: 1em;
   font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #bbb;
+  background-color: #42d1a8;
+  // border-radius: 4px;
+  border: 1px solid white;
   cursor: pointer;
   box-sizing: border-box;
   margin-bottom: 1rem;
@@ -91,49 +146,10 @@ button
 button:hover,
 button:focus
  {
-  color: blue;
-  border-color: #888;
+  color: white;
+  // background-color: #42d1b9;
+  border-color: black;
   outline: 0; }
-
-input,
-textarea,
-select {
-  // height: 38px;
-  padding: .6em 1em;
-  background-color: white;
-  border: 1px solid #D1D1D1;
-  // border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box;
-  margin-bottom: 1.5rem;}
-
-  textarea {
-    min-height: 65px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    resize: vertical;
-}
-
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #33C3F0;
-    outline: 0; }
-  label,
-  legend {
-    display: block;
-    margin-bottom: .5rem;
-    font-weight: 600; }
-  fieldset {
-    padding: 0;
-    border-width: 0; }
-  input[type="checkbox"],
-  input[type="radio"] {
-    display: inline; }
-  label > .label-body {
-    display: inline-block;
-    margin-left: .5rem;
-    font-weight: normal; }
 
   .u-full-width {
     width: 100%;
