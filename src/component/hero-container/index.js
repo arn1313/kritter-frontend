@@ -4,16 +4,16 @@ import scrollToComponent from 'react-scroll-to-component';
 import './_heroContainer.scss';
 import img from '../../img/Kritter.png';
 import AuthForm from '../auth-form';
-import {signupRequest, loginRequest} from '../../action/auth-actions';
-import {stringify} from 'querystring';
-import {connect} from 'react-redux';
+import { signupRequest, loginRequest, userFetchRequest } from '../../action/auth-actions';
+import { stringify } from 'querystring';
+import { connect } from 'react-redux';
 import * as utils from '../../lib/utils';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../auth-form/_auth-form.scss';
 
 
 class Hero extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
 
@@ -32,7 +32,8 @@ class Hero extends React.Component {
               className="signup"
               auth='signup'
               onComplete={this.props.signup}
-              buttonText={'submit'}/>
+              buttonText={'submit'}
+              userFetchRequest={this.props.userFetchRequest} />
           </div>
           {/* <div className="wrap">
           <div className="raccoon-img">
@@ -59,6 +60,7 @@ let mapStateToProps = state => ({
 let mapDispatchToProps = dispatch => ({
   signup: user => dispatch(signupRequest(user)),
   login: user => dispatch(loginRequest(user)),
+  userFetchRequest: () => dispatch(userFetchRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hero);
