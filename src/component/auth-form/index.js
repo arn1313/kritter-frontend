@@ -74,7 +74,7 @@ class AuthForm extends React.Component {
             this.setState({ loading: false })
             window.location.href = '/home'
 
-          }) : window.location.href = '/settings'
+          }) : window.location.href = '/'
         }
       })
       .catch(error => {
@@ -94,12 +94,12 @@ class AuthForm extends React.Component {
           {utils.renderIf(this.props.auth === 'login',
             <div className="login-auth">
               <div className="login-row">
-                <div className="six columns">
+                <div className="two columns">
                   {utils.renderIf(this.state.usernameError,
                     <span className="tooltip">{this.state.usernameError}</span>
                   )}
 
-                  <label htmlFor="username">Full Name</label>
+                  <label htmlFor="username">Username</label>
                   <input
                     type="text"
                     name="username"
@@ -108,7 +108,7 @@ class AuthForm extends React.Component {
                     onChange={this.handleChange} />
                 </div>
 
-                <div className="six columns">
+                <div className="two columns">
                   {utils.renderIf(this.state.emailError,
                     <span className="tooltip">{this.state.emailError}</span>
                   )}
