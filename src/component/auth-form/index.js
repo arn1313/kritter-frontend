@@ -1,8 +1,9 @@
 import React from 'react';
 import * as utils from '../../lib/utils';
 import { stringify } from 'querystring';
+import { Redirect } from 'react-router-dom'
 import { CircularProgress } from 'material-ui/Progress';
-import purple from 'material-ui/colors/purple';
+import purple from 'material-ui/colors/green';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class AuthForm extends React.Component {
         passwordError: null,
         emailError: null,
         error: null,
-        loading: false, 
+        loading: false,
       };
 
     this.handleChange = this.handleChange.bind(this);
@@ -62,14 +63,20 @@ class AuthForm extends React.Component {
     }
 
   }
-
+  label
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({loading: true})
+    this.setState({ loading: true })
     this.props.onComplete(this.state)
       .then(() => {
-        this.setState({loading: false})
-        this.props.redirect('/home')})
+        {
+          this.props.userFetchRequest ? this.props.userFetchRequest().then(() => {
+            this.setState({ loading: false })
+            window.location.href = '/home'
+
+          }) : undefined
+        }
+      })
       .catch(error => {
         console.error(error);
         this.setState({ error });
@@ -79,7 +86,7 @@ class AuthForm extends React.Component {
   render() {
     return (
       <div className="auth signup-form">
-         {this.state.loading ? <CircularProgress  style={{ color: purple[500] }} thickness={7} /> : undefined}
+        {this.state.loading ? <CircularProgress style={{ color: purple[500] }} thickness={7} /> : undefined}
         <form
           onSubmit={this.handleSubmit}
           className="auth-form">
@@ -92,7 +99,7 @@ class AuthForm extends React.Component {
                     <span className="tooltip">{this.state.usernameError}</span>
                   )}
 
-                  <label for="username">Full Name</label>
+                  <label htmlFor="username">Full Name</label>
                   <input
                     type="text"
                     name="username"
@@ -105,7 +112,7 @@ class AuthForm extends React.Component {
                   {utils.renderIf(this.state.emailError,
                     <span className="tooltip">{this.state.emailError}</span>
                   )}
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     type="password"
                     name="password"
@@ -125,7 +132,7 @@ class AuthForm extends React.Component {
                   {utils.renderIf(this.state.usernameError,
                     <span className="tooltip">{this.state.usernameError}</span>
                   )}
-                  <label for="username">Full Name</label>
+                  <label htmlFor="username">Full Name</label>
                   <input
                     type="text"
                     name="username"
@@ -135,7 +142,7 @@ class AuthForm extends React.Component {
                 </div>
 
                 <div className="six columns">
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -147,7 +154,7 @@ class AuthForm extends React.Component {
 
               <div className="row">
                 <div className="six columns">
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     type="password"
                     name="password"
@@ -157,7 +164,7 @@ class AuthForm extends React.Component {
                 </div>
 
                 <div className="six columns">
-                  <label for="species">Species</label>
+                  <label htmlFor="species">Species</label>
                   <input
                     type="text"
                     name="species"
@@ -168,7 +175,7 @@ class AuthForm extends React.Component {
               </div>
 
               <div>
-                <label for="bio">Bio</label>
+                <label htmlFor="bio">Bio</label>
                 <textarea
                   className="u-full-width"
                   name="bio"
@@ -186,7 +193,7 @@ class AuthForm extends React.Component {
               <section className="update-form">
                 <div className="row">
                   <div className="six columns">
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input
                       type="email"
                       name="email"
@@ -195,7 +202,7 @@ class AuthForm extends React.Component {
                       onChange={this.handleChange} />
                   </div>
                   <div className="six columns">
-                    <label for="species">Species</label>
+                    <label htmlFor="species">Species</label>
                     <input
                       type="text"
                       name="species"
@@ -206,7 +213,7 @@ class AuthForm extends React.Component {
 
                 </div>
 
-                <label for="bio">Bio</label>
+                <label htmlFor="bio">Bio</label>
 
                 <textarea
                   className="u-full-width"
@@ -216,7 +223,7 @@ class AuthForm extends React.Component {
                   value={this.state.bio}
                   onChange={this.handleChange}>
                 </textarea>
-                <label for="avatar">Avatar</label>
+                <label htmlFor="avatar">Avatar</label>
                 <img src={this.state.preview} style={{ 'width': '25%' }} />
                 <input
                   type="file"

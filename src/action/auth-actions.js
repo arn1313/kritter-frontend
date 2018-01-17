@@ -25,6 +25,7 @@ export const tokenSetRequest = token => dispatch => {
   return new Promise((resolve, reject) => {
     resolve(dispatch(tokenSet(token)));
   });
+  // window.location.href = '/home'
 };
 
 
@@ -34,7 +35,7 @@ export const logoutProfile = () => ({ type: 'LOGOUT_PROFILE', payload: null });
 
 export const signupRequest = user => dispatch => {
   return superagent.post(`${__API_URL__}/signup`)
-   
+
     .send(user)
     .attach(user.avatar)
     .then(res => {
@@ -68,6 +69,7 @@ export const userFetchRequest = () => (dispatch, getState) => {
   return superagent.get(`${__API_URL__}/user/me`)
     .set('Authorization', `Bearer ${auth}`)
     .then(res => {
+      console.log('hit')
       dispatch(userSet(res.body));
       return res;
     });
