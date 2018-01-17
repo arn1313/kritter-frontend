@@ -1,6 +1,8 @@
 import React from 'react';
 import * as utils from '../../lib/utils';
 import { stringify } from 'querystring';
+import { CircularProgress } from 'material-ui/Progress';
+import purple from 'material-ui/colors/purple';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class AuthForm extends React.Component {
         passwordError: null,
         emailError: null,
         error: null,
+        loading: false,
       } :
       {
         username: '',
@@ -30,7 +33,8 @@ class AuthForm extends React.Component {
         usernameError: null,
         passwordError: null,
         emailError: null,
-        error: null
+        error: null,
+        loading: false, 
       };
 
     this.handleChange = this.handleChange.bind(this);
@@ -61,8 +65,11 @@ class AuthForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({loading: true})
     this.props.onComplete(this.state)
-      .then(() => this.props.redirect('/home'))
+      .then(() => {
+        this.setState({loading: false})
+        this.props.redirect('/home')})
       .catch(error => {
         console.error(error);
         this.setState({ error });
@@ -72,6 +79,7 @@ class AuthForm extends React.Component {
   render() {
     return (
       <div className="auth signup-form">
+         {this.state.loading ? <CircularProgress  style={{ color: purple[500] }} thickness={7} /> : undefined}
         <form
           onSubmit={this.handleSubmit}
           className="auth-form">

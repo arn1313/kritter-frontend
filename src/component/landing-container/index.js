@@ -5,8 +5,7 @@ import * as utils from '../../lib/utils';
 import { signupRequest, loginRequest } from '../../action/auth-actions';
 import { stringify } from 'querystring';
 import './_landing-container.scss';
-import { CircularProgress } from 'material-ui/Progress';
-import purple from 'material-ui/colors/purple';
+
 
 class LandingContainer extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class LandingContainer extends React.Component {
     return (
       <section>
         <div className="login-form">
-          {!this.props.auth ? <CircularProgress className={classes.progress} style={{ color: purple[500] }} thickness={7} /> : undefined}
+         
           {/* <h1> Please {params.auth}</h1> */}
           <AuthForm
             auth={params.auth}

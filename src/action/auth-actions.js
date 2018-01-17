@@ -34,7 +34,7 @@ export const logoutProfile = () => ({ type: 'LOGOUT_PROFILE', payload: null });
 
 export const signupRequest = user => dispatch => {
   return superagent.post(`${__API_URL__}/signup`)
-    . ()
+   
     .send(user)
     .attach(user.avatar)
     .then(res => {
