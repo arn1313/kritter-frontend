@@ -1,24 +1,24 @@
 import React from 'react';
 import * as utils from '../../lib/utils';
 import PostItem from '../post-item';
-import {postFetchAllRequest} from '../../action/post-actions.js';
-import {connect} from 'react-redux';
+import { postFetchAllRequest } from '../../action/post-actions.js';
+import { connect } from 'react-redux';
 
 class PostList extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       sortedArray: this.props.post,
-      
+
     };
   }
-  
-  
-  render () {
-    let sorted =  this.props.post.sort(function(a,b) {
+
+
+  render() {
+    let sorted = this.props.post.sort(function (a, b) {
       return b.exactTime - a.exactTime;
     });
-    console.log('====>THIS IS SORTED', sorted);
+    console.log('====>THIS IS SORTED', this.props.post);
     return (
       <div>
         {utils.renderIf(this.props.post,
@@ -26,7 +26,7 @@ class PostList extends React.Component {
             <div key={post._id}>{
               <PostItem key={post._id} post={post}
               />
-            }<br/></div>
+            }<br /></div>
           ))}
       </div>
     );
