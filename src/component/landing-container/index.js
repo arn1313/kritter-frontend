@@ -1,6 +1,9 @@
 import React from 'react';
 import AuthForm from '../auth-form';
+import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
+import PopupDialogForm from '../PopupDialogForm'
+
 import * as utils from '../../lib/utils';
 import { signupRequest, loginRequest, userFetchRequest } from '../../action/auth-actions';
 import { stringify } from 'querystring';
@@ -13,7 +16,7 @@ class LandingContainer extends React.Component {
     this.state = {
       showModal: true,
     };
-    // this.redirect = this.redirect.bind(this)
+
 
   }
 
@@ -22,9 +25,7 @@ class LandingContainer extends React.Component {
     // this.props.history.replace('/home');
   }
 
-  // redirect(path) {
-  //   this.props.history.replace(path)
-  // }
+
   render() {
 
 
@@ -33,19 +34,25 @@ class LandingContainer extends React.Component {
       this.props.login :
       this.props.signup;
 
-    // let redirect = path => (this.props.history.replace(path));
 
 
     return (
       <section>
         <div className="login-form">
 
-          {/* <h1> Please {params.auth}</h1> */}
+
           <AuthForm
             auth={params.auth}
             userFetchRequest={this.props.userFetchRequest}
             onComplete={handleComplete}
             buttonText={'submit'} />
+          {/* <PopupDialogForm
+            openNow={'instantLogin'}
+            onComplete={this.props.signup}
+            buttonText={'Login'}
+            userFetchRequest={this.props.userFetchRequest}
+            auth='signup' /> */}
+          <Link to="/"><h2 className="login-link">Whoops, I actually want to sign up!</h2></Link>
         </div>
       </section>
     );

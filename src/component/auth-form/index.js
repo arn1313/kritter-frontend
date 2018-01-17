@@ -74,7 +74,7 @@ class AuthForm extends React.Component {
             this.setState({ loading: false })
             window.location.href = '/home'
 
-          }) : undefined
+          }) : window.location.href = '/settings'
         }
       })
       .catch(error => {

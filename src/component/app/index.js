@@ -34,9 +34,9 @@ class App extends React.Component {
           <div>
             <Navbar
             />
-            {utils.renderIf(!this.props.auth,
-              <Hero />
-            )}
+            {/* //hero = signup */}
+            {/* landingcontainer = login */}
+            <Route exact path="/" component={() => !this.props.auth ? <Hero /> : <Redirect to="/home" />} />
             <Route path="/welcome/:auth" component={LandingContainer} />
             <Route exact path="/settings" component={() => this.props.auth ? <SettingsContainer /> : <Redirect to="/home" />} />
             <Route exact path="/home" component={() => this.props.auth ? <DashboardContainer /> : <Redirect to="/home" />} />

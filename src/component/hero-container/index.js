@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import scrollToComponent from 'react-scroll-to-component';
+import PopupDialogForm from '../PopupDialogForm'
 import './_heroContainer.scss';
 import img from '../../img/Kritter.png';
 import AuthForm from '../auth-form';
@@ -35,12 +36,9 @@ class Hero extends React.Component {
               buttonText={'submit'}
               userFetchRequest={this.props.userFetchRequest} />
           </div>
-          {/* <div className="wrap">
-          <div className="raccoon-img">
-            <img className="u-max-width" src={img} />
-          </div>
-        </div> */}
+
           <div className="six columns login-thing">
+
             <h1 className="land-head2">dflgjdfkg</h1>
             <Link to="/welcome/login"><h2 className="login-link">...or Login</h2></Link>
           </div>
