@@ -1,13 +1,14 @@
 import React from 'react';
 import AuthForm from '../auth-form';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as utils from '../../lib/utils';
-import {signupRequest, loginRequest} from '../../action/auth-actions';
-import {stringify} from 'querystring';
+import { signupRequest, loginRequest } from '../../action/auth-actions';
+import { stringify } from 'querystring';
 import './_landing-container.scss';
 
+
 class LandingContainer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       showModal: true,
@@ -22,9 +23,9 @@ class LandingContainer extends React.Component {
   render() {
 
 
-    let {params} = this.props.match;
+    let { params } = this.props.match;
     let handleComplete = params.auth === 'login' ?
-      this.props.login  :
+      this.props.login :
       this.props.signup;
 
     let redirect = path => this.props.history.replace(path);
@@ -33,6 +34,7 @@ class LandingContainer extends React.Component {
     return (
       <section>
         <div className="login-form">
+         
           {/* <h1> Please {params.auth}</h1> */}
           <AuthForm
             auth={params.auth}

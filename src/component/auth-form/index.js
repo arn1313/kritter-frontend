@@ -1,12 +1,15 @@
 import React from 'react';
 import * as utils from '../../lib/utils';
-import {stringify} from 'querystring';
+import { stringify } from 'querystring';
+import { CircularProgress } from 'material-ui/Progress';
+import purple from 'material-ui/colors/purple';
 
 class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.user ?
-      {...props.user,
+      {
+        ...props.user,
         _id: this.props.user._id,
         username: '',
         password: '',
@@ -18,6 +21,7 @@ class AuthForm extends React.Component {
         passwordError: null,
         emailError: null,
         error: null,
+        loading: false,
       } :
       {
         username: '',
@@ -29,7 +33,9 @@ class AuthForm extends React.Component {
         usernameError: null,
         passwordError: null,
         emailError: null,
-        error: null};
+        error: null,
+        loading: false, 
+      };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,7 +43,7 @@ class AuthForm extends React.Component {
 
 
   handleChange(e) {
-    let {name, value} = e.target;
+    let { name, value } = e.target;
     this.setState({
       [name]: value,
       usernameError: name === 'username' && !value ? 'username must have a value' : null,
@@ -45,13 +51,13 @@ class AuthForm extends React.Component {
       passwordError: name === 'password' && !value ? 'password must have a value' : null,
     });
 
-    if(name === 'avatar') {
-      let {files} = e.target;
+    if (name === 'avatar') {
+      let { files } = e.target;
       let avatar = files[0];
-      this.setState({avatar});
+      this.setState({ avatar });
 
       utils.photoToDataUrl(avatar)
-        .then(preview => this.setState({preview}))
+        .then(preview => this.setState({ preview }))
         .catch(console.error);
     }
 
@@ -59,17 +65,21 @@ class AuthForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({loading: true})
     this.props.onComplete(this.state)
-      .then(() => this.props.redirect('/home'))
+      .then(() => {
+        this.setState({loading: false})
+        this.props.redirect('/home')})
       .catch(error => {
         console.error(error);
-        this.setState({error});
+        this.setState({ error });
       });
   }
 
   render() {
     return (
       <div className="auth signup-form">
+         {this.state.loading ? <CircularProgress  style={{ color: purple[500] }} thickness={7} /> : undefined}
         <form
           onSubmit={this.handleSubmit}
           className="auth-form">
@@ -88,7 +98,7 @@ class AuthForm extends React.Component {
                     name="username"
                     // placeholder="name"
                     value={this.state.username}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange} />
                 </div>
 
                 <div className="six columns">
@@ -101,7 +111,7 @@ class AuthForm extends React.Component {
                     name="password"
                     // placeholder="password"
                     value={this.state.password}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange} />
                 </div>
               </div>
             </div>
@@ -121,7 +131,7 @@ class AuthForm extends React.Component {
                     name="username"
                     // placeholder="name"
                     value={this.state.username}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange} />
                 </div>
 
                 <div className="six columns">
@@ -143,7 +153,7 @@ class AuthForm extends React.Component {
                     name="password"
                     // placeholder="password"
                     value={this.state.password}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange} />
                 </div>
 
                 <div className="six columns">
@@ -153,7 +163,7 @@ class AuthForm extends React.Component {
                     name="species"
                     // placeholder="species"
                     value={this.state.species}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange} />
                 </div>
               </div>
 
@@ -191,7 +201,7 @@ class AuthForm extends React.Component {
                       name="species"
                       placeholder="species"
                       value={this.state.species}
-                      onChange={this.handleChange}/>
+                      onChange={this.handleChange} />
                   </div>
 
                 </div>
@@ -207,11 +217,11 @@ class AuthForm extends React.Component {
                   onChange={this.handleChange}>
                 </textarea>
                 <label for="avatar">Avatar</label>
-                <img src={this.state.preview} style={{'width': '25%'}}/>
+                <img src={this.state.preview} style={{ 'width': '25%' }} />
                 <input
                   type="file"
                   name="avatar"
-                  onChange={this.handleChange}/>
+                  onChange={this.handleChange} />
               </section>
             )}
           </div>
