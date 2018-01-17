@@ -56,13 +56,13 @@ a:hover {
   .container {
     width: 80%; }
   .columns {
-    margin-left: 4%; }
+   }
   .columns:first-child {
-    margin-left: 0; }
+    width: 50%; }
 
 
   .three.columns{ width: 22%; }
-  .six.columns  { width: 48%; }
+  // .six.columns  { width: 48%; }
   .nine.columns { width: 74.0%; }
 }
 
