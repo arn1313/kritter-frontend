@@ -7,11 +7,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "prestart": "next build",
     "build": "webpack",
     "watch": "webpack-dev-server --inline --hot",
     "test": "jest",
     "test:watch": "jest --watchAll",
+    "heroku-prebuild": "npm rebuild node-sass",
     "heroku-postbuild": "webpack -p --progress"
   },
   "jest": {
