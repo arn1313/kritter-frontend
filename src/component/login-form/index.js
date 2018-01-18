@@ -155,6 +155,7 @@ class CustomizedInputs extends React.Component {
                 </Button>
                 <br />
                 {this.state.loading ? <CircularProgress style={{ color: purple[500] }} thickness={7} /> : undefined}
+                {this.state.error ? <p style={{ color: 'red' }}>Whoops, make sure your username and password are correct</p> : undefined}
 
             </div>
 
