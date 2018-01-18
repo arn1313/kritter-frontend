@@ -2,7 +2,7 @@ import React from 'react';
 import AuthForm from '../auth-form';
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
-import PopupDialogForm from '../PopupDialogForm'
+import LoginForm from '../LoginForm'
 
 import * as utils from '../../lib/utils';
 import { signupRequest, loginRequest, userFetchRequest } from '../../action/auth-actions';
@@ -52,6 +52,8 @@ class LandingContainer extends React.Component {
             buttonText={'Login'}
             userFetchRequest={this.props.userFetchRequest}
             auth='signup' /> */}
+          <LoginForm
+          />
           <Link to="/"><h2 className="login-link">Whoops, I actually want to sign up!</h2></Link>
         </div>
       </section>

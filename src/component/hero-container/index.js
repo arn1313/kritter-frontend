@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import scrollToComponent from 'react-scroll-to-component';
-import PopupDialogForm from '../PopupDialogForm'
 import './_heroContainer.scss';
 import img from '../../img/Kritter.png';
 import AuthForm from '../auth-form';
