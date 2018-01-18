@@ -31,8 +31,8 @@ module.exports = {
   entry: `${__dirname}/src/main.js`,
   devServer: {
     historyApiFallback: true,
-    inline: true,
-    hot: true,
+    // inline: true,
+    // hot: true,
   },
   devtool: production ? undefined : 'eval',
   output: {
