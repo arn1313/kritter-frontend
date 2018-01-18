@@ -2,8 +2,8 @@ import React from 'react';
 import AuthForm from '../auth-form';
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
-import PopupDialogForm from '../PopupDialogForm'
-
+import LoginForm from '../login-form'
+import Navbar from '../navbar'
 import * as utils from '../../lib/utils';
 import { signupRequest, loginRequest, userFetchRequest } from '../../action/auth-actions';
 import { stringify } from 'querystring';
@@ -38,20 +38,24 @@ class LandingContainer extends React.Component {
 
     return (
       <section>
+
         <div className="login-form">
 
 
-          <AuthForm
+          {/* <AuthForm
             auth={params.auth}
             userFetchRequest={this.props.userFetchRequest}
             onComplete={handleComplete}
-            buttonText={'submit'} />
-          {/* <PopupDialogForm
-            openNow={'instantLogin'}
-            onComplete={this.props.signup}
-            buttonText={'Login'}
+            buttonText={'submit'} /> */}
+
+
+          <LoginForm
+            auth={params.auth}
             userFetchRequest={this.props.userFetchRequest}
-            auth='signup' /> */}
+            onComplete={this.props.login}
+            buttonText={'submit'}
+          />
+          <br />
           <Link to="/"><h2 className="login-link">Whoops, I actually want to sign up!</h2></Link>
         </div>
       </section>

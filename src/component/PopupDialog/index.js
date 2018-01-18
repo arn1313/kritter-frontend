@@ -48,19 +48,19 @@ class PopupDialog extends React.Component {
                     onClose={this.handleClose}
 
                 >
-                    <DialogTitle style={{ fontSize: 48 }}>
+                    <DialogContent style={{ fontSize: '48' }}>
                         Hello, {this.props.user.username}!
-                    </DialogTitle>
+                    </DialogContent>
                     <DialogContent>
                         <DialogContentText style={{ fontSize: '24' }}>
-                            Thanks for signing up with us, to get the best experience possible please upload a photo of your cute self to share with others!
+                            Thanks for joing the community, to get the best experience possible please go update your profile!
             </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Link to={'/settings'}><Button onClick={this.handleClose} color="primary">
+                        <Link to={'/settings'}><Button onClick={this.handleClose} style={{ color: `#42d1a8`, fontSize: '18' }}>
                             I would love too!
                         </Button></Link>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={this.handleClose} style={{ color: `#42d1a8`, fontSize: '12' }}>
                             I'm camera shy...
             </Button>
                     </DialogActions>
