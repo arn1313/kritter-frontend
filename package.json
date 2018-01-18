@@ -11,7 +11,7 @@
     "watch": "webpack-dev-server --inline --hot",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "heroku-prebuild": "npm rebuild node-sass",
+    "heroku-prebuild": "heroku config:set NODE_MODULES_CACHE=false",
     "heroku-postbuild": "webpack -p --progress"
   },
   "jest": {
