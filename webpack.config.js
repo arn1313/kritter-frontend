@@ -22,7 +22,7 @@ let plugins = [
   }),
 ];
 
-if(production) {
+if (production) {
   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
 }
 
@@ -31,6 +31,8 @@ module.exports = {
   entry: `${__dirname}/src/main.js`,
   devServer: {
     historyApiFallback: true,
+    inline: true,
+    hot: true,
   },
   devtool: production ? undefined : 'eval',
   output: {
