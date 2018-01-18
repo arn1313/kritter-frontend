@@ -9,7 +9,6 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack-dev-server --inline --hot",
-    "start": "webpack --progress --watch",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "heroku-postbuild": "webpack -p --progress"
