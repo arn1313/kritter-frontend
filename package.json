@@ -55,6 +55,7 @@
     "react-test-renderer": "^15.6.1",
     "redux": "^3.7.2",
     "redux-persist": "^4.10.1",
+    "request": "^2.83.0",
     "sass-loader": "^6.0.6",
     "superagent": "^3.6.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
