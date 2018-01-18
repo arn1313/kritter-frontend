@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import scrollToComponent from 'react-scroll-to-component';
-import PopupDialogForm from '../PopupDialogForm'
 import './_heroContainer.scss';
 import img from '../../img/Kritter.png';
 import AuthForm from '../auth-form';
+import SignUpForm from '../sign-up-form'
 import { signupRequest, loginRequest, userFetchRequest } from '../../action/auth-actions';
 import { stringify } from 'querystring';
 import { connect } from 'react-redux';
@@ -24,27 +24,30 @@ class Hero extends React.Component {
   render() {
 
     return (
-      <div className="landing">
-        <div className="landing-row">
-          <div className="six columns signup-form">
-            <h1 className="land-head">Kritter</h1>
-            <h2 className="create">Create a New Account</h2>
-            <AuthForm
-              className="signup"
-              auth='signup'
-              onComplete={this.props.signup}
-              buttonText={'submit'}
-              userFetchRequest={this.props.userFetchRequest} />
-          </div>
+      <section style={{ textAlign: 'center' }}>
 
-          <div className="six columns login-thing">
-
-            <h1 className="land-head2">dflgjdfkg</h1>
-            <Link to="/welcome/login"><h2 className="login-link">...or Login</h2></Link>
-          </div>
+        <div >
+          {/* <h1 className="land-head">Kritter</h1> */}
+          <h2 className="create">Create a New Account</h2>
+          {/* <AuthForm
+            className="signup"
+            auth='signup'
+            onComplete={this.props.signup}
+            buttonText={'submit'}
+            userFetchRequest={this.props.userFetchRequest} /> */}
+          <SignUpForm
+            userFetchRequest={this.props.userFetchRequest}
+            onComplete={this.props.signup}
+            buttonText={'submit'} />
         </div>
 
-      </div>
+        <div className="six columns login-thing">
+
+          {/* <h1 className="land-head2">dflgjdfkg</h1> */}
+          <Link to="/welcome/login"><h2 className="login-link">...or Login</h2></Link>
+        </div>
+      </section>
+
 
     );
   }
