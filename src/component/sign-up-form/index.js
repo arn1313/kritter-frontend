@@ -121,7 +121,6 @@ class CustomizedInputs extends React.Component {
 
 
 
-        console.log(this.state)
     };
 
 
@@ -139,7 +138,6 @@ class CustomizedInputs extends React.Component {
                 }
             })
             .catch(error => {
-                //put error password here
                 console.error(error);
                 this.setState({ error, loading: false });
             });
@@ -233,6 +231,7 @@ class CustomizedInputs extends React.Component {
                             Password
                 </InputLabel>
                         <Input
+                            type="password"
                             style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('password')}
                             error={this.state.errors}
