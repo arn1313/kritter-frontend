@@ -188,7 +188,7 @@ class CustomizedInputs extends React.Component {
                             Username
                     </InputLabel>
                         <Input
-
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('username')}
                             error={this.state.errors}
                             value={this.state.username}
@@ -204,7 +204,7 @@ class CustomizedInputs extends React.Component {
                 {this.state.passwordError ?
                     <FormControl className={classes.formControl}>
                         <InputLabel
-                            style={{ paddingLeft: '7em' }}
+                            style={{ paddingLeft: '13em' }}
                             FormControlClasses={{
                                 focused: classes.ErrorInputLabelFocused,
                             }}
@@ -233,6 +233,7 @@ class CustomizedInputs extends React.Component {
                             Password
                 </InputLabel>
                         <Input
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('password')}
                             error={this.state.errors}
                             value={this.state.password}
@@ -277,7 +278,7 @@ class CustomizedInputs extends React.Component {
                             Email
                  </InputLabel>
                         <Input
-
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('email')}
                             error={this.state.emailError}
                             value={this.state.email}
@@ -294,6 +295,7 @@ class CustomizedInputs extends React.Component {
                 {this.state.speciesError ?
                     <FormControl className={classes.formControl}>
                         <InputLabel
+                            style={{ paddingLeft: '10em' }}
                             FormControlClasses={{
                                 focused: classes.ErrorInputLabelFocused,
                             }}
@@ -321,6 +323,7 @@ class CustomizedInputs extends React.Component {
                             Species
                  </InputLabel>
                         <Input
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('species')}
                             error={this.state.errors}
                             value={this.state.species}
