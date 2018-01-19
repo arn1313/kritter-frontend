@@ -18,10 +18,13 @@ const styles = theme => ({
     },
     formControl: {
         margin: theme.spacing.unit,
+
     },
     inputLabelFocused: {
         color: `#42d1a8`,
+        fontSize: '24px'
     },
+
     inputInkbar: {
         '&:after': {
             backgroundColor: `#42d1a8`,
@@ -29,6 +32,7 @@ const styles = theme => ({
     },
     ErrorInputLabelFocused: {
         color: red[500],
+        fontSize: '24px'
     },
     ErrorInputInkbar: {
         '&:after': {
@@ -45,7 +49,7 @@ const styles = theme => ({
         borderRadius: 4,
         backgroundColor: theme.palette.common.white,
         border: '1px solid #ced4da',
-        fontSize: 16,
+        fontSize: 18,
         padding: '10px 12px',
         width: 'calc(100% - 24px)',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -55,9 +59,11 @@ const styles = theme => ({
         },
     },
     textFieldFormLabel: {
-        fontSize: 18,
+        fontSize: 24,
     },
 });
+
+
 
 class CustomizedInputs extends React.Component {
     constructor(props) {
@@ -101,7 +107,7 @@ class CustomizedInputs extends React.Component {
             // %%%%%%%%%%%%%%%%%%% email VALIDATION %%%%%%%%%%%%%%%%%%%
             let regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             {
-                regEmail.test(this.state.email) !== true ? this.setState({ emailError: true }) :
+                regEmail.test(this.state.email) !== true && this.state.email !== '' ? this.setState({ emailError: true }) :
                     this.setState({ emailError: false })
             }
             // %%%%%%%%%%%%%%%%%%% species VALIDATION %%%%%%%%%%%%%%%%%%%
@@ -156,10 +162,12 @@ class CustomizedInputs extends React.Component {
                                 focused: classes.ErrorInputLabelFocused,
                             }}
                             htmlFor="Username"
+
                         >
                             Username
                         </InputLabel>
                         <Input
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('username')}
                             error={this.state.errors}
                             value={this.state.username}
@@ -180,6 +188,7 @@ class CustomizedInputs extends React.Component {
                             Username
                     </InputLabel>
                         <Input
+
                             onChange={this.handleInputChange('username')}
                             error={this.state.errors}
                             value={this.state.username}
@@ -195,6 +204,7 @@ class CustomizedInputs extends React.Component {
                 {this.state.passwordError ?
                     <FormControl className={classes.formControl}>
                         <InputLabel
+                            style={{ paddingLeft: '7em' }}
                             FormControlClasses={{
                                 focused: classes.ErrorInputLabelFocused,
                             }}
@@ -203,6 +213,7 @@ class CustomizedInputs extends React.Component {
                             At least 6 characters. Two numbers. One Special Character.
                     </InputLabel>
                         <Input
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('password')}
                             // error={this.state.errors}
                             value={this.state.password}
@@ -245,7 +256,7 @@ class CustomizedInputs extends React.Component {
                             Email
                     </InputLabel>
                         <Input
-
+                            style={{ fontSize: '18px' }}
                             onChange={this.handleInputChange('email')}
                             error={this.state.emailError}
                             value={this.state.email}

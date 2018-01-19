@@ -36,7 +36,7 @@ const styles = theme => ({
         borderRadius: 4,
         backgroundColor: theme.palette.common.white,
         border: '1px solid #ced4da',
-        fontSize: 16,
+        fontSize: 24,
         padding: '10px 12px',
         width: 'calc(100% - 24px)',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -46,7 +46,7 @@ const styles = theme => ({
         },
     },
     textFieldFormLabel: {
-        fontSize: 18,
+        fontSize: 24,
     },
 });
 
