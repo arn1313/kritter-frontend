@@ -105,8 +105,8 @@ class CustomizedInputs extends React.Component {
 
 
             <div >
-                {/* <h1 className="land-head">Kritter</h1>
-                <h2 className="login-link">Login</h2> */}
+                {/* <h1 className="land-head">Kritter</h1> */}
+                <h2 className="login-link">Login</h2>
                 <FormControl >
                     <InputLabel
                         FormControlClasses={{
