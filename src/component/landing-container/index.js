@@ -40,6 +40,7 @@ class LandingContainer extends React.Component {
       <section>
 
         <div className="login-form">
+          <h2 className="create">Login</h2>
 
 
           {/* <AuthForm
@@ -48,13 +49,15 @@ class LandingContainer extends React.Component {
             onComplete={handleComplete}
             buttonText={'submit'} /> */}
 
+          <div id="signupBackground">
 
-          <LoginForm
-            auth={params.auth}
-            userFetchRequest={this.props.userFetchRequest}
-            onComplete={this.props.login}
-            buttonText={'submit'}
-          />
+            <LoginForm
+              auth={params.auth}
+              userFetchRequest={this.props.userFetchRequest}
+              onComplete={this.props.login}
+              buttonText={'submit'}
+            />
+          </div>
           <br />
           <Link to="/"><h2 className="login-link">Whoops, I actually want to sign up!</h2></Link>
         </div>

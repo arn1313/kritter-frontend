@@ -24,7 +24,7 @@ class Hero extends React.Component {
   render() {
 
     return (
-      <section style={{ textAlign: 'center' }}>
+      <section id="signupBackground" style={{ textAlign: 'center' }}>
 
         <div >
           {/* <h1 className="land-head">Kritter</h1> */}

@@ -19,6 +19,7 @@ const styles = theme => ({
         margin: theme.spacing.unit,
     },
     inputLabelFocused: {
+        fontSize: '24px',
         color: `#42d1a8`,
     },
     inputInkbar: {
@@ -63,13 +64,11 @@ class CustomizedInputs extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
     }
     handleInputChange = name => event => {
         this.setState({
             [name]: event.target.value,
         })
-        console.log(this.state)
     };
 
 
@@ -87,7 +86,6 @@ class CustomizedInputs extends React.Component {
                 }
             })
             .catch(error => {
-                //put error password here
                 console.error(error);
                 this.setState({ error, loading: false });
             });
@@ -95,7 +93,6 @@ class CustomizedInputs extends React.Component {
 
     }
 
-    // function CustomizedInputs(props) {
 
     render() {
         const { classes } = this.props;
@@ -106,9 +103,10 @@ class CustomizedInputs extends React.Component {
 
             <div >
                 {/* <h1 className="land-head">Kritter</h1> */}
-                <h2 className="login-link">Login</h2>
+                {/* <h2 className="login-link">Login</h2> */}
                 <FormControl >
                     <InputLabel
+                        style={{ fontSize: '16px' }}
                         FormControlClasses={{
                             focused: classes.inputLabelFocused,
                         }}
@@ -117,6 +115,7 @@ class CustomizedInputs extends React.Component {
                         Username
             </InputLabel>
                     <Input
+                        // style={{ fontSize: '24px' }}
                         onChange={this.handleInputChange('username')}
                         error={this.state.errors}
                         value={this.state.username}
@@ -131,6 +130,7 @@ class CustomizedInputs extends React.Component {
                 <br />
                 <FormControl className={classes.formControl}>
                     <InputLabel
+                        style={{ fontSize: '16px' }}
                         FormControlClasses={{
                             focused: classes.inputLabelFocused,
                         }}
@@ -139,6 +139,9 @@ class CustomizedInputs extends React.Component {
                         Password
             </InputLabel>
                     <Input
+                        // style={{ fontSize: '18px' }}
+                        type="password"
+
                         onChange={this.handleInputChange('password')}
                         error={this.state.errors}
                         value={this.state.password}
