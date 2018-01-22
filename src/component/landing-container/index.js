@@ -1,9 +1,9 @@
 import React from 'react';
 import AuthForm from '../auth-form';
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LoginForm from '../login-form'
-import Navbar from '../navbar'
+import LoginForm from '../login-form';
+import Navbar from '../navbar';
 import * as utils from '../../lib/utils';
 import { signupRequest, loginRequest, userFetchRequest } from '../../action/auth-actions';
 import { stringify } from 'querystring';
