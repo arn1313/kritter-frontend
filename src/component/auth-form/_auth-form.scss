@@ -12,54 +12,50 @@
   margin-bottom: 1.5rem;
 }
 
-  .signup-form textarea {
-    min-height: 100px;
-    padding-top: 1em;
-    padding-bottom: 6px;
-    resize: vertical;
+.signup-form textarea {
+  min-height: 100px;
+  padding-top: 1em;
+  padding-bottom: 6px;
+  resize: vertical;
 }
 
-  .signup-form input:focus
-   {
-    border: 0px;
-    border-bottom: 2px solid #42d1a8;
-    // border-bottom: 1px solid black;
-    outline: 0; }
+.signup-form input:focus {
+  border: 0px;
+  border-bottom: 2px solid #42d1a8;
+  outline: 0;
+}
 
-  .signup-form textarea:focus {
-    border: 0px;
-    border-bottom: 2px solid #42d1a8;
-    border-left: 2px solid #42d1a8;
-    // border-bottom: 1px solid black;
-    // border-left: 1px solid black;
-    outline: 0;
-  }
+.signup-form textarea:focus {
+  border: 0px;
+  border-bottom: 2px solid #42d1a8;
+  border-left: 2px solid #42d1a8;
+  outline: 0;
+}
 
-  .signup-form label
-   {
-    display: block;
-    margin-bottom: .2em;
-    font-weight: 200;
-   }
+.signup-form label {
+  display: block;
+  margin-bottom: .2em;
+  font-weight: 200;
+}
 
-  .signup-form label > .label-body {
-    display: inline-block;
-    margin-left: .5rem;
-    font-weight: normal; }
+.signup-form label>.label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal;
+}
 
-    .signup-form form {
-      // background-color: rgba(255, 255, 255, 0.2);;
-      padding-right: 2em;
-    }
+.signup-form form {
+  // background-color: rgba(255, 255, 255, 0.2);;
+  padding-right: 2em;
+}
 
+.login-auth {
+  margin: 0 auto;
+  position: relative;
+  top: 1em;
+  right: 5em;
+}
 
-  .login-auth {
-    margin: 0 auto;
-    position: relative;
-    top: 1em;
-    right: 5em;
-  }
-
-  .login-row {
-    height: 100px;
-  }
+.login-row {
+  height: 100px;
+}
